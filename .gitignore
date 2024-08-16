@@ -13,3 +13,7 @@ composer.phar
 
 # PHPUnit cache
 .phpunit.result.cache
+
+# Misc
+.travis.yml
+git_push.sh
