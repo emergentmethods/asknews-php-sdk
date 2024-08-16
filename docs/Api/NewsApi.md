@@ -31,7 +31,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
   'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat']
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
 ]);
 
 
@@ -96,7 +96,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
   'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat']
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
 ]);
 
 
@@ -169,7 +169,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
   'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat']
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
 ]);
 
 
