@@ -1,0 +1,17 @@
+name: Publish
+on:
+  push:
+    tags:
+      - '*'
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Publish
+        uses: hotaruma/packagist-sync@v1.0.1
+        with:
+          api-token: ${{ secrets.PACKAGIST_TOKEN }}
+          packagist-username: ${{ secrets.PACKAGIST_USER }}
