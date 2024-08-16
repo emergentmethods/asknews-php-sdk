@@ -186,10 +186,8 @@ Class | Method | HTTP request | Description
 - [WebSearchResult](docs/Model/WebSearchResult.md)
 
 ## Authorization
-### Bearer
 
 
-### Bearer
 
 - **Type**: `OAuth`
 - **Flow**: `client_credentials`
