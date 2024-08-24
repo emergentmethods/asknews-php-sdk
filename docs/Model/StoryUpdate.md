@@ -41,7 +41,7 @@ Name | Type | Description | Notes
 **relationships** | [**\AskNews\Model\AsknewsApiSchemaV1StoriesGraphRelationships**](AsknewsApiSchemaV1StoriesGraphRelationships.md) |  |
 **mermaid** | **string** |  |
 **cc_image_url** | **string** |  |
-**display_image_urls** | **string[]** |  |
+**display_image_urls** | [**\AskNews\Model\StoryUpdateDisplayImageUrlsInner[]**](StoryUpdateDisplayImageUrlsInner.md) |  |
 **alignment** | **int** |  | [optional] [default to 0]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
