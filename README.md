@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *ChatApi* | [**getHeadlineQuestions**](docs/Api/ChatApi.md#getheadlinequestions) | **GET** /v1/chat/questions | Get example headline questions
 *ChatApi* | [**listChatModels**](docs/Api/ChatApi.md#listchatmodels) | **GET** /v1/openai/models | List available chat models
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
+*GraphApi* | [**buildGraph**](docs/Api/GraphApi.md#buildgraph) | **POST** /v1/news/graph | Build a custom mega-news-knowledge graph
 *NewsApi* | [**getArticle**](docs/Api/NewsApi.md#getarticle) | **GET** /v1/news/{article_id} | Get an article by its UUID
 *NewsApi* | [**getSourcesReport**](docs/Api/NewsApi.md#getsourcesreport) | **GET** /v1/sources | Get the sources underlying AskNews
 *NewsApi* | [**searchNews**](docs/Api/NewsApi.md#searchnews) | **GET** /v1/news/search | Search for enriched real-time news context
@@ -124,6 +125,10 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel30](docs/Model/AbcAPIErrorModel30.md)
 - [AbcAPIErrorModel31](docs/Model/AbcAPIErrorModel31.md)
 - [AbcAPIErrorModel32](docs/Model/AbcAPIErrorModel32.md)
+- [AbcAPIErrorModel33](docs/Model/AbcAPIErrorModel33.md)
+- [AbcAPIErrorModel34](docs/Model/AbcAPIErrorModel34.md)
+- [AbcAPIErrorModel35](docs/Model/AbcAPIErrorModel35.md)
+- [AbcAPIErrorModel36](docs/Model/AbcAPIErrorModel36.md)
 - [AbcAPIErrorModel4](docs/Model/AbcAPIErrorModel4.md)
 - [AbcAPIErrorModel5](docs/Model/AbcAPIErrorModel5.md)
 - [AbcAPIErrorModel6](docs/Model/AbcAPIErrorModel6.md)
@@ -134,6 +139,7 @@ Class | Method | HTTP request | Description
 - [AsknewsApiErrorsAPIErrorModel](docs/Model/AsknewsApiErrorsAPIErrorModel.md)
 - [AsknewsApiSchemaV1CommonGraphRelationships](docs/Model/AsknewsApiSchemaV1CommonGraphRelationships.md)
 - [AsknewsApiSchemaV1StoriesGraphRelationships](docs/Model/AsknewsApiSchemaV1StoriesGraphRelationships.md)
+- [BodyBuildGraph](docs/Model/BodyBuildGraph.md)
 - [Choice](docs/Model/Choice.md)
 - [Classification](docs/Model/Classification.md)
 - [ClusterProbabilities](docs/Model/ClusterProbabilities.md)
@@ -157,6 +163,7 @@ Class | Method | HTTP request | Description
 - [FinanceResponseTimeSeries](docs/Model/FinanceResponseTimeSeries.md)
 - [FinanceResponseTimeSeriesData](docs/Model/FinanceResponseTimeSeriesData.md)
 - [ForecastResponse](docs/Model/ForecastResponse.md)
+- [GraphResponse](docs/Model/GraphResponse.md)
 - [HTTPValidationError](docs/Model/HTTPValidationError.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
 - [KeyPerson](docs/Model/KeyPerson.md)
