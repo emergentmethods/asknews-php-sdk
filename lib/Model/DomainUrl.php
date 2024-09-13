@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateChatCompletionResponse
+ * DomainUrl
  *
  * PHP version 7.4
  *
@@ -32,15 +32,16 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * CreateChatCompletionResponse Class Doc Comment
+ * DomainUrl Class Doc Comment
  *
  * @category Class
+ * @description filter by domain url of interest. This can be a single domain or a list of domains. For example, &#39;npr.org&#39; or [&#39;nature.com&#39;, &#39;npr.org&#39;]
  * @package  AskNews
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class DomainUrl implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +50,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateChatCompletionResponse';
+    protected static $openAPIModelName = 'Domain_Url';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,12 +58,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
       * @var string[]
       */
     protected static $openAPITypes = [
-        'id' => 'string',
-        'created' => 'int',
-        'object' => 'string',
-        'model' => 'string',
-        'usage' => '\AskNews\Model\CreateChatCompletionResponseUsage',
-        'choices' => '\AskNews\Model\CreateChatCompletionResponseChoice[]'
+        
     ];
 
     /**
@@ -73,12 +69,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'id' => null,
-        'created' => null,
-        'object' => null,
-        'model' => null,
-        'usage' => null,
-        'choices' => null
+        
     ];
 
     /**
@@ -87,12 +78,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'id' => false,
-        'created' => false,
-        'object' => false,
-        'model' => false,
-        'usage' => false,
-        'choices' => false
+        
     ];
 
     /**
@@ -181,12 +167,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $attributeMap = [
-        'id' => 'id',
-        'created' => 'created',
-        'object' => 'object',
-        'model' => 'model',
-        'usage' => 'usage',
-        'choices' => 'choices'
+        
     ];
 
     /**
@@ -195,12 +176,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $setters = [
-        'id' => 'setId',
-        'created' => 'setCreated',
-        'object' => 'setObject',
-        'model' => 'setModel',
-        'usage' => 'setUsage',
-        'choices' => 'setChoices'
+        
     ];
 
     /**
@@ -209,12 +185,7 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
      * @var string[]
      */
     protected static $getters = [
-        'id' => 'getId',
-        'created' => 'getCreated',
-        'object' => 'getObject',
-        'model' => 'getModel',
-        'usage' => 'getUsage',
-        'choices' => 'getChoices'
+        
     ];
 
     /**
@@ -274,12 +245,6 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('id', $data ?? [], null);
-        $this->setIfExists('created', $data ?? [], null);
-        $this->setIfExists('object', $data ?? [], 'chat.completion');
-        $this->setIfExists('model', $data ?? [], 'gpt-4o-mini');
-        $this->setIfExists('usage', $data ?? [], null);
-        $this->setIfExists('choices', $data ?? [], null);
     }
 
     /**
@@ -309,18 +274,6 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
     {
         $invalidProperties = [];
 
-        if ($this->container['id'] === null) {
-            $invalidProperties[] = "'id' can't be null";
-        }
-        if ($this->container['created'] === null) {
-            $invalidProperties[] = "'created' can't be null";
-        }
-        if ($this->container['usage'] === null) {
-            $invalidProperties[] = "'usage' can't be null";
-        }
-        if ($this->container['choices'] === null) {
-            $invalidProperties[] = "'choices' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -335,168 +288,6 @@ class CreateChatCompletionResponse implements ModelInterface, ArrayAccess, \Json
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets id
-     *
-     * @return string
-     */
-    public function getId()
-    {
-        return $this->container['id'];
-    }
-
-    /**
-     * Sets id
-     *
-     * @param string $id id
-     *
-     * @return self
-     */
-    public function setId($id)
-    {
-        if (is_null($id)) {
-            throw new \InvalidArgumentException('non-nullable id cannot be null');
-        }
-        $this->container['id'] = $id;
-
-        return $this;
-    }
-
-    /**
-     * Gets created
-     *
-     * @return int
-     */
-    public function getCreated()
-    {
-        return $this->container['created'];
-    }
-
-    /**
-     * Sets created
-     *
-     * @param int $created created
-     *
-     * @return self
-     */
-    public function setCreated($created)
-    {
-        if (is_null($created)) {
-            throw new \InvalidArgumentException('non-nullable created cannot be null');
-        }
-        $this->container['created'] = $created;
-
-        return $this;
-    }
-
-    /**
-     * Gets object
-     *
-     * @return string|null
-     */
-    public function getObject()
-    {
-        return $this->container['object'];
-    }
-
-    /**
-     * Sets object
-     *
-     * @param string|null $object object
-     *
-     * @return self
-     */
-    public function setObject($object)
-    {
-        if (is_null($object)) {
-            throw new \InvalidArgumentException('non-nullable object cannot be null');
-        }
-        $this->container['object'] = $object;
-
-        return $this;
-    }
-
-    /**
-     * Gets model
-     *
-     * @return string|null
-     */
-    public function getModel()
-    {
-        return $this->container['model'];
-    }
-
-    /**
-     * Sets model
-     *
-     * @param string|null $model model
-     *
-     * @return self
-     */
-    public function setModel($model)
-    {
-        if (is_null($model)) {
-            throw new \InvalidArgumentException('non-nullable model cannot be null');
-        }
-        $this->container['model'] = $model;
-
-        return $this;
-    }
-
-    /**
-     * Gets usage
-     *
-     * @return \AskNews\Model\CreateChatCompletionResponseUsage
-     */
-    public function getUsage()
-    {
-        return $this->container['usage'];
-    }
-
-    /**
-     * Sets usage
-     *
-     * @param \AskNews\Model\CreateChatCompletionResponseUsage $usage usage
-     *
-     * @return self
-     */
-    public function setUsage($usage)
-    {
-        if (is_null($usage)) {
-            throw new \InvalidArgumentException('non-nullable usage cannot be null');
-        }
-        $this->container['usage'] = $usage;
-
-        return $this;
-    }
-
-    /**
-     * Gets choices
-     *
-     * @return \AskNews\Model\CreateChatCompletionResponseChoice[]
-     */
-    public function getChoices()
-    {
-        return $this->container['choices'];
-    }
-
-    /**
-     * Sets choices
-     *
-     * @param \AskNews\Model\CreateChatCompletionResponseChoice[] $choices choices
-     *
-     * @return self
-     */
-    public function setChoices($choices)
-    {
-        if (is_null($choices)) {
-            throw new \InvalidArgumentException('non-nullable choices cannot be null');
-        }
-        $this->container['choices'] = $choices;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

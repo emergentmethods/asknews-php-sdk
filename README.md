@@ -158,6 +158,7 @@ Class | Method | HTTP request | Description
 - [CreateChatCompletionResponseUsage](docs/Model/CreateChatCompletionResponseUsage.md)
 - [CreateChatCompletionResponseUsage1](docs/Model/CreateChatCompletionResponseUsage1.md)
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
+- [DomainUrl](docs/Model/DomainUrl.md)
 - [Entities](docs/Model/Entities.md)
 - [FinanceResponse](docs/Model/FinanceResponse.md)
 - [FinanceResponseTimeSeries](docs/Model/FinanceResponseTimeSeries.md)

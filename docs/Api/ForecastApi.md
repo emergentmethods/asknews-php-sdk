@@ -10,7 +10,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 ## `getForecast()`
 
 ```php
-getForecast($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search): \AskNews\Model\ForecastResponse
+getForecast($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search, $expert): \AskNews\Model\ForecastResponse
 ```
 
 Make an expert forecast for a news event.
@@ -48,9 +48,10 @@ $cutoff_date = 'cutoff_date_example'; // string | The cutoff date for the foreca
 $use_reddit = false; // bool | Whether to use Reddit data for the forecast.enterprise customers only.
 $additional_context = 'additional_context_example'; // string | Additional context to use for the forecast.
 $web_search = false; // bool | Whether to run a live web search and include results in the forecast. enterprise customers only.
+$expert = 'general'; // string | The type of expert to use for the forecast.
 
 try {
-    $result = $apiInstance->getForecast($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search);
+    $result = $apiInstance->getForecast($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search, $expert);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ForecastApi->getForecast: ', $e->getMessage(), PHP_EOL;
@@ -70,6 +71,7 @@ try {
 | **use_reddit** | **bool**| Whether to use Reddit data for the forecast.enterprise customers only. | [optional] [default to false] |
 | **additional_context** | **string**| Additional context to use for the forecast. | [optional] |
 | **web_search** | **bool**| Whether to run a live web search and include results in the forecast. enterprise customers only. | [optional] [default to false] |
+| **expert** | **string**| The type of expert to use for the forecast. | [optional] [default to &#39;general&#39;] |
 
 ### Return type
 

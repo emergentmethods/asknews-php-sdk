@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | **string** |  | [optional] [default to 'gpt-3.5-turbo-16k']
+**model** | **string** |  | [optional] [default to 'gpt-4o-mini']
 **messages** | [**\AskNews\Model\CreateChatCompletionRequestMessage[]**](CreateChatCompletionRequestMessage.md) |  |
 **temperature** | **mixed** |  | [optional]
 **top_p** | **mixed** |  | [optional]

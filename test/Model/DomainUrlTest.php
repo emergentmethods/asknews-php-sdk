@@ -1,6 +1,6 @@
 <?php
 /**
- * FinanceResponseTimeSeriesTest
+ * DomainUrlTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * FinanceResponseTimeSeriesTest Class Doc Comment
+ * DomainUrlTest Class Doc Comment
  *
  * @category    Class
- * @description FinanceResponseTimeSeries
+ * @description filter by domain url of interest. This can be a single domain or a list of domains. For example, &#39;npr.org&#39; or [&#39;nature.com&#39;, &#39;npr.org&#39;]
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class FinanceResponseTimeSeriesTest extends TestCase
+class DomainUrlTest extends TestCase
 {
 
     /**
@@ -71,18 +71,9 @@ class FinanceResponseTimeSeriesTest extends TestCase
     }
 
     /**
-     * Test "FinanceResponseTimeSeries"
+     * Test "DomainUrl"
      */
-    public function testFinanceResponseTimeSeries()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "timeseries"
-     */
-    public function testPropertyTimeseries()
+    public function testDomainUrl()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
