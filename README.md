@@ -96,6 +96,7 @@ Class | Method | HTTP request | Description
 *RedditApi* | [**searchReddit**](docs/Api/RedditApi.md#searchreddit) | **GET** /v1/reddit/search | Search Reddit, summarize threads, and return analysis.
 *StoriesApi* | [**getStories**](docs/Api/StoriesApi.md#getstories) | **GET** /v1/stories | Filter and search for top news narratives
 *StoriesApi* | [**getStory**](docs/Api/StoriesApi.md#getstory) | **GET** /v1/stories/{story_id} | Get a story containing updates
+*WebsearchApi* | [**liveWebSearch**](docs/Api/WebsearchApi.md#livewebsearch) | **GET** /v1/chat/websearch | Run a live websearch.
 
 ## Models
 
@@ -193,6 +194,7 @@ Class | Method | HTTP request | Description
 - [ValidationErrorLocInner](docs/Model/ValidationErrorLocInner.md)
 - [ValidationErrorModel](docs/Model/ValidationErrorModel.md)
 - [Value](docs/Model/Value.md)
+- [WebSearchResponse](docs/Model/WebSearchResponse.md)
 - [WebSearchResult](docs/Model/WebSearchResult.md)
 
 ## Authorization

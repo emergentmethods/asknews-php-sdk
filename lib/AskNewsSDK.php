@@ -22,6 +22,7 @@ class AskNewsSDK
     public Api\PingApi $ping;
     public Api\RedditApi $reddit;
     public Api\StoriesApi $stories;
+    public Api\WebsearchApi $websearch;
 
     /**
      * Constructor
@@ -40,5 +41,6 @@ class AskNewsSDK
         $this->ping = new Api\PingApi(null, $_configuration);
         $this->reddit = new Api\RedditApi(null, $_configuration);
         $this->stories = new Api\StoriesApi(null, $_configuration);
+        $this->websearch = new Api\WebsearchApi(null, $_configuration);
     }
 }
