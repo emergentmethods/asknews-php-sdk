@@ -1,6 +1,6 @@
 <?php
 /**
- * AbcAPIErrorModel11Test
+ * FilterParamsTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AbcAPIErrorModel11Test Class Doc Comment
+ * FilterParamsTest Class Doc Comment
  *
  * @category    Class
- * @description AbcAPIErrorModel11
+ * @description FilterParams
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AbcAPIErrorModel11Test extends TestCase
+class FilterParamsTest extends TestCase
 {
 
     /**
@@ -71,27 +71,9 @@ class AbcAPIErrorModel11Test extends TestCase
     }
 
     /**
-     * Test "AbcAPIErrorModel11"
+     * Test "FilterParams"
      */
-    public function testAbcAPIErrorModel11()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "code"
-     */
-    public function testPropertyCode()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "detail"
-     */
-    public function testPropertyDetail()
+    public function testFilterParams()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

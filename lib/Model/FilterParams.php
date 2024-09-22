@@ -1,6 +1,6 @@
 <?php
 /**
- * ValidationError
+ * FilterParams
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * ValidationError Class Doc Comment
+ * FilterParams Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,7 +40,7 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'ValidationError';
+    protected static $openAPIModelName = 'Filter_Params';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,9 +57,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'loc' => '\AskNews\Model\ValidationErrorLocInner[]',
-        'msg' => 'string',
-        'type' => 'string'
+        
     ];
 
     /**
@@ -70,9 +68,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'loc' => null,
-        'msg' => null,
-        'type' => null
+        
     ];
 
     /**
@@ -81,9 +77,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'loc' => false,
-        'msg' => false,
-        'type' => false
+        
     ];
 
     /**
@@ -172,9 +166,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'loc' => 'loc',
-        'msg' => 'msg',
-        'type' => 'type'
+        
     ];
 
     /**
@@ -183,9 +175,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'loc' => 'setLoc',
-        'msg' => 'setMsg',
-        'type' => 'setType'
+        
     ];
 
     /**
@@ -194,9 +184,7 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'loc' => 'getLoc',
-        'msg' => 'getMsg',
-        'type' => 'getType'
+        
     ];
 
     /**
@@ -256,9 +244,6 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('loc', $data ?? [], null);
-        $this->setIfExists('msg', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
     }
 
     /**
@@ -288,15 +273,6 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['loc'] === null) {
-            $invalidProperties[] = "'loc' can't be null";
-        }
-        if ($this->container['msg'] === null) {
-            $invalidProperties[] = "'msg' can't be null";
-        }
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -311,87 +287,6 @@ class ValidationError implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets loc
-     *
-     * @return \AskNews\Model\ValidationErrorLocInner[]
-     */
-    public function getLoc()
-    {
-        return $this->container['loc'];
-    }
-
-    /**
-     * Sets loc
-     *
-     * @param \AskNews\Model\ValidationErrorLocInner[] $loc loc
-     *
-     * @return self
-     */
-    public function setLoc($loc)
-    {
-        if (is_null($loc)) {
-            throw new \InvalidArgumentException('non-nullable loc cannot be null');
-        }
-        $this->container['loc'] = $loc;
-
-        return $this;
-    }
-
-    /**
-     * Gets msg
-     *
-     * @return string
-     */
-    public function getMsg()
-    {
-        return $this->container['msg'];
-    }
-
-    /**
-     * Sets msg
-     *
-     * @param string $msg msg
-     *
-     * @return self
-     */
-    public function setMsg($msg)
-    {
-        if (is_null($msg)) {
-            throw new \InvalidArgumentException('non-nullable msg cannot be null');
-        }
-        $this->container['msg'] = $msg;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
-     *
-     * @return string
-     */
-    public function getType()
-    {
-        return $this->container['type'];
-    }
-
-    /**
-     * Sets type
-     *
-     * @param string $type type
-     *
-     * @return self
-     */
-    public function setType($type)
-    {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
-        }
-        $this->container['type'] = $type;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

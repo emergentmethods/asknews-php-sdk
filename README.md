@@ -161,6 +161,7 @@ Class | Method | HTTP request | Description
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
 - [DomainUrl](docs/Model/DomainUrl.md)
 - [Entities](docs/Model/Entities.md)
+- [FilterParams](docs/Model/FilterParams.md)
 - [FinanceResponse](docs/Model/FinanceResponse.md)
 - [FinanceResponseTimeSeries](docs/Model/FinanceResponseTimeSeries.md)
 - [FinanceResponseTimeSeriesData](docs/Model/FinanceResponseTimeSeriesData.md)
