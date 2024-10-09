@@ -48,7 +48,7 @@ $end_timestamp = 56; // int | End timestamp to filter results on.
 $sort_by = 'sort_by_example'; // string | Which type of sorting to perform. published: Sort by published date. coverage: Sort by coverage. sentiment: Sort by sentiment. relevance: Sort by relevance of similarity score/ranking.
 $sort_type = 'sort_type_example'; // string | Whether to sort results in ascending or descending order.
 $continent = new \AskNews\Model\Continent(); // Continent | Continents to filter by.
-$offset = 0; // int | Offset to use
+$offset = new \AskNews\Model\Offset1(); // Offset1 | Offset to use
 $limit = 10; // int | Limit to use
 $expand_updates = false; // bool | Whether to expand updates
 $max_updates = 2; // int | Max updates to use
@@ -81,7 +81,7 @@ try {
 | **sort_by** | **string**| Which type of sorting to perform. published: Sort by published date. coverage: Sort by coverage. sentiment: Sort by sentiment. relevance: Sort by relevance of similarity score/ranking. | [optional] |
 | **sort_type** | **string**| Whether to sort results in ascending or descending order. | [optional] |
 | **continent** | [**Continent**](../Model/.md)| Continents to filter by. | [optional] |
-| **offset** | **int**| Offset to use | [optional] [default to 0] |
+| **offset** | [**Offset1**](../Model/.md)| Offset to use | [optional] |
 | **limit** | **int**| Limit to use | [optional] [default to 10] |
 | **expand_updates** | **bool**| Whether to expand updates | [optional] [default to false] |
 | **max_updates** | **int**| Max updates to use | [optional] [default to 2] |

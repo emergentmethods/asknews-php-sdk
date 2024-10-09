@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **cluster_probability** | **float** |  |
 **markdown_citation** | **string** |  | [optional] [default to '']
 **provocative** | **string** |  | [optional] [default to 'unknown']
-**reporting_voice** | [**\AskNews\Model\ReportingVoice**](ReportingVoice.md) |  | [optional]
+**reporting_voice** | [**\AskNews\Model\ReportingVoice1**](ReportingVoice1.md) |  | [optional]
 **entity_relation_graph** | [**\AskNews\Model\AsknewsApiSchemaV1CommonGraphRelationships**](AsknewsApiSchemaV1CommonGraphRelationships.md) |  | [optional]
 **as_string_key** | **string** |  |
 

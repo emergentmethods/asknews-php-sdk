@@ -150,7 +150,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $reverse_string_guarantee, $entity_guarantee, $return_graphs, $languages, $countries, $continents, $sentiment): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $languages, $countries, $continents, $sentiment): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -179,7 +179,7 @@ $apiInstance = new AskNews\Api\NewsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$query = 'query_example'; // string | Query string that can be any phrase, keyword, question, or paragraph. If method='nl', then this will be used as a natural language query. If method='kw', then this will be used as a direct keyword query.
+$query = ''; // string | Query string that can be any phrase, keyword, question, or paragraph. If method='nl', then this will be used as a natural language query. If method='kw', then this will be used as a direct keyword query. This is not required, if it is not passed, then the search is based on the remaining filters only.
 $n_articles = 10; // int | Number of articles to return
 $start_timestamp = 56; // int | Timestamp to start search from
 $end_timestamp = 56; // int | Timestamp to end search at
@@ -187,20 +187,22 @@ $return_type = 'dicts'; // string | Type of return value. 'string' means that th
 $historical = false; // bool | Search on archive of historical news. Defaults to False, meaning that the search will only look through the most recent news (48 hours)
 $method = 'kw'; // string | Method to use for searching. 'nl' means Natural Language, which is a string that can be any phrase, keyword, question, or paragraph that will be used for semantic search on the news. 'kw' means Keyword, which can also be any keyword(s), phrase, or paragraph, however the search is a direct keyword search on the database. 'both' means both methods will be used and results will be ranked according to IRR. 'both' may reduce latency by 10 pct in exchange  for improved accuracy.
 $similarity_score_threshold = 0.5; // float | Similarity score threshold to determine which articles to return. Lower means less similar results  are allowed.
-$offset = 0; // int | Offset for pagination. The n_articles is your page size, while your offset is the number of articles to skip to get to your page of interest. For example, if you want to get page 3 for n_article page size of 10, you would set offset to 20.
+$offset = new \AskNews\Model\Offset(); // Offset | Offset for pagination. The n_articles is your page size, while your offset is the number of articles to skip to get to your page of interest. For example, if you want to get page 3 for n_article page size of 10, you would set offset to 20.
 $categories = array('categories_example'); // string[] | Categories of news to filter on
 $doc_start_delimiter = '<doc>'; // string | Document start delimiter for string return.
 $doc_end_delimiter = '</doc>'; // string | Document end delimiter for string return.
 $provocative = 'all'; // string | Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary.
-$reporting_voice = 'all'; // string | Type of reporting voice to filer by.
+$reporting_voice = new \AskNews\Model\ReportingVoice(); // ReportingVoice | Type of reporting voice to filer by.
 $domain_url = new \AskNews\Model\DomainUrl(); // DomainUrl | filter by domain url of interest. This can be a single domain or a list of domains. For example, 'npr.org' or ['nature.com', 'npr.org']
 $page_rank = 56; // int | Maximum allowed page rank for returned articles.
 $diversify_sources = false; // bool | Ensure that the return set of articles are selected from diverse sources. This adds latency to the search, but attempts to balance the representation of sources by country and source origins. In summary, a net is cast around your search, then the diversity of sources is analyzed, and your final result matches the large net diversity distribution. This means that your search accuracy is reduced, but you gain more diverse perspectives.
 $strategy = 'default'; // string | Strategy to use for searching. 'latest news' automatically setsmethod='nl', historical=False, and looks within the past 24 hours. 'news knowledge' automatically sets method='kw', historical=True, and looks within the past 60 days. 'news knowledge' will increase latency due to the  larger search space in the archive. Use 'default' if you want to control  start_timestamp, end_timestamp, historical, and method.
 $hours_back = 24; // int | Can be set to easily control the look back on the search. This is the same as controlling the 'start_timestamp' parameter. The difference is that this is not a timestamp, it is the number of hours back to look from the current time. Defaults to 24 hours.
 $string_guarantee = array(new \AskNews\Model\string[]()); // string[] | If defined, the search will only occur on articles that contain strings in this list.
+$string_guarantee_op = 'AND'; // string | Operator to use for string guarantee list.
 $reverse_string_guarantee = array(new \AskNews\Model\string[]()); // string[] | If defined, the search will only occur on articles that do not contain strings in this list.
 $entity_guarantee = array(new \AskNews\Model\string[]()); // string[] | Entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example ['Location:Paris', 'Person:John']
+$entity_guarantee_op = 'OR'; // string | Operator to use for entity guarantee list.
 $return_graphs = false; // bool | Return graphs for the articles. Only available to Analyst tier and above.
 $languages = array(new \AskNews\Model\string[]()); // string[] | Languages to filter by. This is the two-letter 'set 1' of the ISO 639-1 standard. For example: English is 'en'.
 $countries = array(new \AskNews\Model\string[]()); // string[] | Countries to filter by, this is the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
@@ -208,7 +210,7 @@ $continents = array(new \AskNews\Model\string[]()); // string[] | Continents to 
 $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $reverse_string_guarantee, $entity_guarantee, $return_graphs, $languages, $countries, $continents, $sentiment);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $languages, $countries, $continents, $sentiment);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -219,7 +221,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **query** | **string**| Query string that can be any phrase, keyword, question, or paragraph. If method&#x3D;&#39;nl&#39;, then this will be used as a natural language query. If method&#x3D;&#39;kw&#39;, then this will be used as a direct keyword query. | |
+| **query** | **string**| Query string that can be any phrase, keyword, question, or paragraph. If method&#x3D;&#39;nl&#39;, then this will be used as a natural language query. If method&#x3D;&#39;kw&#39;, then this will be used as a direct keyword query. This is not required, if it is not passed, then the search is based on the remaining filters only. | [optional] [default to &#39;&#39;] |
 | **n_articles** | **int**| Number of articles to return | [optional] [default to 10] |
 | **start_timestamp** | **int**| Timestamp to start search from | [optional] |
 | **end_timestamp** | **int**| Timestamp to end search at | [optional] |
@@ -227,20 +229,22 @@ try {
 | **historical** | **bool**| Search on archive of historical news. Defaults to False, meaning that the search will only look through the most recent news (48 hours) | [optional] [default to false] |
 | **method** | **string**| Method to use for searching. &#39;nl&#39; means Natural Language, which is a string that can be any phrase, keyword, question, or paragraph that will be used for semantic search on the news. &#39;kw&#39; means Keyword, which can also be any keyword(s), phrase, or paragraph, however the search is a direct keyword search on the database. &#39;both&#39; means both methods will be used and results will be ranked according to IRR. &#39;both&#39; may reduce latency by 10 pct in exchange  for improved accuracy. | [optional] [default to &#39;kw&#39;] |
 | **similarity_score_threshold** | **float**| Similarity score threshold to determine which articles to return. Lower means less similar results  are allowed. | [optional] [default to 0.5] |
-| **offset** | **int**| Offset for pagination. The n_articles is your page size, while your offset is the number of articles to skip to get to your page of interest. For example, if you want to get page 3 for n_article page size of 10, you would set offset to 20. | [optional] [default to 0] |
+| **offset** | [**Offset**](../Model/.md)| Offset for pagination. The n_articles is your page size, while your offset is the number of articles to skip to get to your page of interest. For example, if you want to get page 3 for n_article page size of 10, you would set offset to 20. | [optional] |
 | **categories** | [**string[]**](../Model/string.md)| Categories of news to filter on | [optional] |
 | **doc_start_delimiter** | **string**| Document start delimiter for string return. | [optional] [default to &#39;&lt;doc&gt;&#39;] |
 | **doc_end_delimiter** | **string**| Document end delimiter for string return. | [optional] [default to &#39;&lt;/doc&gt;&#39;] |
 | **provocative** | **string**| Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary. | [optional] [default to &#39;all&#39;] |
-| **reporting_voice** | **string**| Type of reporting voice to filer by. | [optional] [default to &#39;all&#39;] |
+| **reporting_voice** | [**ReportingVoice**](../Model/.md)| Type of reporting voice to filer by. | [optional] |
 | **domain_url** | [**DomainUrl**](../Model/.md)| filter by domain url of interest. This can be a single domain or a list of domains. For example, &#39;npr.org&#39; or [&#39;nature.com&#39;, &#39;npr.org&#39;] | [optional] |
 | **page_rank** | **int**| Maximum allowed page rank for returned articles. | [optional] |
 | **diversify_sources** | **bool**| Ensure that the return set of articles are selected from diverse sources. This adds latency to the search, but attempts to balance the representation of sources by country and source origins. In summary, a net is cast around your search, then the diversity of sources is analyzed, and your final result matches the large net diversity distribution. This means that your search accuracy is reduced, but you gain more diverse perspectives. | [optional] [default to false] |
 | **strategy** | **string**| Strategy to use for searching. &#39;latest news&#39; automatically setsmethod&#x3D;&#39;nl&#39;, historical&#x3D;False, and looks within the past 24 hours. &#39;news knowledge&#39; automatically sets method&#x3D;&#39;kw&#39;, historical&#x3D;True, and looks within the past 60 days. &#39;news knowledge&#39; will increase latency due to the  larger search space in the archive. Use &#39;default&#39; if you want to control  start_timestamp, end_timestamp, historical, and method. | [optional] [default to &#39;default&#39;] |
 | **hours_back** | **int**| Can be set to easily control the look back on the search. This is the same as controlling the &#39;start_timestamp&#39; parameter. The difference is that this is not a timestamp, it is the number of hours back to look from the current time. Defaults to 24 hours. | [optional] [default to 24] |
 | **string_guarantee** | [**string[]**](../Model/.md)| If defined, the search will only occur on articles that contain strings in this list. | [optional] |
+| **string_guarantee_op** | **string**| Operator to use for string guarantee list. | [optional] [default to &#39;AND&#39;] |
 | **reverse_string_guarantee** | [**string[]**](../Model/.md)| If defined, the search will only occur on articles that do not contain strings in this list. | [optional] |
 | **entity_guarantee** | [**string[]**](../Model/.md)| Entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example [&#39;Location:Paris&#39;, &#39;Person:John&#39;] | [optional] |
+| **entity_guarantee_op** | **string**| Operator to use for entity guarantee list. | [optional] [default to &#39;OR&#39;] |
 | **return_graphs** | **bool**| Return graphs for the articles. Only available to Analyst tier and above. | [optional] [default to false] |
 | **languages** | [**string[]**](../Model/.md)| Languages to filter by. This is the two-letter &#39;set 1&#39; of the ISO 639-1 standard. For example: English is &#39;en&#39;. | [optional] |
 | **countries** | [**string[]**](../Model/.md)| Countries to filter by, this is the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |

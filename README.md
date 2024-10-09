@@ -93,6 +93,7 @@ Class | Method | HTTP request | Description
 *NewsApi* | [**getSourcesReport**](docs/Api/NewsApi.md#getsourcesreport) | **GET** /v1/sources | Get the sources underlying AskNews
 *NewsApi* | [**searchNews**](docs/Api/NewsApi.md#searchnews) | **GET** /v1/news/search | Search for enriched real-time news context
 *PingApi* | [**ping**](docs/Api/PingApi.md#ping) | **GET** / | Ping
+*ProfileApi* | [**getUserProfile**](docs/Api/ProfileApi.md#getuserprofile) | **GET** /v1/profiles/me | Get the current user&#39;s profile
 *RedditApi* | [**searchReddit**](docs/Api/RedditApi.md#searchreddit) | **GET** /v1/reddit/search | Search Reddit, summarize threads, and return analysis.
 *StoriesApi* | [**getStories**](docs/Api/StoriesApi.md#getstories) | **GET** /v1/stories | Filter and search for top news narratives
 *StoriesApi* | [**getStory**](docs/Api/StoriesApi.md#getstory) | **GET** /v1/stories/{story_id} | Get a story containing updates
@@ -130,7 +131,11 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel34](docs/Model/AbcAPIErrorModel34.md)
 - [AbcAPIErrorModel35](docs/Model/AbcAPIErrorModel35.md)
 - [AbcAPIErrorModel36](docs/Model/AbcAPIErrorModel36.md)
+- [AbcAPIErrorModel37](docs/Model/AbcAPIErrorModel37.md)
+- [AbcAPIErrorModel38](docs/Model/AbcAPIErrorModel38.md)
+- [AbcAPIErrorModel39](docs/Model/AbcAPIErrorModel39.md)
 - [AbcAPIErrorModel4](docs/Model/AbcAPIErrorModel4.md)
+- [AbcAPIErrorModel40](docs/Model/AbcAPIErrorModel40.md)
 - [AbcAPIErrorModel5](docs/Model/AbcAPIErrorModel5.md)
 - [AbcAPIErrorModel6](docs/Model/AbcAPIErrorModel6.md)
 - [AbcAPIErrorModel7](docs/Model/AbcAPIErrorModel7.md)
@@ -173,16 +178,23 @@ Class | Method | HTTP request | Description
 - [ListModelResponse](docs/Model/ListModelResponse.md)
 - [ModelItem](docs/Model/ModelItem.md)
 - [Offset](docs/Model/Offset.md)
+- [Offset1](docs/Model/Offset1.md)
+- [Offset2](docs/Model/Offset2.md)
+- [Offset3](docs/Model/Offset3.md)
 - [PingModel](docs/Model/PingModel.md)
+- [Profile](docs/Model/Profile.md)
+- [ProfileResponse](docs/Model/ProfileResponse.md)
 - [RedditComment](docs/Model/RedditComment.md)
 - [RedditEntities](docs/Model/RedditEntities.md)
 - [RedditPerspective](docs/Model/RedditPerspective.md)
 - [RedditResponse](docs/Model/RedditResponse.md)
 - [RedditThread](docs/Model/RedditThread.md)
 - [ReportingVoice](docs/Model/ReportingVoice.md)
+- [ReportingVoice1](docs/Model/ReportingVoice1.md)
 - [SearchResponse](docs/Model/SearchResponse.md)
 - [SearchResponseDictItem](docs/Model/SearchResponseDictItem.md)
 - [Sentiment](docs/Model/Sentiment.md)
+- [ServiceAccountProfile](docs/Model/ServiceAccountProfile.md)
 - [SourceReportItem](docs/Model/SourceReportItem.md)
 - [Stop](docs/Model/Stop.md)
 - [StoriesResponse](docs/Model/StoriesResponse.md)
@@ -190,6 +202,8 @@ Class | Method | HTTP request | Description
 - [StoryUpdate](docs/Model/StoryUpdate.md)
 - [StoryUpdateDisplayImageUrlsInner](docs/Model/StoryUpdateDisplayImageUrlsInner.md)
 - [User](docs/Model/User.md)
+- [UserProfile](docs/Model/UserProfile.md)
+- [UserProfileSubscription](docs/Model/UserProfileSubscription.md)
 - [ValidationError](docs/Model/ValidationError.md)
 - [ValidationErrorItem](docs/Model/ValidationErrorItem.md)
 - [ValidationErrorLocInner](docs/Model/ValidationErrorLocInner.md)
