@@ -1,6 +1,6 @@
 <?php
 /**
- * ClassificationTest
+ * ThreadIdTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * ClassificationTest Class Doc Comment
+ * ThreadIdTest Class Doc Comment
  *
  * @category    Class
- * @description Classification
+ * @description ThreadId
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class ClassificationTest extends TestCase
+class ThreadIdTest extends TestCase
 {
 
     /**
@@ -71,9 +71,9 @@ class ClassificationTest extends TestCase
     }
 
     /**
-     * Test "Classification"
+     * Test "ThreadId"
      */
-    public function testClassification()
+    public function testThreadId()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

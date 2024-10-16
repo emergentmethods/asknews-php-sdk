@@ -53,7 +53,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **body_build_graph** | [**\AskNews\Model\BodyBuildGraph**](../Model/BodyBuildGraph.md)|  | |
+| **body_build_graph** | [**\AskNews\Model\BodyBuildGraph**](../Model/BodyBuildGraph.md)|  | [optional] |
 
 ### Return type
 

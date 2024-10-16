@@ -201,6 +201,7 @@ Class | Method | HTTP request | Description
 - [StoryResponse](docs/Model/StoryResponse.md)
 - [StoryUpdate](docs/Model/StoryUpdate.md)
 - [StoryUpdateDisplayImageUrlsInner](docs/Model/StoryUpdateDisplayImageUrlsInner.md)
+- [ThreadId](docs/Model/ThreadId.md)
 - [User](docs/Model/User.md)
 - [UserProfile](docs/Model/UserProfile.md)
 - [UserProfileSubscription](docs/Model/UserProfileSubscription.md)

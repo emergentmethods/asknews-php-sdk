@@ -1,6 +1,6 @@
 <?php
 /**
- * UserProfileSubscription
+ * ThreadId
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * UserProfileSubscription Class Doc Comment
+ * ThreadId Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,7 +40,7 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSerializable
+class ThreadId implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
       *
       * @var string
       */
-    protected static $openAPIModelName = 'UserProfileSubscription';
+    protected static $openAPIModelName = 'Thread_Id';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,10 +57,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
       * @var string[]
       */
     protected static $openAPITypes = [
-        'status' => 'string',
-        'plan' => 'string',
-        'period_start' => '\DateTime',
-        'period_end' => '\DateTime'
+        
     ];
 
     /**
@@ -71,10 +68,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'status' => null,
-        'plan' => null,
-        'period_start' => 'date-time',
-        'period_end' => 'date-time'
+        
     ];
 
     /**
@@ -83,10 +77,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'status' => false,
-        'plan' => false,
-        'period_start' => true,
-        'period_end' => true
+        
     ];
 
     /**
@@ -175,10 +166,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $attributeMap = [
-        'status' => 'status',
-        'plan' => 'plan',
-        'period_start' => 'period_start',
-        'period_end' => 'period_end'
+        
     ];
 
     /**
@@ -187,10 +175,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $setters = [
-        'status' => 'setStatus',
-        'plan' => 'setPlan',
-        'period_start' => 'setPeriodStart',
-        'period_end' => 'setPeriodEnd'
+        
     ];
 
     /**
@@ -199,10 +184,7 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
      * @var string[]
      */
     protected static $getters = [
-        'status' => 'getStatus',
-        'plan' => 'getPlan',
-        'period_start' => 'getPeriodStart',
-        'period_end' => 'getPeriodEnd'
+        
     ];
 
     /**
@@ -262,10 +244,6 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('status', $data ?? [], null);
-        $this->setIfExists('plan', $data ?? [], null);
-        $this->setIfExists('period_start', $data ?? [], null);
-        $this->setIfExists('period_end', $data ?? [], null);
     }
 
     /**
@@ -295,12 +273,6 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
     {
         $invalidProperties = [];
 
-        if ($this->container['status'] === null) {
-            $invalidProperties[] = "'status' can't be null";
-        }
-        if ($this->container['plan'] === null) {
-            $invalidProperties[] = "'plan' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -315,128 +287,6 @@ class UserProfileSubscription implements ModelInterface, ArrayAccess, \JsonSeria
         return count($this->listInvalidProperties()) === 0;
     }
 
-
-    /**
-     * Gets status
-     *
-     * @return string
-     */
-    public function getStatus()
-    {
-        return $this->container['status'];
-    }
-
-    /**
-     * Sets status
-     *
-     * @param string $status status
-     *
-     * @return self
-     */
-    public function setStatus($status)
-    {
-        if (is_null($status)) {
-            throw new \InvalidArgumentException('non-nullable status cannot be null');
-        }
-        $this->container['status'] = $status;
-
-        return $this;
-    }
-
-    /**
-     * Gets plan
-     *
-     * @return string
-     */
-    public function getPlan()
-    {
-        return $this->container['plan'];
-    }
-
-    /**
-     * Sets plan
-     *
-     * @param string $plan plan
-     *
-     * @return self
-     */
-    public function setPlan($plan)
-    {
-        if (is_null($plan)) {
-            throw new \InvalidArgumentException('non-nullable plan cannot be null');
-        }
-        $this->container['plan'] = $plan;
-
-        return $this;
-    }
-
-    /**
-     * Gets period_start
-     *
-     * @return \DateTime|null
-     */
-    public function getPeriodStart()
-    {
-        return $this->container['period_start'];
-    }
-
-    /**
-     * Sets period_start
-     *
-     * @param \DateTime|null $period_start period_start
-     *
-     * @return self
-     */
-    public function setPeriodStart($period_start)
-    {
-        if (is_null($period_start)) {
-            array_push($this->openAPINullablesSetToNull, 'period_start');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('period_start', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['period_start'] = $period_start;
-
-        return $this;
-    }
-
-    /**
-     * Gets period_end
-     *
-     * @return \DateTime|null
-     */
-    public function getPeriodEnd()
-    {
-        return $this->container['period_end'];
-    }
-
-    /**
-     * Sets period_end
-     *
-     * @param \DateTime|null $period_end period_end
-     *
-     * @return self
-     */
-    public function setPeriodEnd($period_end)
-    {
-        if (is_null($period_end)) {
-            array_push($this->openAPINullablesSetToNull, 'period_end');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('period_end', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['period_end'] = $period_end;
-
-        return $this;
-    }
     /**
      * Returns true if offset exists. False otherwise.
      *

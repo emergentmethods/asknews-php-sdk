@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **max_tokens** | **mixed** |  | [optional]
 **presence_penalty** | **mixed** |  | [optional]
 **frequency_penalty** | **mixed** |  | [optional]
+**thread_id** | [**\AskNews\Model\ThreadId**](ThreadId.md) |  | [optional]
 **user** | [**\AskNews\Model\User**](User.md) |  | [optional]
 **inline_citations** | **mixed** |  | [optional]
 **append_references** | **mixed** |  | [optional]
