@@ -26,5 +26,6 @@ Name | Type | Description | Notes
 **provocative** | **string** |  | [optional] [default to 'unknown']
 **reporting_voice** | [**\AskNews\Model\ReportingVoice1**](ReportingVoice1.md) |  | [optional]
 **entity_relation_graph** | [**\AskNews\Model\AsknewsApiSchemaV1CommonGraphRelationships**](AsknewsApiSchemaV1CommonGraphRelationships.md) |  | [optional]
+**geo_coordinates** | [**array<string,\AskNews\Model\GeoCoordinate>**](GeoCoordinate.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

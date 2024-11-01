@@ -1,6 +1,6 @@
 <?php
 /**
- * AbcAPIErrorModel37Test
+ * GeoCoordinateTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AbcAPIErrorModel37Test Class Doc Comment
+ * GeoCoordinateTest Class Doc Comment
  *
  * @category    Class
- * @description AbcAPIErrorModel37
+ * @description GeoCoordinate
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AbcAPIErrorModel37Test extends TestCase
+class GeoCoordinateTest extends TestCase
 {
 
     /**
@@ -71,27 +71,36 @@ class AbcAPIErrorModel37Test extends TestCase
     }
 
     /**
-     * Test "AbcAPIErrorModel37"
+     * Test "GeoCoordinate"
      */
-    public function testAbcAPIErrorModel37()
+    public function testGeoCoordinate()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "latitude"
      */
-    public function testPropertyCode()
+    public function testPropertyLatitude()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "detail"
+     * Test attribute "longitude"
      */
-    public function testPropertyDetail()
+    public function testPropertyLongitude()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "metadata"
+     */
+    public function testPropertyMetadata()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

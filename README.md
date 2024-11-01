@@ -171,6 +171,7 @@ Class | Method | HTTP request | Description
 - [FinanceResponseTimeSeries](docs/Model/FinanceResponseTimeSeries.md)
 - [FinanceResponseTimeSeriesData](docs/Model/FinanceResponseTimeSeriesData.md)
 - [ForecastResponse](docs/Model/ForecastResponse.md)
+- [GeoCoordinate](docs/Model/GeoCoordinate.md)
 - [GraphResponse](docs/Model/GraphResponse.md)
 - [HTTPValidationError](docs/Model/HTTPValidationError.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
@@ -227,7 +228,6 @@ Class | Method | HTTP request | Description
     - **stories**: Stories related operations
     - **profile**: Profile related operations
     - **reddit**: Reddit related operations
-    - **forecast**: Forecast related operations
 
 
 

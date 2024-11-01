@@ -1,6 +1,6 @@
 <?php
 /**
- * ReportingVoice1
+ * GeoCoordinate
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * ReportingVoice1 Class Doc Comment
+ * GeoCoordinate Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,7 +40,7 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
+class GeoCoordinate implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Reporting_Voice_1';
+    protected static $openAPIModelName = 'GeoCoordinate';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,7 +57,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        
+        'latitude' => 'float',
+        'longitude' => 'float',
+        'metadata' => 'object'
     ];
 
     /**
@@ -68,7 +70,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        
+        'latitude' => null,
+        'longitude' => null,
+        'metadata' => null
     ];
 
     /**
@@ -77,7 +81,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        
+        'latitude' => false,
+        'longitude' => false,
+        'metadata' => false
     ];
 
     /**
@@ -166,7 +172,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'latitude' => 'latitude',
+        'longitude' => 'longitude',
+        'metadata' => 'metadata'
     ];
 
     /**
@@ -175,7 +183,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        
+        'latitude' => 'setLatitude',
+        'longitude' => 'setLongitude',
+        'metadata' => 'setMetadata'
     ];
 
     /**
@@ -184,7 +194,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        
+        'latitude' => 'getLatitude',
+        'longitude' => 'getLongitude',
+        'metadata' => 'getMetadata'
     ];
 
     /**
@@ -244,6 +256,9 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(array $data = null)
     {
+        $this->setIfExists('latitude', $data ?? [], null);
+        $this->setIfExists('longitude', $data ?? [], null);
+        $this->setIfExists('metadata', $data ?? [], null);
     }
 
     /**
@@ -273,6 +288,15 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
+        if ($this->container['latitude'] === null) {
+            $invalidProperties[] = "'latitude' can't be null";
+        }
+        if ($this->container['longitude'] === null) {
+            $invalidProperties[] = "'longitude' can't be null";
+        }
+        if ($this->container['metadata'] === null) {
+            $invalidProperties[] = "'metadata' can't be null";
+        }
         return $invalidProperties;
     }
 
@@ -287,6 +311,87 @@ class ReportingVoice1 implements ModelInterface, ArrayAccess, \JsonSerializable
         return count($this->listInvalidProperties()) === 0;
     }
 
+
+    /**
+     * Gets latitude
+     *
+     * @return float
+     */
+    public function getLatitude()
+    {
+        return $this->container['latitude'];
+    }
+
+    /**
+     * Sets latitude
+     *
+     * @param float $latitude latitude
+     *
+     * @return self
+     */
+    public function setLatitude($latitude)
+    {
+        if (is_null($latitude)) {
+            throw new \InvalidArgumentException('non-nullable latitude cannot be null');
+        }
+        $this->container['latitude'] = $latitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets longitude
+     *
+     * @return float
+     */
+    public function getLongitude()
+    {
+        return $this->container['longitude'];
+    }
+
+    /**
+     * Sets longitude
+     *
+     * @param float $longitude longitude
+     *
+     * @return self
+     */
+    public function setLongitude($longitude)
+    {
+        if (is_null($longitude)) {
+            throw new \InvalidArgumentException('non-nullable longitude cannot be null');
+        }
+        $this->container['longitude'] = $longitude;
+
+        return $this;
+    }
+
+    /**
+     * Gets metadata
+     *
+     * @return object
+     */
+    public function getMetadata()
+    {
+        return $this->container['metadata'];
+    }
+
+    /**
+     * Sets metadata
+     *
+     * @param object $metadata metadata
+     *
+     * @return self
+     */
+    public function setMetadata($metadata)
+    {
+        if (is_null($metadata)) {
+            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
+        }
+        $this->container['metadata'] = $metadata;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      *
