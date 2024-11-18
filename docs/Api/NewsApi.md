@@ -150,7 +150,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -183,6 +183,7 @@ $query = ''; // string | Query string that can be any phrase, keyword, question,
 $n_articles = 10; // int | Number of articles to return
 $start_timestamp = 56; // int | Timestamp to start search from
 $end_timestamp = 56; // int | Timestamp to end search at
+$time_filter = 'crawl_date'; // string | Control which date type to filter on. 'crawl_date' is the date the article was crawled, 'pub_date' is the date the article was published.
 $return_type = 'dicts'; // string | Type of return value. 'string' means that the return is prompt-optimized and ready to be immediately injected into any prompt. 'dicts' means that the return is a structured dictionary, containing additional metadata (like a classic news api). Can be 'string' or 'dicts', or 'both'. 'string' guarantees the lowest-latency response 'dicts' requires more I/O, therefore increases latency (very slightly, depending on your network connection).
 $historical = false; // bool | Search on archive of historical news. Defaults to False, meaning that the search will only look through the most recent news (48 hours)
 $method = 'kw'; // string | Method to use for searching. 'nl' means Natural Language, which is a string that can be any phrase, keyword, question, or paragraph that will be used for semantic search on the news. 'kw' means Keyword, which can also be any keyword(s), phrase, or paragraph, however the search is a direct keyword search on the database. 'both' means both methods will be used and results will be ranked according to IRR. 'both' may reduce latency by 10 pct in exchange  for improved accuracy.
@@ -211,7 +212,7 @@ $continents = array(new \AskNews\Model\string[]()); // string[] | Continents to 
 $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -226,6 +227,7 @@ try {
 | **n_articles** | **int**| Number of articles to return | [optional] [default to 10] |
 | **start_timestamp** | **int**| Timestamp to start search from | [optional] |
 | **end_timestamp** | **int**| Timestamp to end search at | [optional] |
+| **time_filter** | **string**| Control which date type to filter on. &#39;crawl_date&#39; is the date the article was crawled, &#39;pub_date&#39; is the date the article was published. | [optional] [default to &#39;crawl_date&#39;] |
 | **return_type** | **string**| Type of return value. &#39;string&#39; means that the return is prompt-optimized and ready to be immediately injected into any prompt. &#39;dicts&#39; means that the return is a structured dictionary, containing additional metadata (like a classic news api). Can be &#39;string&#39; or &#39;dicts&#39;, or &#39;both&#39;. &#39;string&#39; guarantees the lowest-latency response &#39;dicts&#39; requires more I/O, therefore increases latency (very slightly, depending on your network connection). | [optional] [default to &#39;dicts&#39;] |
 | **historical** | **bool**| Search on archive of historical news. Defaults to False, meaning that the search will only look through the most recent news (48 hours) | [optional] [default to false] |
 | **method** | **string**| Method to use for searching. &#39;nl&#39; means Natural Language, which is a string that can be any phrase, keyword, question, or paragraph that will be used for semantic search on the news. &#39;kw&#39; means Keyword, which can also be any keyword(s), phrase, or paragraph, however the search is a direct keyword search on the database. &#39;both&#39; means both methods will be used and results will be ranked according to IRR. &#39;both&#39; may reduce latency by 10 pct in exchange  for improved accuracy. | [optional] [default to &#39;kw&#39;] |
