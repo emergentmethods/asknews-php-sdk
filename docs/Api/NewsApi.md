@@ -150,7 +150,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -210,9 +210,10 @@ $languages = array(new \AskNews\Model\string[]()); // string[] | Languages to fi
 $countries = array(new \AskNews\Model\string[]()); // string[] | Countries to filter by, this is the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
 $continents = array(new \AskNews\Model\string[]()); // string[] | Continents to filter by.
 $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
+$premium = false; // bool | Include premium sources.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -254,6 +255,7 @@ try {
 | **countries** | [**string[]**](../Model/.md)| Countries to filter by, this is the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |
 | **continents** | [**string[]**](../Model/.md)| Continents to filter by. | [optional] |
 | **sentiment** | **string**| Sentiment to filter articles by. | [optional] |
+| **premium** | **bool**| Include premium sources. | [optional] [default to false] |
 
 ### Return type
 
