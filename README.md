@@ -84,6 +84,7 @@ All URIs are relative to *https://api.asknews.app*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
+*AutofilterApi* | [**autofilter**](docs/Api/AutofilterApi.md#autofilter) | **GET** /v1/chat/autofilter | Generate filter params for AskNews endpoints
 *ChatApi* | [**getChatCompletions**](docs/Api/ChatApi.md#getchatcompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant
 *ChatApi* | [**getHeadlineQuestions**](docs/Api/ChatApi.md#getheadlinequestions) | **GET** /v1/chat/questions | Get example headline questions
 *ChatApi* | [**listChatModels**](docs/Api/ChatApi.md#listchatmodels) | **GET** /v1/openai/models | List available chat models
@@ -167,6 +168,7 @@ Class | Method | HTTP request | Description
 - [DomainUrl](docs/Model/DomainUrl.md)
 - [Entities](docs/Model/Entities.md)
 - [FilterParams](docs/Model/FilterParams.md)
+- [FilterParamsResponse](docs/Model/FilterParamsResponse.md)
 - [FinanceResponse](docs/Model/FinanceResponse.md)
 - [FinanceResponseTimeSeries](docs/Model/FinanceResponseTimeSeries.md)
 - [FinanceResponseTimeSeriesData](docs/Model/FinanceResponseTimeSeriesData.md)
