@@ -1,6 +1,6 @@
 <?php
 /**
- * FilterParamsResponse
+ * FilterParamsMetadata
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * FilterParamsResponse Class Doc Comment
+ * FilterParamsMetadata Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,7 +40,7 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializable
+class FilterParamsMetadata implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       *
       * @var string
       */
-    protected static $openAPIModelName = 'FilterParamsResponse';
+    protected static $openAPIModelName = 'FilterParamsMetadata';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var string[]
       */
     protected static $openAPITypes = [
-        'filter_params' => '\AskNews\Model\FilterParams',
-        'metadata' => '\AskNews\Model\FilterParamsMetadata'
+        'title' => 'string'
     ];
 
     /**
@@ -69,8 +68,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'filter_params' => null,
-        'metadata' => null
+        'title' => null
     ];
 
     /**
@@ -79,8 +77,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'filter_params' => false,
-        'metadata' => false
+        'title' => false
     ];
 
     /**
@@ -169,8 +166,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $attributeMap = [
-        'filter_params' => 'filter_params',
-        'metadata' => 'metadata'
+        'title' => 'title'
     ];
 
     /**
@@ -179,8 +175,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $setters = [
-        'filter_params' => 'setFilterParams',
-        'metadata' => 'setMetadata'
+        'title' => 'setTitle'
     ];
 
     /**
@@ -189,8 +184,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      * @var string[]
      */
     protected static $getters = [
-        'filter_params' => 'getFilterParams',
-        'metadata' => 'getMetadata'
+        'title' => 'getTitle'
     ];
 
     /**
@@ -250,8 +244,7 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('filter_params', $data ?? [], null);
-        $this->setIfExists('metadata', $data ?? [], null);
+        $this->setIfExists('title', $data ?? [], '');
     }
 
     /**
@@ -281,12 +274,6 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
     {
         $invalidProperties = [];
 
-        if ($this->container['filter_params'] === null) {
-            $invalidProperties[] = "'filter_params' can't be null";
-        }
-        if ($this->container['metadata'] === null) {
-            $invalidProperties[] = "'metadata' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -303,55 +290,28 @@ class FilterParamsResponse implements ModelInterface, ArrayAccess, \JsonSerializ
 
 
     /**
-     * Gets filter_params
+     * Gets title
      *
-     * @return \AskNews\Model\FilterParams
+     * @return string|null
      */
-    public function getFilterParams()
+    public function getTitle()
     {
-        return $this->container['filter_params'];
+        return $this->container['title'];
     }
 
     /**
-     * Sets filter_params
+     * Sets title
      *
-     * @param \AskNews\Model\FilterParams $filter_params filter_params
+     * @param string|null $title title
      *
      * @return self
      */
-    public function setFilterParams($filter_params)
+    public function setTitle($title)
     {
-        if (is_null($filter_params)) {
-            throw new \InvalidArgumentException('non-nullable filter_params cannot be null');
+        if (is_null($title)) {
+            throw new \InvalidArgumentException('non-nullable title cannot be null');
         }
-        $this->container['filter_params'] = $filter_params;
-
-        return $this;
-    }
-
-    /**
-     * Gets metadata
-     *
-     * @return \AskNews\Model\FilterParamsMetadata
-     */
-    public function getMetadata()
-    {
-        return $this->container['metadata'];
-    }
-
-    /**
-     * Sets metadata
-     *
-     * @param \AskNews\Model\FilterParamsMetadata $metadata metadata
-     *
-     * @return self
-     */
-    public function setMetadata($metadata)
-    {
-        if (is_null($metadata)) {
-            throw new \InvalidArgumentException('non-nullable metadata cannot be null');
-        }
-        $this->container['metadata'] = $metadata;
+        $this->container['title'] = $title;
 
         return $this;
     }

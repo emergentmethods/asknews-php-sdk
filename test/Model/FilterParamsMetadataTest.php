@@ -1,6 +1,6 @@
 <?php
 /**
- * FilterParamsResponseTest
+ * FilterParamsMetadataTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * FilterParamsResponseTest Class Doc Comment
+ * FilterParamsMetadataTest Class Doc Comment
  *
  * @category    Class
- * @description FilterParamsResponse
+ * @description FilterParamsMetadata
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class FilterParamsResponseTest extends TestCase
+class FilterParamsMetadataTest extends TestCase
 {
 
     /**
@@ -71,27 +71,18 @@ class FilterParamsResponseTest extends TestCase
     }
 
     /**
-     * Test "FilterParamsResponse"
+     * Test "FilterParamsMetadata"
      */
-    public function testFilterParamsResponse()
+    public function testFilterParamsMetadata()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "filter_params"
+     * Test attribute "title"
      */
-    public function testPropertyFilterParams()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
-     * Test attribute "metadata"
-     */
-    public function testPropertyMetadata()
+    public function testPropertyTitle()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
