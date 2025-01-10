@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **reporting_voice** | [**\AskNews\Model\ReportingVoice1**](ReportingVoice1.md) |  | [optional]
 **entity_relation_graph** | [**\AskNews\Model\AsknewsApiSchemaV1CommonGraphRelationships**](AsknewsApiSchemaV1CommonGraphRelationships.md) |  | [optional]
 **geo_coordinates** | [**array<string,\AskNews\Model\GeoCoordinate>**](GeoCoordinate.md) |  | [optional]
+**continent** | **string** |  | [optional]
 **as_string_key** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

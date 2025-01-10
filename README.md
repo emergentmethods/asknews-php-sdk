@@ -57,22 +57,19 @@ $config = new AskNews\Configuration([
 ]);
 
 
-$apiInstance = new AskNews\Api\AnalyticsApi(
+$apiInstance = new AskNews\Api\AlertsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client(),
     $config
 );
-$asset = 'asset_example'; // string | The asset name to query for sentiment.
-$metric = 'news_positive'; // string | The metric to obtain. Weighted metrics account for page-rank of original source. Higher page rank sources are weighted more heavily.
-$date_from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date in ISO format
-$date_to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date in ISO format
+$create_alert_request = new \AskNews\Model\CreateAlertRequest(); // \AskNews\Model\CreateAlertRequest
 
 try {
-    $result = $apiInstance->getAssetSentiment($asset, $metric, $date_from, $date_to);
+    $result = $apiInstance->createAlert($create_alert_request);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling AnalyticsApi->getAssetSentiment: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling AlertsApi->createAlert: ', $e->getMessage(), PHP_EOL;
 }
 
 ```
@@ -83,6 +80,11 @@ All URIs are relative to *https://api.asknews.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AlertsApi* | [**createAlert**](docs/Api/AlertsApi.md#createalert) | **POST** /v1/chat/alerts | Create an alert
+*AlertsApi* | [**deleteAlert**](docs/Api/AlertsApi.md#deletealert) | **DELETE** /v1/chat/alerts/{alert_id} | Delete an alert
+*AlertsApi* | [**getAlert**](docs/Api/AlertsApi.md#getalert) | **GET** /v1/chat/alerts/{alert_id} | Get an alert
+*AlertsApi* | [**getAlerts**](docs/Api/AlertsApi.md#getalerts) | **GET** /v1/chat/alerts | Get all created alerts
+*AlertsApi* | [**putAlert**](docs/Api/AlertsApi.md#putalert) | **PUT** /v1/chat/alerts/{alert_id} | Update an alert
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
 *AutofilterApi* | [**autofilter**](docs/Api/AutofilterApi.md#autofilter) | **GET** /v1/chat/autofilter | Generate filter params for AskNews endpoints
 *ChatApi* | [**getChatCompletions**](docs/Api/ChatApi.md#getchatcompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant
@@ -142,6 +144,7 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel7](docs/Model/AbcAPIErrorModel7.md)
 - [AbcAPIErrorModel8](docs/Model/AbcAPIErrorModel8.md)
 - [AbcAPIErrorModel9](docs/Model/AbcAPIErrorModel9.md)
+- [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
 - [AsknewsApiErrorsAPIErrorModel](docs/Model/AsknewsApiErrorsAPIErrorModel.md)
 - [AsknewsApiSchemaV1CommonGraphRelationships](docs/Model/AsknewsApiSchemaV1CommonGraphRelationships.md)
@@ -151,6 +154,7 @@ Class | Method | HTTP request | Description
 - [Classification](docs/Model/Classification.md)
 - [ClusterProbabilities](docs/Model/ClusterProbabilities.md)
 - [Continent](docs/Model/Continent.md)
+- [CreateAlertRequest](docs/Model/CreateAlertRequest.md)
 - [CreateChatCompletionRequest](docs/Model/CreateChatCompletionRequest.md)
 - [CreateChatCompletionRequestMessage](docs/Model/CreateChatCompletionRequestMessage.md)
 - [CreateChatCompletionRequestMessage1](docs/Model/CreateChatCompletionRequestMessage1.md)
@@ -166,6 +170,9 @@ Class | Method | HTTP request | Description
 - [CreateChatCompletionResponseUsage1](docs/Model/CreateChatCompletionResponseUsage1.md)
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
 - [DomainUrl](docs/Model/DomainUrl.md)
+- [DomainUrl1](docs/Model/DomainUrl1.md)
+- [EmailAction](docs/Model/EmailAction.md)
+- [EmailParams](docs/Model/EmailParams.md)
 - [Entities](docs/Model/Entities.md)
 - [FilterParams](docs/Model/FilterParams.md)
 - [FilterParamsMetadata](docs/Model/FilterParamsMetadata.md)
@@ -175,6 +182,8 @@ Class | Method | HTTP request | Description
 - [FinanceResponseTimeSeriesData](docs/Model/FinanceResponseTimeSeriesData.md)
 - [ForecastResponse](docs/Model/ForecastResponse.md)
 - [GeoCoordinate](docs/Model/GeoCoordinate.md)
+- [GoogleDocsAction](docs/Model/GoogleDocsAction.md)
+- [GoogleDocsParams](docs/Model/GoogleDocsParams.md)
 - [GraphResponse](docs/Model/GraphResponse.md)
 - [HTTPValidationError](docs/Model/HTTPValidationError.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
@@ -185,6 +194,8 @@ Class | Method | HTTP request | Description
 - [Offset1](docs/Model/Offset1.md)
 - [Offset2](docs/Model/Offset2.md)
 - [Offset3](docs/Model/Offset3.md)
+- [Offset4](docs/Model/Offset4.md)
+- [PaginatedResponseAlertResponse](docs/Model/PaginatedResponseAlertResponse.md)
 - [PingModel](docs/Model/PingModel.md)
 - [Profile](docs/Model/Profile.md)
 - [ProfileResponse](docs/Model/ProfileResponse.md)
@@ -193,6 +204,8 @@ Class | Method | HTTP request | Description
 - [RedditPerspective](docs/Model/RedditPerspective.md)
 - [RedditResponse](docs/Model/RedditResponse.md)
 - [RedditThread](docs/Model/RedditThread.md)
+- [ReportAction](docs/Model/ReportAction.md)
+- [ReportParams](docs/Model/ReportParams.md)
 - [ReportingVoice](docs/Model/ReportingVoice.md)
 - [ReportingVoice1](docs/Model/ReportingVoice1.md)
 - [SearchResponse](docs/Model/SearchResponse.md)
@@ -206,6 +219,8 @@ Class | Method | HTTP request | Description
 - [StoryUpdate](docs/Model/StoryUpdate.md)
 - [StoryUpdateDisplayImageUrlsInner](docs/Model/StoryUpdateDisplayImageUrlsInner.md)
 - [ThreadId](docs/Model/ThreadId.md)
+- [TriggersInner](docs/Model/TriggersInner.md)
+- [UpdateAlertRequest](docs/Model/UpdateAlertRequest.md)
 - [User](docs/Model/User.md)
 - [UserProfile](docs/Model/UserProfile.md)
 - [UserProfileSubscription](docs/Model/UserProfileSubscription.md)
@@ -216,6 +231,8 @@ Class | Method | HTTP request | Description
 - [Value](docs/Model/Value.md)
 - [WebSearchResponse](docs/Model/WebSearchResponse.md)
 - [WebSearchResult](docs/Model/WebSearchResult.md)
+- [WebhookAction](docs/Model/WebhookAction.md)
+- [WebhookParams](docs/Model/WebhookParams.md)
 
 ## Authorization
 

@@ -14,6 +14,7 @@ namespace AskNews;
 class AskNewsSDK
 {
     protected Configuration $configuration;
+    public Api\AlertsApi $alerts;
     public Api\AnalyticsApi $analytics;
     public Api\AutofilterApi $autofilter;
     public Api\ChatApi $chat;
@@ -35,6 +36,7 @@ class AskNewsSDK
             $_configuration = new Configuration($_configuration);
         }
         $this->configuration = $_configuration;
+        $this->alerts = new Api\AlertsApi(null, $_configuration);
         $this->analytics = new Api\AnalyticsApi(null, $_configuration);
         $this->autofilter = new Api\AutofilterApi(null, $_configuration);
         $this->chat = new Api\ChatApi(null, $_configuration);
