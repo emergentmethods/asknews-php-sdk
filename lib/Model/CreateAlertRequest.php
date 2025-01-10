@@ -433,7 +433,7 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets cron
      *
-     * @param string $cron The cron schedule for the alert. For example every 15 minutes is '*_/15 * * * *'. See https://crontab.run/ for more examples
+     * @param string $cron The cron schedule for the alert. For example hourly is '0 * * * *'. See https://crontab.run/ for more examples
      *
      * @return self
      */

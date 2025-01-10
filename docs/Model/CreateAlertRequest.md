@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **query** | **string** |  | [optional]
-**cron** | **string** | The cron schedule for the alert. For example every 15 minutes is &#39;*_/15 * * * *&#39;. See https://crontab.run/ for more examples |
+**cron** | **string** | The cron schedule for the alert. For example hourly is &#39;0 * * * *&#39;. See https://crontab.run/ for more examples |
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
 **filter_params** | [**\AskNews\Model\FilterParams**](FilterParams.md) |  | [optional]
