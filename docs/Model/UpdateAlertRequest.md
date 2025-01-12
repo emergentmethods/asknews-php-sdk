@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **model** | **string** |  | [optional]
 **share_link** | **string** |  | [optional]
 **filter_params** | [**\AskNews\Model\FilterParams**](FilterParams.md) |  | [optional]
+**report** | [**\AskNews\Model\ReportRequest**](ReportRequest.md) |  | [optional]
 **triggers** | [**\AskNews\Model\TriggersInner[]**](TriggersInner.md) |  | [optional]
 **always_trigger** | **bool** |  | [optional]
 **repeat** | **bool** |  | [optional]

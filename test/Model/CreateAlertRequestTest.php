@@ -125,6 +125,15 @@ class CreateAlertRequestTest extends TestCase
     }
 
     /**
+     * Test attribute "report"
+     */
+    public function testPropertyReport()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "triggers"
      */
     public function testPropertyTriggers()

@@ -1,6 +1,6 @@
 <?php
 /**
- * CreateAlertRequest
+ * ReportRequest
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * CreateAlertRequest Class Doc Comment
+ * ReportRequest Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,7 +40,7 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializable
+class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'CreateAlertRequest';
+    protected static $openAPIModelName = 'ReportRequest';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,16 +57,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'query' => 'string',
-        'cron' => 'string',
-        'model' => 'string',
-        'share_link' => 'string',
-        'filter_params' => '\AskNews\Model\FilterParams',
-        'report' => '\AskNews\Model\ReportRequest',
-        'triggers' => '\AskNews\Model\TriggersInner[]',
-        'always_trigger' => 'bool',
-        'repeat' => 'bool',
-        'active' => 'bool'
+        'prompt' => 'string[][]',
+        'model' => 'string'
     ];
 
     /**
@@ -77,16 +69,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'query' => null,
-        'cron' => null,
-        'model' => null,
-        'share_link' => 'uri',
-        'filter_params' => null,
-        'report' => null,
-        'triggers' => null,
-        'always_trigger' => null,
-        'repeat' => null,
-        'active' => null
+        'prompt' => null,
+        'model' => null
     ];
 
     /**
@@ -95,16 +79,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'query' => true,
-        'cron' => false,
-        'model' => true,
-        'share_link' => true,
-        'filter_params' => true,
-        'report' => true,
-        'triggers' => false,
-        'always_trigger' => false,
-        'repeat' => false,
-        'active' => false
+        'prompt' => true,
+        'model' => true
     ];
 
     /**
@@ -193,16 +169,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'query' => 'query',
-        'cron' => 'cron',
-        'model' => 'model',
-        'share_link' => 'share_link',
-        'filter_params' => 'filter_params',
-        'report' => 'report',
-        'triggers' => 'triggers',
-        'always_trigger' => 'always_trigger',
-        'repeat' => 'repeat',
-        'active' => 'active'
+        'prompt' => 'prompt',
+        'model' => 'model'
     ];
 
     /**
@@ -211,16 +179,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'query' => 'setQuery',
-        'cron' => 'setCron',
-        'model' => 'setModel',
-        'share_link' => 'setShareLink',
-        'filter_params' => 'setFilterParams',
-        'report' => 'setReport',
-        'triggers' => 'setTriggers',
-        'always_trigger' => 'setAlwaysTrigger',
-        'repeat' => 'setRepeat',
-        'active' => 'setActive'
+        'prompt' => 'setPrompt',
+        'model' => 'setModel'
     ];
 
     /**
@@ -229,16 +189,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'query' => 'getQuery',
-        'cron' => 'getCron',
-        'model' => 'getModel',
-        'share_link' => 'getShareLink',
-        'filter_params' => 'getFilterParams',
-        'report' => 'getReport',
-        'triggers' => 'getTriggers',
-        'always_trigger' => 'getAlwaysTrigger',
-        'repeat' => 'getRepeat',
-        'active' => 'getActive'
+        'prompt' => 'getPrompt',
+        'model' => 'getModel'
     ];
 
     /**
@@ -282,8 +234,9 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         return self::$openAPIModelName;
     }
 
-    public const MODEL_META_LLAMA_META_LLAMA_3_1_8_B_INSTRUCT = 'meta-llama/Meta-Llama-3.1-8B-Instruct';
-    public const MODEL_GPT_4O_MINI = 'gpt-4o-mini';
+    public const MODEL_GPT_4O = 'gpt-4o';
+    public const MODEL_CLAUDE_3_5_SONNET_LATEST = 'claude-3-5-sonnet-latest';
+    public const MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT = 'meta-llama/Meta-Llama-3.1-405B-Instruct';
 
     /**
      * Gets allowable values of the enum
@@ -293,8 +246,9 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     public function getModelAllowableValues()
     {
         return [
-            self::MODEL_META_LLAMA_META_LLAMA_3_1_8_B_INSTRUCT,
-            self::MODEL_GPT_4O_MINI,
+            self::MODEL_GPT_4O,
+            self::MODEL_CLAUDE_3_5_SONNET_LATEST,
+            self::MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT,
         ];
     }
 
@@ -313,16 +267,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('query', $data ?? [], null);
-        $this->setIfExists('cron', $data ?? [], null);
+        $this->setIfExists('prompt', $data ?? [], null);
         $this->setIfExists('model', $data ?? [], null);
-        $this->setIfExists('share_link', $data ?? [], null);
-        $this->setIfExists('filter_params', $data ?? [], null);
-        $this->setIfExists('report', $data ?? [], null);
-        $this->setIfExists('triggers', $data ?? [], null);
-        $this->setIfExists('always_trigger', $data ?? [], false);
-        $this->setIfExists('repeat', $data ?? [], true);
-        $this->setIfExists('active', $data ?? [], true);
     }
 
     /**
@@ -352,12 +298,6 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['cron'] === null) {
-            $invalidProperties[] = "'cron' can't be null";
-        }
-        if ($this->container['model'] === null) {
-            $invalidProperties[] = "'model' can't be null";
-        }
         $allowedValues = $this->getModelAllowableValues();
         if (!is_null($this->container['model']) && !in_array($this->container['model'], $allowedValues, true)) {
             $invalidProperties[] = sprintf(
@@ -367,17 +307,6 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             );
         }
 
-        if (!is_null($this->container['share_link']) && (mb_strlen($this->container['share_link']) > 2083)) {
-            $invalidProperties[] = "invalid value for 'share_link', the character length must be smaller than or equal to 2083.";
-        }
-
-        if (!is_null($this->container['share_link']) && (mb_strlen($this->container['share_link']) < 1)) {
-            $invalidProperties[] = "invalid value for 'share_link', the character length must be bigger than or equal to 1.";
-        }
-
-        if ($this->container['triggers'] === null) {
-            $invalidProperties[] = "'triggers' can't be null";
-        }
         return $invalidProperties;
     }
 
@@ -394,62 +323,35 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets query
+     * Gets prompt
      *
-     * @return string|null
+     * @return string[][]|null
      */
-    public function getQuery()
+    public function getPrompt()
     {
-        return $this->container['query'];
+        return $this->container['prompt'];
     }
 
     /**
-     * Sets query
+     * Sets prompt
      *
-     * @param string|null $query query
+     * @param string[][]|null $prompt prompt
      *
      * @return self
      */
-    public function setQuery($query)
+    public function setPrompt($prompt)
     {
-        if (is_null($query)) {
-            array_push($this->openAPINullablesSetToNull, 'query');
+        if (is_null($prompt)) {
+            array_push($this->openAPINullablesSetToNull, 'prompt');
         } else {
             $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('query', $nullablesSetToNull);
+            $index = array_search('prompt', $nullablesSetToNull);
             if ($index !== FALSE) {
                 unset($nullablesSetToNull[$index]);
                 $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
             }
         }
-        $this->container['query'] = $query;
-
-        return $this;
-    }
-
-    /**
-     * Gets cron
-     *
-     * @return string
-     */
-    public function getCron()
-    {
-        return $this->container['cron'];
-    }
-
-    /**
-     * Sets cron
-     *
-     * @param string $cron The cron schedule for the alert. For example hourly is '0 * * * *'. See https://crontab.run/ for more examples
-     *
-     * @return self
-     */
-    public function setCron($cron)
-    {
-        if (is_null($cron)) {
-            throw new \InvalidArgumentException('non-nullable cron cannot be null');
-        }
-        $this->container['cron'] = $cron;
+        $this->container['prompt'] = $prompt;
 
         return $this;
     }
@@ -457,7 +359,7 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Gets model
      *
-     * @return string
+     * @return string|null
      */
     public function getModel()
     {
@@ -467,7 +369,7 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     /**
      * Sets model
      *
-     * @param string $model model
+     * @param string|null $model model
      *
      * @return self
      */
@@ -494,223 +396,6 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             );
         }
         $this->container['model'] = $model;
-
-        return $this;
-    }
-
-    /**
-     * Gets share_link
-     *
-     * @return string|null
-     */
-    public function getShareLink()
-    {
-        return $this->container['share_link'];
-    }
-
-    /**
-     * Sets share_link
-     *
-     * @param string|null $share_link share_link
-     *
-     * @return self
-     */
-    public function setShareLink($share_link)
-    {
-        if (is_null($share_link)) {
-            array_push($this->openAPINullablesSetToNull, 'share_link');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('share_link', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        if (!is_null($share_link) && (mb_strlen($share_link) > 2083)) {
-            throw new \InvalidArgumentException('invalid length for $share_link when calling CreateAlertRequest., must be smaller than or equal to 2083.');
-        }
-        if (!is_null($share_link) && (mb_strlen($share_link) < 1)) {
-            throw new \InvalidArgumentException('invalid length for $share_link when calling CreateAlertRequest., must be bigger than or equal to 1.');
-        }
-
-        $this->container['share_link'] = $share_link;
-
-        return $this;
-    }
-
-    /**
-     * Gets filter_params
-     *
-     * @return \AskNews\Model\FilterParams|null
-     */
-    public function getFilterParams()
-    {
-        return $this->container['filter_params'];
-    }
-
-    /**
-     * Sets filter_params
-     *
-     * @param \AskNews\Model\FilterParams|null $filter_params filter_params
-     *
-     * @return self
-     */
-    public function setFilterParams($filter_params)
-    {
-        if (is_null($filter_params)) {
-            array_push($this->openAPINullablesSetToNull, 'filter_params');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('filter_params', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['filter_params'] = $filter_params;
-
-        return $this;
-    }
-
-    /**
-     * Gets report
-     *
-     * @return \AskNews\Model\ReportRequest|null
-     */
-    public function getReport()
-    {
-        return $this->container['report'];
-    }
-
-    /**
-     * Sets report
-     *
-     * @param \AskNews\Model\ReportRequest|null $report report
-     *
-     * @return self
-     */
-    public function setReport($report)
-    {
-        if (is_null($report)) {
-            array_push($this->openAPINullablesSetToNull, 'report');
-        } else {
-            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
-            $index = array_search('report', $nullablesSetToNull);
-            if ($index !== FALSE) {
-                unset($nullablesSetToNull[$index]);
-                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
-            }
-        }
-        $this->container['report'] = $report;
-
-        return $this;
-    }
-
-    /**
-     * Gets triggers
-     *
-     * @return \AskNews\Model\TriggersInner[]
-     */
-    public function getTriggers()
-    {
-        return $this->container['triggers'];
-    }
-
-    /**
-     * Sets triggers
-     *
-     * @param \AskNews\Model\TriggersInner[] $triggers triggers
-     *
-     * @return self
-     */
-    public function setTriggers($triggers)
-    {
-        if (is_null($triggers)) {
-            throw new \InvalidArgumentException('non-nullable triggers cannot be null');
-        }
-        $this->container['triggers'] = $triggers;
-
-        return $this;
-    }
-
-    /**
-     * Gets always_trigger
-     *
-     * @return bool|null
-     */
-    public function getAlwaysTrigger()
-    {
-        return $this->container['always_trigger'];
-    }
-
-    /**
-     * Sets always_trigger
-     *
-     * @param bool|null $always_trigger Whether to always trigger the alert. Default is False. This skips the alert check and run triggers immediately
-     *
-     * @return self
-     */
-    public function setAlwaysTrigger($always_trigger)
-    {
-        if (is_null($always_trigger)) {
-            throw new \InvalidArgumentException('non-nullable always_trigger cannot be null');
-        }
-        $this->container['always_trigger'] = $always_trigger;
-
-        return $this;
-    }
-
-    /**
-     * Gets repeat
-     *
-     * @return bool|null
-     */
-    public function getRepeat()
-    {
-        return $this->container['repeat'];
-    }
-
-    /**
-     * Sets repeat
-     *
-     * @param bool|null $repeat Whether to repeat the alert. Default is True. If False, the alert will be disabled after it triggers once
-     *
-     * @return self
-     */
-    public function setRepeat($repeat)
-    {
-        if (is_null($repeat)) {
-            throw new \InvalidArgumentException('non-nullable repeat cannot be null');
-        }
-        $this->container['repeat'] = $repeat;
-
-        return $this;
-    }
-
-    /**
-     * Gets active
-     *
-     * @return bool|null
-     */
-    public function getActive()
-    {
-        return $this->container['active'];
-    }
-
-    /**
-     * Sets active
-     *
-     * @param bool|null $active Whether the alert is active or not. Default is True.
-     *
-     * @return self
-     */
-    public function setActive($active)
-    {
-        if (is_null($active)) {
-            throw new \InvalidArgumentException('non-nullable active cannot be null');
-        }
-        $this->container['active'] = $active;
 
         return $this;
     }

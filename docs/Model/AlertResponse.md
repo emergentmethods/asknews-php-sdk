@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
 **filter_params** | **object** |  | [optional]
+**report** | **object** |  | [optional]
 **triggers** | **object[]** |  |
 **always_trigger** | **bool** |  | [optional] [default to false]
 **repeat** | **bool** |  | [optional] [default to true]

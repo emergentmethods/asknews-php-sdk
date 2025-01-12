@@ -66,6 +66,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'model' => 'string',
         'share_link' => 'string',
         'filter_params' => 'object',
+        'report' => 'object',
         'triggers' => 'object[]',
         'always_trigger' => 'bool',
         'repeat' => 'bool',
@@ -89,6 +90,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'model' => null,
         'share_link' => null,
         'filter_params' => null,
+        'report' => null,
         'triggers' => null,
         'always_trigger' => null,
         'repeat' => null,
@@ -110,6 +112,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'model' => true,
         'share_link' => true,
         'filter_params' => true,
+        'report' => true,
         'triggers' => false,
         'always_trigger' => false,
         'repeat' => false,
@@ -211,6 +214,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'model' => 'model',
         'share_link' => 'share_link',
         'filter_params' => 'filter_params',
+        'report' => 'report',
         'triggers' => 'triggers',
         'always_trigger' => 'always_trigger',
         'repeat' => 'repeat',
@@ -232,6 +236,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'model' => 'setModel',
         'share_link' => 'setShareLink',
         'filter_params' => 'setFilterParams',
+        'report' => 'setReport',
         'triggers' => 'setTriggers',
         'always_trigger' => 'setAlwaysTrigger',
         'repeat' => 'setRepeat',
@@ -253,6 +258,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'model' => 'getModel',
         'share_link' => 'getShareLink',
         'filter_params' => 'getFilterParams',
+        'report' => 'getReport',
         'triggers' => 'getTriggers',
         'always_trigger' => 'getAlwaysTrigger',
         'repeat' => 'getRepeat',
@@ -325,6 +331,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('model', $data ?? [], null);
         $this->setIfExists('share_link', $data ?? [], null);
         $this->setIfExists('filter_params', $data ?? [], null);
+        $this->setIfExists('report', $data ?? [], null);
         $this->setIfExists('triggers', $data ?? [], null);
         $this->setIfExists('always_trigger', $data ?? [], false);
         $this->setIfExists('repeat', $data ?? [], true);
@@ -669,6 +676,40 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['filter_params'] = $filter_params;
+
+        return $this;
+    }
+
+    /**
+     * Gets report
+     *
+     * @return object|null
+     */
+    public function getReport()
+    {
+        return $this->container['report'];
+    }
+
+    /**
+     * Sets report
+     *
+     * @param object|null $report report
+     *
+     * @return self
+     */
+    public function setReport($report)
+    {
+        if (is_null($report)) {
+            array_push($this->openAPINullablesSetToNull, 'report');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('report', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['report'] = $report;
 
         return $this;
     }

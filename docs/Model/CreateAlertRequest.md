@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
 **filter_params** | [**\AskNews\Model\FilterParams**](FilterParams.md) |  | [optional]
+**report** | [**\AskNews\Model\ReportRequest**](ReportRequest.md) |  | [optional]
 **triggers** | [**\AskNews\Model\TriggersInner[]**](TriggersInner.md) |  |
 **always_trigger** | **bool** | Whether to always trigger the alert. Default is False. This skips the alert check and run triggers immediately | [optional] [default to false]
 **repeat** | **bool** | Whether to repeat the alert. Default is True. If False, the alert will be disabled after it triggers once | [optional] [default to true]

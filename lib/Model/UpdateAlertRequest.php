@@ -62,6 +62,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'model' => 'string',
         'share_link' => 'string',
         'filter_params' => '\AskNews\Model\FilterParams',
+        'report' => '\AskNews\Model\ReportRequest',
         'triggers' => '\AskNews\Model\TriggersInner[]',
         'always_trigger' => 'bool',
         'repeat' => 'bool',
@@ -81,6 +82,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'model' => null,
         'share_link' => 'uri',
         'filter_params' => null,
+        'report' => null,
         'triggers' => null,
         'always_trigger' => null,
         'repeat' => null,
@@ -98,6 +100,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'model' => true,
         'share_link' => true,
         'filter_params' => true,
+        'report' => true,
         'triggers' => false,
         'always_trigger' => true,
         'repeat' => true,
@@ -195,6 +198,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'model' => 'model',
         'share_link' => 'share_link',
         'filter_params' => 'filter_params',
+        'report' => 'report',
         'triggers' => 'triggers',
         'always_trigger' => 'always_trigger',
         'repeat' => 'repeat',
@@ -212,6 +216,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'model' => 'setModel',
         'share_link' => 'setShareLink',
         'filter_params' => 'setFilterParams',
+        'report' => 'setReport',
         'triggers' => 'setTriggers',
         'always_trigger' => 'setAlwaysTrigger',
         'repeat' => 'setRepeat',
@@ -229,6 +234,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'model' => 'getModel',
         'share_link' => 'getShareLink',
         'filter_params' => 'getFilterParams',
+        'report' => 'getReport',
         'triggers' => 'getTriggers',
         'always_trigger' => 'getAlwaysTrigger',
         'repeat' => 'getRepeat',
@@ -312,6 +318,7 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('model', $data ?? [], null);
         $this->setIfExists('share_link', $data ?? [], null);
         $this->setIfExists('filter_params', $data ?? [], null);
+        $this->setIfExists('report', $data ?? [], null);
         $this->setIfExists('triggers', $data ?? [], null);
         $this->setIfExists('always_trigger', $data ?? [], null);
         $this->setIfExists('repeat', $data ?? [], null);
@@ -560,6 +567,40 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             }
         }
         $this->container['filter_params'] = $filter_params;
+
+        return $this;
+    }
+
+    /**
+     * Gets report
+     *
+     * @return \AskNews\Model\ReportRequest|null
+     */
+    public function getReport()
+    {
+        return $this->container['report'];
+    }
+
+    /**
+     * Sets report
+     *
+     * @param \AskNews\Model\ReportRequest|null $report report
+     *
+     * @return self
+     */
+    public function setReport($report)
+    {
+        if (is_null($report)) {
+            array_push($this->openAPINullablesSetToNull, 'report');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('report', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['report'] = $report;
 
         return $this;
     }
