@@ -83,6 +83,7 @@ Class | Method | HTTP request | Description
 *AlertsApi* | [**createAlert**](docs/Api/AlertsApi.md#createalert) | **POST** /v1/chat/alerts | Create an alert
 *AlertsApi* | [**deleteAlert**](docs/Api/AlertsApi.md#deletealert) | **DELETE** /v1/chat/alerts/{alert_id} | Delete an alert
 *AlertsApi* | [**getAlert**](docs/Api/AlertsApi.md#getalert) | **GET** /v1/chat/alerts/{alert_id} | Get an alert
+*AlertsApi* | [**getAlertLogs**](docs/Api/AlertsApi.md#getalertlogs) | **GET** /v1/chat/alerts/{alert_id}/logs | Get alert logs
 *AlertsApi* | [**getAlerts**](docs/Api/AlertsApi.md#getalerts) | **GET** /v1/chat/alerts | Get all created alerts
 *AlertsApi* | [**putAlert**](docs/Api/AlertsApi.md#putalert) | **PUT** /v1/chat/alerts/{alert_id} | Update an alert
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
@@ -144,6 +145,7 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel7](docs/Model/AbcAPIErrorModel7.md)
 - [AbcAPIErrorModel8](docs/Model/AbcAPIErrorModel8.md)
 - [AbcAPIErrorModel9](docs/Model/AbcAPIErrorModel9.md)
+- [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
 - [AsknewsApiErrorsAPIErrorModel](docs/Model/AsknewsApiErrorsAPIErrorModel.md)
@@ -195,6 +197,7 @@ Class | Method | HTTP request | Description
 - [Offset2](docs/Model/Offset2.md)
 - [Offset3](docs/Model/Offset3.md)
 - [Offset4](docs/Model/Offset4.md)
+- [PaginatedResponseAlertLog](docs/Model/PaginatedResponseAlertLog.md)
 - [PaginatedResponseAlertResponse](docs/Model/PaginatedResponseAlertResponse.md)
 - [PingModel](docs/Model/PingModel.md)
 - [Profile](docs/Model/Profile.md)
