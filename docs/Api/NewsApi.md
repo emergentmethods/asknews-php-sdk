@@ -5,6 +5,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**getArticle()**](NewsApi.md#getArticle) | **GET** /v1/news/{article_id} | Get an article by its UUID |
+| [**getArticles()**](NewsApi.md#getArticles) | **GET** /v1/news | Get multiple articles by UUID |
 | [**getSourcesReport()**](NewsApi.md#getSourcesReport) | **GET** /v1/sources | Get the sources underlying AskNews |
 | [**searchNews()**](NewsApi.md#searchNews) | **GET** /v1/news/search | Search for enriched real-time news context |
 
@@ -60,6 +61,71 @@ try {
 ### Return type
 
 [**\AskNews\Model\SearchResponseDictItem**](../Model/SearchResponseDictItem.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getArticles()`
+
+```php
+getArticles($article_ids): \AskNews\Model\SearchResponseDictItem[]
+```
+
+Get multiple articles by UUID
+
+Get articles given a list of UUIDs.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\NewsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$article_ids = 'article_ids_example'; // string | Article IDs to retrieve
+
+try {
+    $result = $apiInstance->getArticles($article_ids);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NewsApi->getArticles: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **article_ids** | **string**| Article IDs to retrieve | |
+
+### Return type
+
+[**\AskNews\Model\SearchResponseDictItem[]**](../Model/SearchResponseDictItem.md)
 
 ### Authorization
 

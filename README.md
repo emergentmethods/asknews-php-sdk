@@ -94,6 +94,7 @@ Class | Method | HTTP request | Description
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
 *GraphApi* | [**buildGraph**](docs/Api/GraphApi.md#buildgraph) | **POST** /v1/news/graph | Build a custom mega-news-knowledge graph
 *NewsApi* | [**getArticle**](docs/Api/NewsApi.md#getarticle) | **GET** /v1/news/{article_id} | Get an article by its UUID
+*NewsApi* | [**getArticles**](docs/Api/NewsApi.md#getarticles) | **GET** /v1/news | Get multiple articles by UUID
 *NewsApi* | [**getSourcesReport**](docs/Api/NewsApi.md#getsourcesreport) | **GET** /v1/sources | Get the sources underlying AskNews
 *NewsApi* | [**searchNews**](docs/Api/NewsApi.md#searchnews) | **GET** /v1/news/search | Search for enriched real-time news context
 *PingApi* | [**ping**](docs/Api/PingApi.md#ping) | **GET** / | Ping
@@ -140,6 +141,10 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel39](docs/Model/AbcAPIErrorModel39.md)
 - [AbcAPIErrorModel4](docs/Model/AbcAPIErrorModel4.md)
 - [AbcAPIErrorModel40](docs/Model/AbcAPIErrorModel40.md)
+- [AbcAPIErrorModel41](docs/Model/AbcAPIErrorModel41.md)
+- [AbcAPIErrorModel42](docs/Model/AbcAPIErrorModel42.md)
+- [AbcAPIErrorModel43](docs/Model/AbcAPIErrorModel43.md)
+- [AbcAPIErrorModel44](docs/Model/AbcAPIErrorModel44.md)
 - [AbcAPIErrorModel5](docs/Model/AbcAPIErrorModel5.md)
 - [AbcAPIErrorModel6](docs/Model/AbcAPIErrorModel6.md)
 - [AbcAPIErrorModel7](docs/Model/AbcAPIErrorModel7.md)
