@@ -14,5 +14,6 @@ Name | Type | Description | Notes
 **always_trigger** | **bool** |  | [optional]
 **repeat** | **bool** |  | [optional]
 **active** | **bool** |  | [optional]
+**expires_at** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

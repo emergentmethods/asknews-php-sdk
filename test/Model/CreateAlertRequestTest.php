@@ -168,4 +168,13 @@ class CreateAlertRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "expires_at"
+     */
+    public function testPropertyExpiresAt()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

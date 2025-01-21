@@ -143,9 +143,27 @@ class AlertLogTest extends TestCase
     }
 
     /**
+     * Test attribute "report_url"
+     */
+    public function testPropertyReportUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "article_ids"
      */
     public function testPropertyArticleIds()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "webhook"
+     */
+    public function testPropertyWebhook()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

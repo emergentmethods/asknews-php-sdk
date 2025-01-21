@@ -60,6 +60,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'string',
         'created_at' => '\DateTime',
         'updated_at' => '\DateTime',
+        'expires_at' => '\DateTime',
         'user_id' => 'string',
         'query' => 'string',
         'cron' => 'string',
@@ -84,6 +85,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'uuid',
         'created_at' => 'date-time',
         'updated_at' => 'date-time',
+        'expires_at' => 'date-time',
         'user_id' => 'uuid',
         'query' => null,
         'cron' => null,
@@ -106,6 +108,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => false,
         'created_at' => true,
         'updated_at' => true,
+        'expires_at' => true,
         'user_id' => false,
         'query' => true,
         'cron' => false,
@@ -208,6 +211,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'id',
         'created_at' => 'created_at',
         'updated_at' => 'updated_at',
+        'expires_at' => 'expires_at',
         'user_id' => 'user_id',
         'query' => 'query',
         'cron' => 'cron',
@@ -230,6 +234,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'setId',
         'created_at' => 'setCreatedAt',
         'updated_at' => 'setUpdatedAt',
+        'expires_at' => 'setExpiresAt',
         'user_id' => 'setUserId',
         'query' => 'setQuery',
         'cron' => 'setCron',
@@ -252,6 +257,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'id' => 'getId',
         'created_at' => 'getCreatedAt',
         'updated_at' => 'getUpdatedAt',
+        'expires_at' => 'getExpiresAt',
         'user_id' => 'getUserId',
         'query' => 'getQuery',
         'cron' => 'getCron',
@@ -325,6 +331,7 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('created_at', $data ?? [], null);
         $this->setIfExists('updated_at', $data ?? [], null);
+        $this->setIfExists('expires_at', $data ?? [], null);
         $this->setIfExists('user_id', $data ?? [], null);
         $this->setIfExists('query', $data ?? [], null);
         $this->setIfExists('cron', $data ?? [], null);
@@ -486,6 +493,40 @@ class AlertResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['updated_at'] = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Gets expires_at
+     *
+     * @return \DateTime|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->container['expires_at'];
+    }
+
+    /**
+     * Sets expires_at
+     *
+     * @param \DateTime|null $expires_at expires_at
+     *
+     * @return self
+     */
+    public function setExpiresAt($expires_at)
+    {
+        if (is_null($expires_at)) {
+            array_push($this->openAPINullablesSetToNull, 'expires_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expires_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['expires_at'] = $expires_at;
 
         return $this;
     }

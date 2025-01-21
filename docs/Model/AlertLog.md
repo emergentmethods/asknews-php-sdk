@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **alert** | **bool** |  |
 **reasoning** | **string** |  |
 **report** | **string** |  | [optional]
+**report_url** | **string** |  | [optional]
 **article_ids** | **string[]** |  |
+**webhook** | **object** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

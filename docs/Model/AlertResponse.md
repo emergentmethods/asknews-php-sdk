@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **created_at** | **\DateTime** |  | [optional]
 **updated_at** | **\DateTime** |  | [optional]
+**expires_at** | **\DateTime** |  | [optional]
 **user_id** | **string** |  |
 **query** | **string** |  | [optional]
 **cron** | **string** |  |

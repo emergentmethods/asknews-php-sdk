@@ -64,7 +64,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         'alert' => 'bool',
         'reasoning' => 'string',
         'report' => 'string',
-        'article_ids' => 'string[]'
+        'report_url' => 'string',
+        'article_ids' => 'string[]',
+        'webhook' => 'object'
     ];
 
     /**
@@ -82,7 +84,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         'alert' => null,
         'reasoning' => null,
         'report' => null,
-        'article_ids' => 'uuid'
+        'report_url' => null,
+        'article_ids' => 'uuid',
+        'webhook' => null
     ];
 
     /**
@@ -98,7 +102,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         'alert' => false,
         'reasoning' => false,
         'report' => true,
-        'article_ids' => false
+        'report_url' => true,
+        'article_ids' => false,
+        'webhook' => true
     ];
 
     /**
@@ -194,7 +200,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         'alert' => 'alert',
         'reasoning' => 'reasoning',
         'report' => 'report',
-        'article_ids' => 'article_ids'
+        'report_url' => 'report_url',
+        'article_ids' => 'article_ids',
+        'webhook' => 'webhook'
     ];
 
     /**
@@ -210,7 +218,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         'alert' => 'setAlert',
         'reasoning' => 'setReasoning',
         'report' => 'setReport',
-        'article_ids' => 'setArticleIds'
+        'report_url' => 'setReportUrl',
+        'article_ids' => 'setArticleIds',
+        'webhook' => 'setWebhook'
     ];
 
     /**
@@ -226,7 +236,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         'alert' => 'getAlert',
         'reasoning' => 'getReasoning',
         'report' => 'getReport',
-        'article_ids' => 'getArticleIds'
+        'report_url' => 'getReportUrl',
+        'article_ids' => 'getArticleIds',
+        'webhook' => 'getWebhook'
     ];
 
     /**
@@ -293,7 +305,9 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('alert', $data ?? [], null);
         $this->setIfExists('reasoning', $data ?? [], null);
         $this->setIfExists('report', $data ?? [], null);
+        $this->setIfExists('report_url', $data ?? [], null);
         $this->setIfExists('article_ids', $data ?? [], null);
+        $this->setIfExists('webhook', $data ?? [], null);
     }
 
     /**
@@ -556,6 +570,40 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     /**
+     * Gets report_url
+     *
+     * @return string|null
+     */
+    public function getReportUrl()
+    {
+        return $this->container['report_url'];
+    }
+
+    /**
+     * Sets report_url
+     *
+     * @param string|null $report_url report_url
+     *
+     * @return self
+     */
+    public function setReportUrl($report_url)
+    {
+        if (is_null($report_url)) {
+            array_push($this->openAPINullablesSetToNull, 'report_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('report_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['report_url'] = $report_url;
+
+        return $this;
+    }
+
+    /**
      * Gets article_ids
      *
      * @return string[]
@@ -578,6 +626,40 @@ class AlertLog implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable article_ids cannot be null');
         }
         $this->container['article_ids'] = $article_ids;
+
+        return $this;
+    }
+
+    /**
+     * Gets webhook
+     *
+     * @return object|null
+     */
+    public function getWebhook()
+    {
+        return $this->container['webhook'];
+    }
+
+    /**
+     * Sets webhook
+     *
+     * @param object|null $webhook webhook
+     *
+     * @return self
+     */
+    public function setWebhook($webhook)
+    {
+        if (is_null($webhook)) {
+            array_push($this->openAPINullablesSetToNull, 'webhook');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('webhook', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['webhook'] = $webhook;
 
         return $this;
     }

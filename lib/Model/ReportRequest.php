@@ -235,8 +235,10 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     }
 
     public const MODEL_GPT_4O = 'gpt-4o';
+    public const MODEL_GPT_4O_MINI = 'gpt-4o-mini';
     public const MODEL_CLAUDE_3_5_SONNET_LATEST = 'claude-3-5-sonnet-latest';
     public const MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT = 'meta-llama/Meta-Llama-3.1-405B-Instruct';
+    public const MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT = 'meta-llama/Meta-Llama-3.3-70B-Instruct';
 
     /**
      * Gets allowable values of the enum
@@ -247,8 +249,10 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         return [
             self::MODEL_GPT_4O,
+            self::MODEL_GPT_4O_MINI,
             self::MODEL_CLAUDE_3_5_SONNET_LATEST,
             self::MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT,
+            self::MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT,
         ];
     }
 

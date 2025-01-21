@@ -66,7 +66,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'triggers' => '\AskNews\Model\TriggersInner[]',
         'always_trigger' => 'bool',
         'repeat' => 'bool',
-        'active' => 'bool'
+        'active' => 'bool',
+        'expires_at' => '\DateTime'
     ];
 
     /**
@@ -86,7 +87,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'triggers' => null,
         'always_trigger' => null,
         'repeat' => null,
-        'active' => null
+        'active' => null,
+        'expires_at' => 'date-time'
     ];
 
     /**
@@ -104,7 +106,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'triggers' => false,
         'always_trigger' => false,
         'repeat' => false,
-        'active' => false
+        'active' => false,
+        'expires_at' => true
     ];
 
     /**
@@ -202,7 +205,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'triggers' => 'triggers',
         'always_trigger' => 'always_trigger',
         'repeat' => 'repeat',
-        'active' => 'active'
+        'active' => 'active',
+        'expires_at' => 'expires_at'
     ];
 
     /**
@@ -220,7 +224,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'triggers' => 'setTriggers',
         'always_trigger' => 'setAlwaysTrigger',
         'repeat' => 'setRepeat',
-        'active' => 'setActive'
+        'active' => 'setActive',
+        'expires_at' => 'setExpiresAt'
     ];
 
     /**
@@ -238,7 +243,8 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         'triggers' => 'getTriggers',
         'always_trigger' => 'getAlwaysTrigger',
         'repeat' => 'getRepeat',
-        'active' => 'getActive'
+        'active' => 'getActive',
+        'expires_at' => 'getExpiresAt'
     ];
 
     /**
@@ -323,6 +329,7 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         $this->setIfExists('always_trigger', $data ?? [], false);
         $this->setIfExists('repeat', $data ?? [], true);
         $this->setIfExists('active', $data ?? [], true);
+        $this->setIfExists('expires_at', $data ?? [], null);
     }
 
     /**
@@ -711,6 +718,40 @@ class CreateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             throw new \InvalidArgumentException('non-nullable active cannot be null');
         }
         $this->container['active'] = $active;
+
+        return $this;
+    }
+
+    /**
+     * Gets expires_at
+     *
+     * @return \DateTime|null
+     */
+    public function getExpiresAt()
+    {
+        return $this->container['expires_at'];
+    }
+
+    /**
+     * Sets expires_at
+     *
+     * @param \DateTime|null $expires_at expires_at
+     *
+     * @return self
+     */
+    public function setExpiresAt($expires_at)
+    {
+        if (is_null($expires_at)) {
+            array_push($this->openAPINullablesSetToNull, 'expires_at');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('expires_at', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['expires_at'] = $expires_at;
 
         return $this;
     }
