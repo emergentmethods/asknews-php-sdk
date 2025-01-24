@@ -58,7 +58,8 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPITypes = [
         'prompt' => 'string[][]',
-        'model' => 'string'
+        'model' => 'string',
+        'logo_url' => 'string'
     ];
 
     /**
@@ -70,7 +71,8 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static $openAPIFormats = [
         'prompt' => null,
-        'model' => null
+        'model' => null,
+        'logo_url' => 'uri'
     ];
 
     /**
@@ -80,7 +82,8 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
       */
     protected static array $openAPINullables = [
         'prompt' => true,
-        'model' => true
+        'model' => true,
+        'logo_url' => true
     ];
 
     /**
@@ -170,7 +173,8 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $attributeMap = [
         'prompt' => 'prompt',
-        'model' => 'model'
+        'model' => 'model',
+        'logo_url' => 'logo_url'
     ];
 
     /**
@@ -180,7 +184,8 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $setters = [
         'prompt' => 'setPrompt',
-        'model' => 'setModel'
+        'model' => 'setModel',
+        'logo_url' => 'setLogoUrl'
     ];
 
     /**
@@ -190,7 +195,8 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     protected static $getters = [
         'prompt' => 'getPrompt',
-        'model' => 'getModel'
+        'model' => 'getModel',
+        'logo_url' => 'getLogoUrl'
     ];
 
     /**
@@ -273,6 +279,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('prompt', $data ?? [], null);
         $this->setIfExists('model', $data ?? [], null);
+        $this->setIfExists('logo_url', $data ?? [], null);
     }
 
     /**
@@ -309,6 +316,14 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
                 $this->container['model'],
                 implode("', '", $allowedValues)
             );
+        }
+
+        if (!is_null($this->container['logo_url']) && (mb_strlen($this->container['logo_url']) > 2083)) {
+            $invalidProperties[] = "invalid value for 'logo_url', the character length must be smaller than or equal to 2083.";
+        }
+
+        if (!is_null($this->container['logo_url']) && (mb_strlen($this->container['logo_url']) < 1)) {
+            $invalidProperties[] = "invalid value for 'logo_url', the character length must be bigger than or equal to 1.";
         }
 
         return $invalidProperties;
@@ -400,6 +415,47 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             );
         }
         $this->container['model'] = $model;
+
+        return $this;
+    }
+
+    /**
+     * Gets logo_url
+     *
+     * @return string|null
+     */
+    public function getLogoUrl()
+    {
+        return $this->container['logo_url'];
+    }
+
+    /**
+     * Sets logo_url
+     *
+     * @param string|null $logo_url logo_url
+     *
+     * @return self
+     */
+    public function setLogoUrl($logo_url)
+    {
+        if (is_null($logo_url)) {
+            array_push($this->openAPINullablesSetToNull, 'logo_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('logo_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        if (!is_null($logo_url) && (mb_strlen($logo_url) > 2083)) {
+            throw new \InvalidArgumentException('invalid length for $logo_url when calling ReportRequest., must be smaller than or equal to 2083.');
+        }
+        if (!is_null($logo_url) && (mb_strlen($logo_url) < 1)) {
+            throw new \InvalidArgumentException('invalid length for $logo_url when calling ReportRequest., must be bigger than or equal to 1.');
+        }
+
+        $this->container['logo_url'] = $logo_url;
 
         return $this;
     }
