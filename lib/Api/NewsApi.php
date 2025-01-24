@@ -672,7 +672,7 @@ class NewsApi
      *
      * Get multiple articles by UUID
      *
-     * @param  string $article_ids Article IDs to retrieve (required)
+     * @param  string[] $article_ids Article UUIDs to fetch. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getArticles'] to see the possible values for this operation
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
@@ -690,7 +690,7 @@ class NewsApi
      *
      * Get multiple articles by UUID
      *
-     * @param  string $article_ids Article IDs to retrieve (required)
+     * @param  string[] $article_ids Article UUIDs to fetch. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getArticles'] to see the possible values for this operation
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
@@ -1024,7 +1024,7 @@ class NewsApi
      *
      * Get multiple articles by UUID
      *
-     * @param  string $article_ids Article IDs to retrieve (required)
+     * @param  string[] $article_ids Article UUIDs to fetch. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getArticles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1045,7 +1045,7 @@ class NewsApi
      *
      * Get multiple articles by UUID
      *
-     * @param  string $article_ids Article IDs to retrieve (required)
+     * @param  string[] $article_ids Article UUIDs to fetch. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getArticles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1095,7 +1095,7 @@ class NewsApi
     /**
      * Create request for operation 'getArticles'
      *
-     * @param  string $article_ids Article IDs to retrieve (required)
+     * @param  string[] $article_ids Article UUIDs to fetch. (required)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getArticles'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
@@ -1123,7 +1123,7 @@ class NewsApi
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $article_ids,
             'article_ids', // param base name
-            'string', // openApiType
+            'array', // openApiType
             'form', // style
             true, // explode
             true // required

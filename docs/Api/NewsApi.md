@@ -107,7 +107,7 @@ $apiInstance = new AskNews\Api\NewsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$article_ids = 'article_ids_example'; // string | Article IDs to retrieve
+$article_ids = array('article_ids_example'); // string[] | Article UUIDs to fetch.
 
 try {
     $result = $apiInstance->getArticles($article_ids);
@@ -121,7 +121,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **article_ids** | **string**| Article IDs to retrieve | |
+| **article_ids** | [**string[]**](../Model/string.md)| Article UUIDs to fetch. | |
 
 ### Return type
 
