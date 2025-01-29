@@ -1148,19 +1148,20 @@ class AlertsApi
      * Get alert logs
      *
      * @param  string $alert_id The alert ID (required)
-     * @param  string $user_id The ID of the user to get logs for (optional)
      * @param  int $page The page number to get (optional, default to 1)
      * @param  int $per_page The number of items per page (optional, default to 10)
      * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlertLogs'] to see the possible values for this operation
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \AskNews\Model\PaginatedResponseAlertLog|\AskNews\Model\HTTPValidationError
      */
-    public function getAlertLogs($alert_id, $user_id = null, $page = 1, $per_page = 10, $all = false, string $contentType = self::contentTypes['getAlertLogs'][0])
+    public function getAlertLogs($alert_id, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAlertLogs'][0])
     {
-        list($response) = $this->getAlertLogsWithHttpInfo($alert_id, $user_id, $page, $per_page, $all, $contentType);
+        list($response) = $this->getAlertLogsWithHttpInfo($alert_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType);
         return $response;
     }
 
@@ -1170,19 +1171,20 @@ class AlertsApi
      * Get alert logs
      *
      * @param  string $alert_id The alert ID (required)
-     * @param  string $user_id The ID of the user to get logs for (optional)
      * @param  int $page The page number to get (optional, default to 1)
      * @param  int $per_page The number of items per page (optional, default to 10)
      * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlertLogs'] to see the possible values for this operation
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \AskNews\Model\PaginatedResponseAlertLog|\AskNews\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getAlertLogsWithHttpInfo($alert_id, $user_id = null, $page = 1, $per_page = 10, $all = false, string $contentType = self::contentTypes['getAlertLogs'][0])
+    public function getAlertLogsWithHttpInfo($alert_id, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAlertLogs'][0])
     {
-        $request = $this->getAlertLogsRequest($alert_id, $user_id, $page, $per_page, $all, $contentType);
+        $request = $this->getAlertLogsRequest($alert_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -1333,18 +1335,19 @@ class AlertsApi
      * Get alert logs
      *
      * @param  string $alert_id The alert ID (required)
-     * @param  string $user_id The ID of the user to get logs for (optional)
      * @param  int $page The page number to get (optional, default to 1)
      * @param  int $per_page The number of items per page (optional, default to 10)
      * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlertLogs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlertLogsAsync($alert_id, $user_id = null, $page = 1, $per_page = 10, $all = false, string $contentType = self::contentTypes['getAlertLogs'][0])
+    public function getAlertLogsAsync($alert_id, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAlertLogs'][0])
     {
-        return $this->getAlertLogsAsyncWithHttpInfo($alert_id, $user_id, $page, $per_page, $all, $contentType)
+        return $this->getAlertLogsAsyncWithHttpInfo($alert_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -1358,19 +1361,20 @@ class AlertsApi
      * Get alert logs
      *
      * @param  string $alert_id The alert ID (required)
-     * @param  string $user_id The ID of the user to get logs for (optional)
      * @param  int $page The page number to get (optional, default to 1)
      * @param  int $per_page The number of items per page (optional, default to 10)
      * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlertLogs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getAlertLogsAsyncWithHttpInfo($alert_id, $user_id = null, $page = 1, $per_page = 10, $all = false, string $contentType = self::contentTypes['getAlertLogs'][0])
+    public function getAlertLogsAsyncWithHttpInfo($alert_id, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAlertLogs'][0])
     {
         $returnType = '\AskNews\Model\PaginatedResponseAlertLog';
-        $request = $this->getAlertLogsRequest($alert_id, $user_id, $page, $per_page, $all, $contentType);
+        $request = $this->getAlertLogsRequest($alert_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -1412,16 +1416,17 @@ class AlertsApi
      * Create request for operation 'getAlertLogs'
      *
      * @param  string $alert_id The alert ID (required)
-     * @param  string $user_id The ID of the user to get logs for (optional)
      * @param  int $page The page number to get (optional, default to 1)
      * @param  int $per_page The number of items per page (optional, default to 10)
      * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAlertLogs'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getAlertLogsRequest($alert_id, $user_id = null, $page = 1, $per_page = 10, $all = false, string $contentType = self::contentTypes['getAlertLogs'][0])
+    public function getAlertLogsRequest($alert_id, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAlertLogs'][0])
     {
 
         // verify the required parameter 'alert_id' is set
@@ -1436,6 +1441,7 @@ class AlertsApi
 
 
 
+
         $resourcePath = '/v1/chat/alerts/{alert_id}/logs';
         $formParams = [];
         $queryParams = [];
@@ -1443,15 +1449,6 @@ class AlertsApi
         $httpBody = '';
         $multipart = false;
 
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $user_id,
-            'user_id', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
             $page,
@@ -1475,6 +1472,24 @@ class AlertsApi
             $all,
             'all', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_timestamp,
+            'start_timestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_timestamp,
+            'end_timestamp', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

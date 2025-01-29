@@ -209,7 +209,7 @@ try {
 ## `getAlertLogs()`
 
 ```php
-getAlertLogs($alert_id, $user_id, $page, $per_page, $all): \AskNews\Model\PaginatedResponseAlertLog
+getAlertLogs($alert_id, $page, $per_page, $all, $start_timestamp, $end_timestamp): \AskNews\Model\PaginatedResponseAlertLog
 ```
 
 Get alert logs
@@ -239,13 +239,14 @@ $apiInstance = new AskNews\Api\AlertsApi(
     $config
 );
 $alert_id = 'alert_id_example'; // string | The alert ID
-$user_id = 'user_id_example'; // string | The ID of the user to get logs for
 $page = 1; // int | The page number to get
 $per_page = 10; // int | The number of items per page
 $all = false; // bool | Whether to get all the alert logs
+$start_timestamp = 56; // int | Timestamp to start search from
+$end_timestamp = 56; // int | Timestamp to end search at
 
 try {
-    $result = $apiInstance->getAlertLogs($alert_id, $user_id, $page, $per_page, $all);
+    $result = $apiInstance->getAlertLogs($alert_id, $page, $per_page, $all, $start_timestamp, $end_timestamp);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->getAlertLogs: ', $e->getMessage(), PHP_EOL;
@@ -257,10 +258,11 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alert_id** | **string**| The alert ID | |
-| **user_id** | **string**| The ID of the user to get logs for | [optional] |
 | **page** | **int**| The page number to get | [optional] [default to 1] |
 | **per_page** | **int**| The number of items per page | [optional] [default to 10] |
 | **all** | **bool**| Whether to get all the alert logs | [optional] [default to false] |
+| **start_timestamp** | **int**| Timestamp to start search from | [optional] |
+| **end_timestamp** | **int**| Timestamp to end search at | [optional] |
 
 ### Return type
 
