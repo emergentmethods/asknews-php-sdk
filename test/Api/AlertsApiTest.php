@@ -132,6 +132,18 @@ class AlertsApiTest extends TestCase
     }
 
     /**
+     * Test case for getAllAlertLogs
+     *
+     * Get all alert logs.
+     *
+     */
+    public function testGetAllAlertLogs()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for putAlert
      *
      * Update an alert.

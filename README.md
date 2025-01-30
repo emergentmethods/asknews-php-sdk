@@ -85,6 +85,7 @@ Class | Method | HTTP request | Description
 *AlertsApi* | [**getAlert**](docs/Api/AlertsApi.md#getalert) | **GET** /v1/chat/alerts/{alert_id} | Get an alert
 *AlertsApi* | [**getAlertLogs**](docs/Api/AlertsApi.md#getalertlogs) | **GET** /v1/chat/alerts/{alert_id}/logs | Get alert logs
 *AlertsApi* | [**getAlerts**](docs/Api/AlertsApi.md#getalerts) | **GET** /v1/chat/alerts | Get all created alerts
+*AlertsApi* | [**getAllAlertLogs**](docs/Api/AlertsApi.md#getallalertlogs) | **GET** /v1/chat/alerts/logs | Get all alert logs
 *AlertsApi* | [**putAlert**](docs/Api/AlertsApi.md#putalert) | **PUT** /v1/chat/alerts/{alert_id} | Update an alert
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
 *AutofilterApi* | [**autofilter**](docs/Api/AutofilterApi.md#autofilter) | **GET** /v1/chat/autofilter | Generate filter params for AskNews endpoints

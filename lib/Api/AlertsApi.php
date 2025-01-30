@@ -72,6 +72,9 @@ class AlertsApi
         'getAlerts' => [
             'application/json',
         ],
+        'getAllAlertLogs' => [
+            'application/json',
+        ],
         'putAlert' => [
             'application/json',
         ],
@@ -1913,6 +1916,466 @@ class AlertsApi
             $all,
             'all', // param base name
             'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+
+
+
+
+        $headers = $this->headerSelector->selectHeaders(
+            ['application/json', ],
+            $contentType,
+            $multipart
+        );
+
+        // for model (json/xml)
+        if (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
+                    foreach ($formParamValueItems as $formParamValueItem) {
+                        $multipartContents[] = [
+                            'name' => $formParamName,
+                            'contents' => $formParamValueItem
+                        ];
+                    }
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
+                # if Content-Type contains "application/json", json_encode the form parameters
+                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
+            } else {
+                // for HTTP post (form)
+                $httpBody = ObjectSerializer::buildQuery($formParams);
+            }
+        }
+
+        if (!empty($this->config->getAccessToken())) {
+            $now = time();
+            $buffer = 10;
+            if ($this->config->getAccessToken()->expires - $buffer < $now) {
+                $this->config->setAccessToken(null);
+            }
+        }
+
+        if (empty($this->config->getAccessToken()) && !empty($this->config->getClientId()) && !empty($this->config->getClientSecret()) && !empty($this->config->getScopes())) {
+            $response = $this->client->send(new Request(
+                'POST',
+                $this->config->getAuthUrl(),
+                [
+                    'Content-Type' => 'application/x-www-form-urlencoded',
+                    'User-Agent' => $this->config->getUserAgent(),
+                    'Authorization' => 'Basic ' . base64_encode($this->config->getClientId() . ':' . $this->config->getClientSecret())
+                ],
+                http_build_query([
+                    'grant_type' => 'client_credentials',
+                    'scope' => implode(' ', $this->config->getScopes()),
+                ])
+            ));
+
+            $data = json_decode($response->getBody()->getContents());
+            $this->config->setAccessToken(
+                new AccessToken($data->token_type, $data->access_token, $data->expires_in + time(), $this->config->getScopes())
+            );
+        }
+
+        if (!empty($this->config->getAccessToken())) {
+            $token = $this->config->getAccessToken();
+            $headers['Authorization'] = $token->tokenType . ' ' . $token->tokenValue;
+        }
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $operationHost = $this->config->getHost();
+        $query = ObjectSerializer::buildQuery($queryParams);
+        return new Request(
+            'GET',
+            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation getAllAlertLogs
+     *
+     * Get all alert logs
+     *
+     * @param  string $alert_id The alert ID (optional)
+     * @param  string $user_id The ID of the user to get logs for (optional)
+     * @param  int $page The page number to get (optional, default to 1)
+     * @param  int $per_page The number of items per page (optional, default to 10)
+     * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAlertLogs'] to see the possible values for this operation
+     *
+     * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return \AskNews\Model\PaginatedResponseAlertLog|\AskNews\Model\HTTPValidationError
+     */
+    public function getAllAlertLogs($alert_id = null, $user_id = null, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAllAlertLogs'][0])
+    {
+        list($response) = $this->getAllAlertLogsWithHttpInfo($alert_id, $user_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType);
+        return $response;
+    }
+
+    /**
+     * Operation getAllAlertLogsWithHttpInfo
+     *
+     * Get all alert logs
+     *
+     * @param  string $alert_id The alert ID (optional)
+     * @param  string $user_id The ID of the user to get logs for (optional)
+     * @param  int $page The page number to get (optional, default to 1)
+     * @param  int $per_page The number of items per page (optional, default to 10)
+     * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAlertLogs'] to see the possible values for this operation
+     *
+     * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
+     * @throws \InvalidArgumentException
+     * @return array of \AskNews\Model\PaginatedResponseAlertLog|\AskNews\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getAllAlertLogsWithHttpInfo($alert_id = null, $user_id = null, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAllAlertLogs'][0])
+    {
+        $request = $this->getAllAlertLogsRequest($alert_id, $user_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
+                );
+            } catch (ConnectException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    (int) $e->getCode(),
+                    null,
+                    null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        (string) $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    (string) $response->getBody()
+                );
+            }
+
+            switch($statusCode) {
+                case 200:
+                    if ('\AskNews\Model\PaginatedResponseAlertLog' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\AskNews\Model\PaginatedResponseAlertLog' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\PaginatedResponseAlertLog', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                case 422:
+                    if ('\AskNews\Model\HTTPValidationError' === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ('\AskNews\Model\HTTPValidationError' !== 'string') {
+                            try {
+                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                            } catch (\JsonException $exception) {
+                                throw new ApiException(
+                                    sprintf(
+                                        'Error JSON decoding server response (%s)',
+                                        $request->getUri()
+                                    ),
+                                    $statusCode,
+                                    $response->getHeaders(),
+                                    $content
+                                );
+                            }
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\HTTPValidationError', []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+            }
+
+            $returnType = '\AskNews\Model\PaginatedResponseAlertLog';
+            if ($returnType === '\SplFileObject') {
+                $content = $response->getBody(); //stream goes to serializer
+            } else {
+                $content = (string) $response->getBody();
+                if ($returnType !== 'string') {
+                    try {
+                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
+                    } catch (\JsonException $exception) {
+                        throw new ApiException(
+                            sprintf(
+                                'Error JSON decoding server response (%s)',
+                                $request->getUri()
+                            ),
+                            $statusCode,
+                            $response->getHeaders(),
+                            $content
+                        );
+                    }
+                }
+            }
+
+            return [
+                ObjectSerializer::deserialize($content, $returnType, []),
+                $response->getStatusCode(),
+                $response->getHeaders()
+            ];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AskNews\Model\PaginatedResponseAlertLog',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+                case 422:
+                    $data = ObjectSerializer::deserialize(
+                        $e->getResponseBody(),
+                        '\AskNews\Model\HTTPValidationError',
+                        $e->getResponseHeaders()
+                    );
+                    $e->setResponseObject($data);
+                    break;
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getAllAlertLogsAsync
+     *
+     * Get all alert logs
+     *
+     * @param  string $alert_id The alert ID (optional)
+     * @param  string $user_id The ID of the user to get logs for (optional)
+     * @param  int $page The page number to get (optional, default to 1)
+     * @param  int $per_page The number of items per page (optional, default to 10)
+     * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAlertLogs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllAlertLogsAsync($alert_id = null, $user_id = null, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAllAlertLogs'][0])
+    {
+        return $this->getAllAlertLogsAsyncWithHttpInfo($alert_id, $user_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation getAllAlertLogsAsyncWithHttpInfo
+     *
+     * Get all alert logs
+     *
+     * @param  string $alert_id The alert ID (optional)
+     * @param  string $user_id The ID of the user to get logs for (optional)
+     * @param  int $page The page number to get (optional, default to 1)
+     * @param  int $per_page The number of items per page (optional, default to 10)
+     * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAlertLogs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function getAllAlertLogsAsyncWithHttpInfo($alert_id = null, $user_id = null, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAllAlertLogs'][0])
+    {
+        $returnType = '\AskNews\Model\PaginatedResponseAlertLog';
+        $request = $this->getAllAlertLogsRequest($alert_id, $user_id, $page, $per_page, $all, $start_timestamp, $end_timestamp, $contentType);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    if ($returnType === '\SplFileObject') {
+                        $content = $response->getBody(); //stream goes to serializer
+                    } else {
+                        $content = (string) $response->getBody();
+                        if ($returnType !== 'string') {
+                            $content = json_decode($content);
+                        }
+                    }
+
+                    return [
+                        ObjectSerializer::deserialize($content, $returnType, []),
+                        $response->getStatusCode(),
+                        $response->getHeaders()
+                    ];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        (string) $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'getAllAlertLogs'
+     *
+     * @param  string $alert_id The alert ID (optional)
+     * @param  string $user_id The ID of the user to get logs for (optional)
+     * @param  int $page The page number to get (optional, default to 1)
+     * @param  int $per_page The number of items per page (optional, default to 10)
+     * @param  bool $all Whether to get all the alert logs (optional, default to false)
+     * @param  int $start_timestamp Timestamp to start search from (optional)
+     * @param  int $end_timestamp Timestamp to end search at (optional)
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getAllAlertLogs'] to see the possible values for this operation
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    public function getAllAlertLogsRequest($alert_id = null, $user_id = null, $page = 1, $per_page = 10, $all = false, $start_timestamp = null, $end_timestamp = null, string $contentType = self::contentTypes['getAllAlertLogs'][0])
+    {
+
+
+
+
+
+
+
+
+
+        $resourcePath = '/v1/chat/alerts/logs';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $alert_id,
+            'alert_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $user_id,
+            'user_id', // param base name
+            'string', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $page,
+            'page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $per_page,
+            'per_page', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $all,
+            'all', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $start_timestamp,
+            'start_timestamp', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $end_timestamp,
+            'end_timestamp', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

@@ -9,6 +9,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**getAlert()**](AlertsApi.md#getAlert) | **GET** /v1/chat/alerts/{alert_id} | Get an alert |
 | [**getAlertLogs()**](AlertsApi.md#getAlertLogs) | **GET** /v1/chat/alerts/{alert_id}/logs | Get alert logs |
 | [**getAlerts()**](AlertsApi.md#getAlerts) | **GET** /v1/chat/alerts | Get all created alerts |
+| [**getAllAlertLogs()**](AlertsApi.md#getAllAlertLogs) | **GET** /v1/chat/alerts/logs | Get all alert logs |
 | [**putAlert()**](AlertsApi.md#putAlert) | **PUT** /v1/chat/alerts/{alert_id} | Update an alert |
 
 
@@ -338,6 +339,83 @@ try {
 ### Return type
 
 [**\AskNews\Model\PaginatedResponseAlertResponse**](../Model/PaginatedResponseAlertResponse.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getAllAlertLogs()`
+
+```php
+getAllAlertLogs($alert_id, $user_id, $page, $per_page, $all, $start_timestamp, $end_timestamp): \AskNews\Model\PaginatedResponseAlertLog
+```
+
+Get all alert logs
+
+Get all alert logs.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\AlertsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$alert_id = 'alert_id_example'; // string | The alert ID
+$user_id = 'user_id_example'; // string | The ID of the user to get logs for
+$page = 1; // int | The page number to get
+$per_page = 10; // int | The number of items per page
+$all = false; // bool | Whether to get all the alert logs
+$start_timestamp = 56; // int | Timestamp to start search from
+$end_timestamp = 56; // int | Timestamp to end search at
+
+try {
+    $result = $apiInstance->getAllAlertLogs($alert_id, $user_id, $page, $per_page, $all, $start_timestamp, $end_timestamp);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AlertsApi->getAllAlertLogs: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **alert_id** | **string**| The alert ID | [optional] |
+| **user_id** | **string**| The ID of the user to get logs for | [optional] |
+| **page** | **int**| The page number to get | [optional] [default to 1] |
+| **per_page** | **int**| The number of items per page | [optional] [default to 10] |
+| **all** | **bool**| Whether to get all the alert logs | [optional] [default to false] |
+| **start_timestamp** | **int**| Timestamp to start search from | [optional] |
+| **end_timestamp** | **int**| Timestamp to end search at | [optional] |
+
+### Return type
+
+[**\AskNews\Model\PaginatedResponseAlertLog**](../Model/PaginatedResponseAlertLog.md)
 
 ### Authorization
 
