@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **cron** | **string** |  | [optional]
 **model** | **string** |  | [optional]
 **share_link** | **string** |  | [optional]
-**filter_params** | [**\AskNews\Model\FilterParams**](FilterParams.md) |  | [optional]
+**sources** | [**\AskNews\Model\SourcesInner[]**](SourcesInner.md) |  | [optional]
 **report** | [**\AskNews\Model\ReportRequest**](ReportRequest.md) |  | [optional]
 **triggers** | [**\AskNews\Model\TriggersInner[]**](TriggersInner.md) |  | [optional]
 **always_trigger** | **bool** |  | [optional]

@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **cron** | **string** |  |
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
-**filter_params** | **object** |  | [optional]
+**sources** | **object[]** |  |
 **report** | **object** |  | [optional]
 **triggers** | **object[]** |  |
 **always_trigger** | **bool** |  | [optional] [default to false]

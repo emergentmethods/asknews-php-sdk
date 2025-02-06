@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **cron** | **string** | The cron schedule for the alert. For example hourly is &#39;0 * * * *&#39;. See https://crontab.run/ for more examples |
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
-**filter_params** | [**\AskNews\Model\FilterParams**](FilterParams.md) |  | [optional]
+**sources** | [**\AskNews\Model\SourcesInner[]**](SourcesInner.md) |  |
 **report** | [**\AskNews\Model\ReportRequest**](ReportRequest.md) |  | [optional]
 **triggers** | [**\AskNews\Model\TriggersInner[]**](TriggersInner.md) |  |
 **always_trigger** | **bool** | Whether to always trigger the alert. Default is False. This skips the alert check and run triggers immediately | [optional] [default to false]
