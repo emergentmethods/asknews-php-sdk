@@ -21,6 +21,7 @@ class AskNewsSDK
     public Api\ForecastApi $forecast;
     public Api\GraphApi $graph;
     public Api\NewsApi $news;
+    public Api\NewslettersApi $newsletters;
     public Api\PingApi $ping;
     public Api\ProfileApi $profile;
     public Api\RedditApi $reddit;
@@ -43,6 +44,7 @@ class AskNewsSDK
         $this->forecast = new Api\ForecastApi(null, $_configuration);
         $this->graph = new Api\GraphApi(null, $_configuration);
         $this->news = new Api\NewsApi(null, $_configuration);
+        $this->newsletters = new Api\NewslettersApi(null, $_configuration);
         $this->ping = new Api\PingApi(null, $_configuration);
         $this->profile = new Api\ProfileApi(null, $_configuration);
         $this->reddit = new Api\RedditApi(null, $_configuration);

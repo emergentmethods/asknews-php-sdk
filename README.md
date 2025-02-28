@@ -98,6 +98,17 @@ Class | Method | HTTP request | Description
 *NewsApi* | [**getArticles**](docs/Api/NewsApi.md#getarticles) | **GET** /v1/news | Get multiple articles by UUID
 *NewsApi* | [**getSourcesReport**](docs/Api/NewsApi.md#getsourcesreport) | **GET** /v1/sources | Get the sources underlying AskNews
 *NewsApi* | [**searchNews**](docs/Api/NewsApi.md#searchnews) | **GET** /v1/news/search | Search for enriched real-time news context
+*NewslettersApi* | [**deleteNewsletter**](docs/Api/NewslettersApi.md#deletenewsletter) | **DELETE** /v1/chat/newsletters/{newsletter_id} | Delete a newsletter
+*NewslettersApi* | [**deleteNewsletterContact**](docs/Api/NewslettersApi.md#deletenewslettercontact) | **DELETE** /v1/chat/newsletters/{newsletter_id}/contacts/{contact_id} | Delete a newsletter contact
+*NewslettersApi* | [**getNewsletter**](docs/Api/NewslettersApi.md#getnewsletter) | **GET** /v1/chat/newsletters/{newsletter_id} | Get a newsletter
+*NewslettersApi* | [**getNewsletterContact**](docs/Api/NewslettersApi.md#getnewslettercontact) | **GET** /v1/chat/newsletters/{newsletter_id}/contacts/{contact_id} | Get a newsletter contact
+*NewslettersApi* | [**getNewsletterContacts**](docs/Api/NewslettersApi.md#getnewslettercontacts) | **GET** /v1/chat/newsletters/{newsletter_id}/contacts | Get newsletter contacts
+*NewslettersApi* | [**getNewsletters**](docs/Api/NewslettersApi.md#getnewsletters) | **GET** /v1/chat/newsletters | Get all created newsletters
+*NewslettersApi* | [**getPublicNewsletters**](docs/Api/NewslettersApi.md#getpublicnewsletters) | **GET** /v1/chat/newsletters/public | Get all public newsletters
+*NewslettersApi* | [**patchNewsletterContact**](docs/Api/NewslettersApi.md#patchnewslettercontact) | **PATCH** /v1/chat/newsletters/{newsletter_id}/contacts/{contact_id} | Update a newsletter contact
+*NewslettersApi* | [**postNewsletter**](docs/Api/NewslettersApi.md#postnewsletter) | **POST** /v1/chat/newsletters | Create a newsletter
+*NewslettersApi* | [**postNewsletterContacts**](docs/Api/NewslettersApi.md#postnewslettercontacts) | **POST** /v1/chat/newsletters/{newsletter_id}/contacts | Create a newsletter contact
+*NewslettersApi* | [**putNewsletter**](docs/Api/NewslettersApi.md#putnewsletter) | **PUT** /v1/chat/newsletters/{newsletter_id} | Update a newsletter
 *PingApi* | [**ping**](docs/Api/PingApi.md#ping) | **GET** / | Ping
 *ProfileApi* | [**getUserProfile**](docs/Api/ProfileApi.md#getuserprofile) | **GET** /v1/profiles/me | Get the current user&#39;s profile
 *RedditApi* | [**searchReddit**](docs/Api/RedditApi.md#searchreddit) | **GET** /v1/reddit/search | Search Reddit, summarize threads, and return analysis.
@@ -179,6 +190,7 @@ Class | Method | HTTP request | Description
 - [CreateChatCompletionResponseStreamChoice1](docs/Model/CreateChatCompletionResponseStreamChoice1.md)
 - [CreateChatCompletionResponseUsage](docs/Model/CreateChatCompletionResponseUsage.md)
 - [CreateChatCompletionResponseUsage1](docs/Model/CreateChatCompletionResponseUsage1.md)
+- [CreateNewsletterRequest](docs/Model/CreateNewsletterRequest.md)
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
 - [DomainUrl](docs/Model/DomainUrl.md)
 - [DomainUrl1](docs/Model/DomainUrl1.md)
@@ -201,6 +213,12 @@ Class | Method | HTTP request | Description
 - [KeyPerson](docs/Model/KeyPerson.md)
 - [ListModelResponse](docs/Model/ListModelResponse.md)
 - [ModelItem](docs/Model/ModelItem.md)
+- [NewsletterContactCreateResponse](docs/Model/NewsletterContactCreateResponse.md)
+- [NewsletterContactRequest](docs/Model/NewsletterContactRequest.md)
+- [NewsletterContactResponse](docs/Model/NewsletterContactResponse.md)
+- [NewsletterContactUpdateResponse](docs/Model/NewsletterContactUpdateResponse.md)
+- [NewsletterPublicResponse](docs/Model/NewsletterPublicResponse.md)
+- [NewsletterResponse](docs/Model/NewsletterResponse.md)
 - [Offset](docs/Model/Offset.md)
 - [Offset1](docs/Model/Offset1.md)
 - [Offset2](docs/Model/Offset2.md)
@@ -208,6 +226,8 @@ Class | Method | HTTP request | Description
 - [Offset4](docs/Model/Offset4.md)
 - [PaginatedResponseAlertLog](docs/Model/PaginatedResponseAlertLog.md)
 - [PaginatedResponseAlertResponse](docs/Model/PaginatedResponseAlertResponse.md)
+- [PaginatedResponseNewsletterPublicResponse](docs/Model/PaginatedResponseNewsletterPublicResponse.md)
+- [PaginatedResponseNewsletterResponse](docs/Model/PaginatedResponseNewsletterResponse.md)
 - [PingModel](docs/Model/PingModel.md)
 - [Profile](docs/Model/Profile.md)
 - [ProfileResponse](docs/Model/ProfileResponse.md)
@@ -216,9 +236,12 @@ Class | Method | HTTP request | Description
 - [RedditPerspective](docs/Model/RedditPerspective.md)
 - [RedditResponse](docs/Model/RedditResponse.md)
 - [RedditThread](docs/Model/RedditThread.md)
+- [ReplyTo](docs/Model/ReplyTo.md)
 - [ReportRequest](docs/Model/ReportRequest.md)
 - [ReportingVoice](docs/Model/ReportingVoice.md)
 - [ReportingVoice1](docs/Model/ReportingVoice1.md)
+- [ResendBroadcastAction](docs/Model/ResendBroadcastAction.md)
+- [ResendBroadcastParams](docs/Model/ResendBroadcastParams.md)
 - [SearchResponse](docs/Model/SearchResponse.md)
 - [SearchResponseDictItem](docs/Model/SearchResponseDictItem.md)
 - [Sentiment](docs/Model/Sentiment.md)
@@ -235,6 +258,7 @@ Class | Method | HTTP request | Description
 - [ThreadId](docs/Model/ThreadId.md)
 - [TriggersInner](docs/Model/TriggersInner.md)
 - [UpdateAlertRequest](docs/Model/UpdateAlertRequest.md)
+- [UpdateNewsletterRequest](docs/Model/UpdateNewsletterRequest.md)
 - [User](docs/Model/User.md)
 - [UserProfile](docs/Model/UserProfile.md)
 - [UserProfileSubscription](docs/Model/UserProfileSubscription.md)
