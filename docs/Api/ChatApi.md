@@ -4,10 +4,74 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
+| [**deepNews()**](ChatApi.md#deepNews) | **POST** /v1/chat/deepnews | Deep research into real-time news, archive news, and Google. |
 | [**getChatCompletions()**](ChatApi.md#getChatCompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant |
 | [**getHeadlineQuestions()**](ChatApi.md#getHeadlineQuestions) | **GET** /v1/chat/questions | Get example headline questions |
 | [**listChatModels()**](ChatApi.md#listChatModels) | **GET** /v1/openai/models | List available chat models |
 
+
+## `deepNews()`
+
+```php
+deepNews($create_deep_news_request): \AskNews\Model\CreateDeepNewsResponse1
+```
+
+Deep research into real-time news, archive news, and Google.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\ChatApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$create_deep_news_request = new \AskNews\Model\CreateDeepNewsRequest(); // \AskNews\Model\CreateDeepNewsRequest
+
+try {
+    $result = $apiInstance->deepNews($create_deep_news_request);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ChatApi->deepNews: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **create_deep_news_request** | [**\AskNews\Model\CreateDeepNewsRequest**](../Model/CreateDeepNewsRequest.md)|  | |
+
+### Return type
+
+[**\AskNews\Model\CreateDeepNewsResponse1**](../Model/CreateDeepNewsResponse1.md)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: `application/json`
+- **Accept**: `application/json`, `text/event-stream`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
 
 ## `getChatCompletions()`
 
