@@ -174,6 +174,8 @@ Class | Method | HTTP request | Description
 - [AsknewsApiErrorsAPIErrorModel](docs/Model/AsknewsApiErrorsAPIErrorModel.md)
 - [AsknewsApiSchemaV1CommonGraphRelationships](docs/Model/AsknewsApiSchemaV1CommonGraphRelationships.md)
 - [AsknewsApiSchemaV1StoriesGraphRelationships](docs/Model/AsknewsApiSchemaV1StoriesGraphRelationships.md)
+- [BadDomainUrl](docs/Model/BadDomainUrl.md)
+- [BadDomainUrl1](docs/Model/BadDomainUrl1.md)
 - [BlueskySource](docs/Model/BlueskySource.md)
 - [BlueskySourceParams](docs/Model/BlueskySourceParams.md)
 - [BodyBuildGraph](docs/Model/BodyBuildGraph.md)

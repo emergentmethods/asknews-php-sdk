@@ -216,7 +216,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -261,6 +261,7 @@ $doc_end_delimiter = '</doc>'; // string | Document end delimiter for string ret
 $provocative = 'all'; // string | Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary.
 $reporting_voice = new \AskNews\Model\ReportingVoice(); // ReportingVoice | Type of reporting voice to filer by.
 $domain_url = new \AskNews\Model\DomainUrl(); // DomainUrl | filter by domain url of interest. This can be a single domain or a list of domains. For example, 'npr.org' or ['nature.com', 'npr.org']
+$bad_domain_url = new \AskNews\Model\BadDomainUrl(); // BadDomainUrl | blacklist of domains that must be excluded from resultsThis can be a single domain url or a list of domain urls.
 $page_rank = 56; // int | Maximum allowed page rank for returned articles.
 $diversify_sources = false; // bool | Ensure that the return set of articles are selected from diverse sources. This adds latency to the search, but attempts to balance the representation of sources by country and source origins. In summary, a net is cast around your search, then the diversity of sources is analyzed, and your final result matches the large net diversity distribution. This means that your search accuracy is reduced, but you gain more diverse perspectives.
 $strategy = 'default'; // string | Strategy to use for searching. 'latest news' automatically setsmethod='nl', historical=False, and looks within the past 24 hours. 'news knowledge' automatically sets method='kw', historical=True, and looks within the past 60 days. 'news knowledge' will increase latency due to the  larger search space in the archive. Use 'default' if you want to control  start_timestamp, end_timestamp, historical, and method.
@@ -279,7 +280,7 @@ $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 $premium = false; // bool | Include premium sources.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -306,6 +307,7 @@ try {
 | **provocative** | **string**| Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary. | [optional] [default to &#39;all&#39;] |
 | **reporting_voice** | [**ReportingVoice**](../Model/.md)| Type of reporting voice to filer by. | [optional] |
 | **domain_url** | [**DomainUrl**](../Model/.md)| filter by domain url of interest. This can be a single domain or a list of domains. For example, &#39;npr.org&#39; or [&#39;nature.com&#39;, &#39;npr.org&#39;] | [optional] |
+| **bad_domain_url** | [**BadDomainUrl**](../Model/.md)| blacklist of domains that must be excluded from resultsThis can be a single domain url or a list of domain urls. | [optional] |
 | **page_rank** | **int**| Maximum allowed page rank for returned articles. | [optional] |
 | **diversify_sources** | **bool**| Ensure that the return set of articles are selected from diverse sources. This adds latency to the search, but attempts to balance the representation of sources by country and source origins. In summary, a net is cast around your search, then the diversity of sources is analyzed, and your final result matches the large net diversity distribution. This means that your search accuracy is reduced, but you gain more diverse perspectives. | [optional] [default to false] |
 | **strategy** | **string**| Strategy to use for searching. &#39;latest news&#39; automatically setsmethod&#x3D;&#39;nl&#39;, historical&#x3D;False, and looks within the past 24 hours. &#39;news knowledge&#39; automatically sets method&#x3D;&#39;kw&#39;, historical&#x3D;True, and looks within the past 60 days. &#39;news knowledge&#39; will increase latency due to the  larger search space in the archive. Use &#39;default&#39; if you want to control  start_timestamp, end_timestamp, historical, and method. | [optional] [default to &#39;default&#39;] |
