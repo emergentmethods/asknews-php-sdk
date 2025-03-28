@@ -21,5 +21,6 @@ Name | Type | Description | Notes
 **resend_api_key** | **string** |  |
 **public** | **bool** |  | [optional] [default to true]
 **active** | **bool** |  | [optional] [default to true]
+**expires_at** | **\DateTime** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
