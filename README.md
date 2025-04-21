@@ -209,6 +209,7 @@ Class | Method | HTTP request | Description
 - [CreateDeepNewsResponseStreamChunkChoice](docs/Model/CreateDeepNewsResponseStreamChunkChoice.md)
 - [CreateDeepNewsResponseStreamChunkChoice1](docs/Model/CreateDeepNewsResponseStreamChunkChoice1.md)
 - [CreateDeepNewsResponseStreamSource](docs/Model/CreateDeepNewsResponseStreamSource.md)
+- [CreateDeepNewsResponseStreamSourcesGraphSource](docs/Model/CreateDeepNewsResponseStreamSourcesGraphSource.md)
 - [CreateDeepNewsResponseStreamSourcesNewsSource](docs/Model/CreateDeepNewsResponseStreamSourcesNewsSource.md)
 - [CreateDeepNewsResponseStreamSourcesWebSource](docs/Model/CreateDeepNewsResponseStreamSourcesWebSource.md)
 - [CreateDeepNewsResponseUsage](docs/Model/CreateDeepNewsResponseUsage.md)
