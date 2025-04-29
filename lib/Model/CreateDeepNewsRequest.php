@@ -78,7 +78,10 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'search_depth' => 'int',
         'max_depth' => 'int',
         'sources' => '\AskNews\Model\Sources1',
-        'return_sources' => 'bool'
+        'return_sources' => 'bool',
+        'include_coordinates' => 'bool',
+        'include_entities' => 'bool',
+        'include_graphs' => 'bool'
     ];
 
     /**
@@ -110,7 +113,10 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'search_depth' => null,
         'max_depth' => null,
         'sources' => null,
-        'return_sources' => null
+        'return_sources' => null,
+        'include_coordinates' => null,
+        'include_entities' => null,
+        'include_graphs' => null
     ];
 
     /**
@@ -140,7 +146,10 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'search_depth' => false,
         'max_depth' => false,
         'sources' => false,
-        'return_sources' => false
+        'return_sources' => false,
+        'include_coordinates' => false,
+        'include_entities' => false,
+        'include_graphs' => false
     ];
 
     /**
@@ -250,7 +259,10 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'search_depth' => 'search_depth',
         'max_depth' => 'max_depth',
         'sources' => 'sources',
-        'return_sources' => 'return_sources'
+        'return_sources' => 'return_sources',
+        'include_coordinates' => 'include_coordinates',
+        'include_entities' => 'include_entities',
+        'include_graphs' => 'include_graphs'
     ];
 
     /**
@@ -280,7 +292,10 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'search_depth' => 'setSearchDepth',
         'max_depth' => 'setMaxDepth',
         'sources' => 'setSources',
-        'return_sources' => 'setReturnSources'
+        'return_sources' => 'setReturnSources',
+        'include_coordinates' => 'setIncludeCoordinates',
+        'include_entities' => 'setIncludeEntities',
+        'include_graphs' => 'setIncludeGraphs'
     ];
 
     /**
@@ -310,7 +325,10 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         'search_depth' => 'getSearchDepth',
         'max_depth' => 'getMaxDepth',
         'sources' => 'getSources',
-        'return_sources' => 'getReturnSources'
+        'return_sources' => 'getReturnSources',
+        'include_coordinates' => 'getIncludeCoordinates',
+        'include_entities' => 'getIncludeEntities',
+        'include_graphs' => 'getIncludeGraphs'
     ];
 
     /**
@@ -409,6 +427,9 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
         $this->setIfExists('max_depth', $data ?? [], 4);
         $this->setIfExists('sources', $data ?? [], null);
         $this->setIfExists('return_sources', $data ?? [], true);
+        $this->setIfExists('include_coordinates', $data ?? [], false);
+        $this->setIfExists('include_entities', $data ?? [], true);
+        $this->setIfExists('include_graphs', $data ?? [], false);
     }
 
     /**
@@ -1093,6 +1114,87 @@ class CreateDeepNewsRequest implements ModelInterface, ArrayAccess, \JsonSeriali
             throw new \InvalidArgumentException('non-nullable return_sources cannot be null');
         }
         $this->container['return_sources'] = $return_sources;
+
+        return $this;
+    }
+
+    /**
+     * Gets include_coordinates
+     *
+     * @return bool|null
+     */
+    public function getIncludeCoordinates()
+    {
+        return $this->container['include_coordinates'];
+    }
+
+    /**
+     * Sets include_coordinates
+     *
+     * @param bool|null $include_coordinates include_coordinates
+     *
+     * @return self
+     */
+    public function setIncludeCoordinates($include_coordinates)
+    {
+        if (is_null($include_coordinates)) {
+            throw new \InvalidArgumentException('non-nullable include_coordinates cannot be null');
+        }
+        $this->container['include_coordinates'] = $include_coordinates;
+
+        return $this;
+    }
+
+    /**
+     * Gets include_entities
+     *
+     * @return bool|null
+     */
+    public function getIncludeEntities()
+    {
+        return $this->container['include_entities'];
+    }
+
+    /**
+     * Sets include_entities
+     *
+     * @param bool|null $include_entities include_entities
+     *
+     * @return self
+     */
+    public function setIncludeEntities($include_entities)
+    {
+        if (is_null($include_entities)) {
+            throw new \InvalidArgumentException('non-nullable include_entities cannot be null');
+        }
+        $this->container['include_entities'] = $include_entities;
+
+        return $this;
+    }
+
+    /**
+     * Gets include_graphs
+     *
+     * @return bool|null
+     */
+    public function getIncludeGraphs()
+    {
+        return $this->container['include_graphs'];
+    }
+
+    /**
+     * Sets include_graphs
+     *
+     * @param bool|null $include_graphs include_graphs
+     *
+     * @return self
+     */
+    public function setIncludeGraphs($include_graphs)
+    {
+        if (is_null($include_graphs)) {
+            throw new \InvalidArgumentException('non-nullable include_graphs cannot be null');
+        }
+        $this->container['include_graphs'] = $include_graphs;
 
         return $this;
     }

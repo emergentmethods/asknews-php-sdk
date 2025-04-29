@@ -293,6 +293,9 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
     public const MODEL_GPT_4O = 'gpt-4o';
     public const MODEL_O3_MINI = 'o3-mini';
     public const MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT = 'meta-llama/Meta-Llama-3.3-70B-Instruct';
+    public const MODEL_GPT_4_1_2025_04_14 = 'gpt-4.1-2025-04-14';
+    public const MODEL_GPT_4_1_NANO_2025_04_14 = 'gpt-4.1-nano-2025-04-14';
+    public const MODEL_GPT_4_1_MINI_2025_04_14 = 'gpt-4.1-mini-2025-04-14';
 
     /**
      * Gets allowable values of the enum
@@ -307,6 +310,9 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
             self::MODEL_GPT_4O,
             self::MODEL_O3_MINI,
             self::MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT,
+            self::MODEL_GPT_4_1_2025_04_14,
+            self::MODEL_GPT_4_1_NANO_2025_04_14,
+            self::MODEL_GPT_4_1_MINI_2025_04_14,
         ];
     }
 

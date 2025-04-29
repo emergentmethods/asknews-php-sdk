@@ -26,5 +26,8 @@ Name | Type | Description | Notes
 **max_depth** | **int** |  | [optional] [default to 4]
 **sources** | [**\AskNews\Model\Sources1**](Sources1.md) |  | [optional]
 **return_sources** | **bool** |  | [optional] [default to true]
+**include_coordinates** | **bool** |  | [optional] [default to false]
+**include_entities** | **bool** |  | [optional] [default to true]
+**include_graphs** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

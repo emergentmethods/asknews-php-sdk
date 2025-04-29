@@ -276,4 +276,31 @@ class CreateDeepNewsRequestTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "include_coordinates"
+     */
+    public function testPropertyIncludeCoordinates()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "include_entities"
+     */
+    public function testPropertyIncludeEntities()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "include_graphs"
+     */
+    public function testPropertyIncludeGraphs()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }
