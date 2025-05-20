@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **cron** | **string** |  |
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
-**sources** | **object[]** |  |
-**report** | **object** |  | [optional]
-**triggers** | **object[]** |  |
+**sources** | **array<string,mixed>[]** |  |
+**report** | **array<string,mixed>** |  | [optional]
+**triggers** | **array<string,mixed>[]** |  |
 **always_trigger** | **bool** |  | [optional] [default to false]
 **repeat** | **bool** |  | [optional] [default to true]
 **active** | **bool** |  | [optional] [default to true]

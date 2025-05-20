@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **languages** | **array<string,int>** |  |
 **keywords** | **string[]** |  |
 **intra_cluster_statistics** | [**\AskNews\Model\IntraClusterStatistics**](IntraClusterStatistics.md) |  |
-**silhouette_score** | **object** |  |
+**silhouette_score** | **array<string,mixed>** |  |
 **article_ids** | **string[]** |  |
 **countries** | **array<string,int>** |  |
 **markdown_citations** | **string[]** |  |

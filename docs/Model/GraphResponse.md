@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**full_graph** | **object** |  |
-**disambiguations** | **object[]** |  |
+**full_graph** | **array<string,mixed>** |  |
+**disambiguations** | **array<string,mixed>[]** |  |
 **articles** | [**\AskNews\Model\SearchResponseDictItem[]**](SearchResponseDictItem.md) |  | [optional]
 **query** | **string** |  | [optional]
-**docs_enhanced** | **object[]** |  | [optional]
+**docs_enhanced** | **array<string,mixed>[]** |  | [optional]
 **triples_url** | **string** |  | [optional]
 **visualize_url** | **string** |  | [optional]
 

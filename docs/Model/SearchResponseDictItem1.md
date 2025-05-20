@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **language** | **string** |  |
 **pub_date** | **\DateTime** |  |
 **summary** | **string** |  |
+**key_points** | **string[]** |  | [optional]
 **title** | **string** |  |
 **sentiment** | **int** |  |
 **centroid_distance** | **float** |  |

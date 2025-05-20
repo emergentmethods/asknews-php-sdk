@@ -24,6 +24,6 @@ Name | Type | Description | Notes
 **reconciled_information** | **string** |  |
 **candidate_models** | **string[]** |  |
 **unique_information** | **string** |  |
-**expert_information** | **object** |  | [optional]
+**expert_information** | **array<string,mixed>** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
