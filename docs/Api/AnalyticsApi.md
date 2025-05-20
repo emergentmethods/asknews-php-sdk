@@ -41,8 +41,8 @@ $apiInstance = new AskNews\Api\AnalyticsApi(
 );
 $asset = 'asset_example'; // string | The asset name to query for sentiment.
 $metric = 'news_positive'; // string | The metric to obtain. Weighted metrics account for page-rank of original source. Higher page rank sources are weighted more heavily.
-$date_from = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The start date in ISO format
-$date_to = new \DateTime("2013-10-20T19:20:30+01:00"); // \DateTime | The end date in ISO format
+$date_from = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The start date in ISO format
+$date_to = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | The end date in ISO format
 
 try {
     $result = $apiInstance->getAssetSentiment($asset, $metric, $date_from, $date_to);

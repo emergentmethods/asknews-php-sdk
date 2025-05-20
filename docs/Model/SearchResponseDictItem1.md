@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **provocative** | **string** |  | [optional] [default to 'unknown']
 **reporting_voice** | [**\AskNews\Model\ReportingVoice1**](ReportingVoice1.md) |  | [optional]
 **entity_relation_graph** | [**\AskNews\Model\GraphRelationships**](GraphRelationships.md) |  | [optional]
-**geo_coordinates** | **object** |  | [optional]
+**geo_coordinates** | [**array<string,\AskNews\Model\GeoCoordinate1>**](GeoCoordinate1.md) |  | [optional]
 **continent** | **string** |  | [optional]
 **as_string_key** | **string** |  |
 

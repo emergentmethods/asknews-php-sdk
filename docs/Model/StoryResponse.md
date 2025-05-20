@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **n_articles** | **int[]** |  |
 **n_updates** | **int** |  |
 **people** | **string[]** |  |
-**reddit_sentiment** | [**\AskNews\Model\ClusterProbabilities[]**](ClusterProbabilities.md) |  |
+**reddit_sentiment** | [**\AskNews\Model\ClusterProbabilitiesValue[]**](ClusterProbabilitiesValue.md) |  |
 **reddit_sentiment_timestamps** | **int[]** |  |
 **rolling_sentiment** | **float[]** |  |
 **sentiment** | **int[]** |  |
