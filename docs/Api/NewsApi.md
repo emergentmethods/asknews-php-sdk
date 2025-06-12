@@ -216,7 +216,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -274,13 +274,14 @@ $entity_guarantee_op = 'OR'; // string | Operator to use for entity guarantee li
 $return_graphs = false; // bool | Return graphs for the articles. Only available to Analyst tier and above.
 $return_geo = false; // bool | Return GeoCoordinates associated with locations discussed  inside the articles. Only available to Analyst tier and above.
 $languages = array('languages_example'); // string[] | Languages to filter by. This is the two-letter 'set 1' of the ISO 639-1 standard. For example: English is 'en'.
-$countries = array('countries_example'); // string[] | Countries to filter by, this is the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
+$countries = array('countries_example'); // string[] | Source countries to filter by (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
+$countries_blacklist = array('countries_blacklist_example'); // string[] | Source countries to blacklist from search (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to reverse_entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
 $continents = array('continents_example'); // string[] | Continents to filter by.
 $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 $premium = false; // bool | Include premium sources.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $continents, $sentiment, $premium);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -320,7 +321,8 @@ try {
 | **return_graphs** | **bool**| Return graphs for the articles. Only available to Analyst tier and above. | [optional] [default to false] |
 | **return_geo** | **bool**| Return GeoCoordinates associated with locations discussed  inside the articles. Only available to Analyst tier and above. | [optional] [default to false] |
 | **languages** | [**string[]**](../Model/string.md)| Languages to filter by. This is the two-letter &#39;set 1&#39; of the ISO 639-1 standard. For example: English is &#39;en&#39;. | [optional] |
-| **countries** | [**string[]**](../Model/string.md)| Countries to filter by, this is the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |
+| **countries** | [**string[]**](../Model/string.md)| Source countries to filter by (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |
+| **countries_blacklist** | [**string[]**](../Model/string.md)| Source countries to blacklist from search (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to reverse_entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |
 | **continents** | [**string[]**](../Model/string.md)| Continents to filter by. | [optional] |
 | **sentiment** | **string**| Sentiment to filter articles by. | [optional] |
 | **premium** | **bool**| Include premium sources. | [optional] [default to false] |

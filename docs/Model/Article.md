@@ -29,5 +29,7 @@ Name | Type | Description | Notes
 **entity_relation_graph** | [**\AskNews\Model\AsknewsApiSchemaV1CommonGraphRelationships**](AsknewsApiSchemaV1CommonGraphRelationships.md) |  | [optional]
 **geo_coordinates** | [**array<string,\AskNews\Model\GeoCoordinate>**](GeoCoordinate.md) |  | [optional]
 **continent** | **string** |  | [optional]
+**assets** | [**\AskNews\Model\Assets**](Assets.md) |  | [optional]
+**social_embeds** | **string[]** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

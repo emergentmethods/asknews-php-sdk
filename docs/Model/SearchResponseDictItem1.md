@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **entity_relation_graph** | [**\AskNews\Model\GraphRelationships**](GraphRelationships.md) |  | [optional]
 **geo_coordinates** | [**array<string,\AskNews\Model\GeoCoordinate1>**](GeoCoordinate1.md) |  | [optional]
 **continent** | **string** |  | [optional]
+**assets** | [**\AskNews\Model\Assets1**](Assets1.md) |  | [optional]
+**social_embeds** | **string[]** |  | [optional]
 **as_string_key** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)
