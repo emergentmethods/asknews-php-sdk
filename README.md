@@ -76,7 +76,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.asknews.app*
+All URIs are relative to *http://localhost:8099*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -110,6 +110,7 @@ Class | Method | HTTP request | Description
 *NewslettersApi* | [**postNewsletter**](docs/Api/NewslettersApi.md#postnewsletter) | **POST** /v1/chat/newsletters | Create a newsletter
 *NewslettersApi* | [**postNewsletterContacts**](docs/Api/NewslettersApi.md#postnewslettercontacts) | **POST** /v1/chat/newsletters/{newsletter_id}/contacts | Create a newsletter contact
 *NewslettersApi* | [**putNewsletter**](docs/Api/NewslettersApi.md#putnewsletter) | **PUT** /v1/chat/newsletters/{newsletter_id} | Update a newsletter
+*NewslettersApi* | [**unsubscribeNewsletter**](docs/Api/NewslettersApi.md#unsubscribenewsletter) | **POST** /v1/chat/newsletters/{newsletter_id}/unsubscribe | Unsubscribe from a newsletter
 *PingApi* | [**ping**](docs/Api/PingApi.md#ping) | **GET** / | Ping
 *ProfileApi* | [**getUserProfile**](docs/Api/ProfileApi.md#getuserprofile) | **GET** /v1/profiles/me | Get the current user&#39;s profile
 *RedditApi* | [**searchReddit**](docs/Api/RedditApi.md#searchreddit) | **GET** /v1/reddit/search | Search Reddit, summarize threads, and return analysis.

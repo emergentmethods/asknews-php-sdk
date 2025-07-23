@@ -1,6 +1,6 @@
 # AskNews\AlertsApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to http://localhost:8099, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -145,7 +145,7 @@ void (empty response body)
 ## `getAlert()`
 
 ```php
-getAlert($alert_id): \AskNews\Model\AlertResponse
+getAlert($alert_id, $user_id): \AskNews\Model\AlertResponse
 ```
 
 Get an alert
@@ -175,9 +175,10 @@ $apiInstance = new AskNews\Api\AlertsApi(
     $config
 );
 $alert_id = 'alert_id_example'; // string | The alert ID
+$user_id = 'user_id_example'; // string | The ID of the user to get logs for
 
 try {
-    $result = $apiInstance->getAlert($alert_id);
+    $result = $apiInstance->getAlert($alert_id, $user_id);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->getAlert: ', $e->getMessage(), PHP_EOL;
@@ -189,6 +190,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **alert_id** | **string**| The alert ID | |
+| **user_id** | **string**| The ID of the user to get logs for | [optional] |
 
 ### Return type
 

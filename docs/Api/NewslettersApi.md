@@ -1,6 +1,6 @@
 # AskNews\NewslettersApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to http://localhost:8099, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -15,6 +15,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**postNewsletter()**](NewslettersApi.md#postNewsletter) | **POST** /v1/chat/newsletters | Create a newsletter |
 | [**postNewsletterContacts()**](NewslettersApi.md#postNewsletterContacts) | **POST** /v1/chat/newsletters/{newsletter_id}/contacts | Create a newsletter contact |
 | [**putNewsletter()**](NewslettersApi.md#putNewsletter) | **PUT** /v1/chat/newsletters/{newsletter_id} | Update a newsletter |
+| [**unsubscribeNewsletter()**](NewslettersApi.md#unsubscribeNewsletter) | **POST** /v1/chat/newsletters/{newsletter_id}/unsubscribe | Unsubscribe from a newsletter |
 
 
 ## `deleteNewsletter()`
@@ -737,6 +738,70 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `unsubscribeNewsletter()`
+
+```php
+unsubscribeNewsletter($newsletter_id)
+```
+
+Unsubscribe from a newsletter
+
+Unsubscribe from a newsletter.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\NewslettersApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$newsletter_id = 'newsletter_id_example'; // string | The newsletter ID
+
+try {
+    $apiInstance->unsubscribeNewsletter($newsletter_id);
+} catch (Exception $e) {
+    echo 'Exception when calling NewslettersApi->unsubscribeNewsletter: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **newsletter_id** | **string**| The newsletter ID | |
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
