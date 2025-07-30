@@ -1,6 +1,6 @@
 # AskNews\WebsearchApi
 
-All URIs are relative to http://localhost:8099, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -10,7 +10,7 @@ All URIs are relative to http://localhost:8099, except if the operation defines 
 ## `liveWebSearch()`
 
 ```php
-liveWebSearch($queries, $lookback): \AskNews\Model\WebSearchResponse
+liveWebSearch($queries, $lookback, $domains): \AskNews\Model\WebSearchResponse
 ```
 
 Run a live websearch.
@@ -41,9 +41,10 @@ $apiInstance = new AskNews\Api\WebsearchApi(
 );
 $queries = array('queries_example'); // string[] | A list of queries to be live searched, analyzed, distilled, and structured.
 $lookback = 56; // int | Number of days back to allow the websearch to look. Defaults to All time
+$domains = array('domains_example'); // string[] | A list of domains to search.
 
 try {
-    $result = $apiInstance->liveWebSearch($queries, $lookback);
+    $result = $apiInstance->liveWebSearch($queries, $lookback, $domains);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebsearchApi->liveWebSearch: ', $e->getMessage(), PHP_EOL;
@@ -56,6 +57,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queries** | [**string[]**](../Model/string.md)| A list of queries to be live searched, analyzed, distilled, and structured. | |
 | **lookback** | **int**| Number of days back to allow the websearch to look. Defaults to All time | [optional] |
+| **domains** | [**string[]**](../Model/string.md)| A list of domains to search. | [optional] |
 
 ### Return type
 

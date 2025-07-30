@@ -76,7 +76,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *http://localhost:8099*
+All URIs are relative to *https://api.asknews.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
