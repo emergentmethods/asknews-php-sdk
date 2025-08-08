@@ -1,6 +1,6 @@
 <?php
 /**
- * WebSearchResponseTest
+ * WebSourceParamsTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * WebSearchResponseTest Class Doc Comment
+ * WebSourceParamsTest Class Doc Comment
  *
  * @category    Class
- * @description WebSearchResponse
+ * @description WebSourceParams
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class WebSearchResponseTest extends TestCase
+class WebSourceParamsTest extends TestCase
 {
 
     /**
@@ -71,36 +71,45 @@ class WebSearchResponseTest extends TestCase
     }
 
     /**
-     * Test "WebSearchResponse"
+     * Test "WebSourceParams"
      */
-    public function testWebSearchResponse()
+    public function testWebSourceParams()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "as_string"
+     * Test attribute "queries"
      */
-    public function testPropertyAsString()
+    public function testPropertyQueries()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "as_dicts"
+     * Test attribute "domains"
      */
-    public function testPropertyAsDicts()
+    public function testPropertyDomains()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "offset"
+     * Test attribute "strict"
      */
-    public function testPropertyOffset()
+    public function testPropertyStrict()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "lookback"
+     */
+    public function testPropertyLookback()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');

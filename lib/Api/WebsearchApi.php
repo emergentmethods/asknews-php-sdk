@@ -114,17 +114,19 @@ class WebsearchApi
      * Run a live websearch.
      *
      * @param  string[] $queries A list of queries to be live searched, analyzed, distilled, and structured. (required)
-     * @param  int $lookback Number of days back to allow the websearch to look. Defaults to All time (optional)
+     * @param  int $lookback Number of hours back to allow the websearch to look. Defaults to All time (optional)
      * @param  string[] $domains A list of domains to search. (optional)
+     * @param  bool $strict If true, the websearch will only return results that have a known publication date and are within the lookback period. (optional, default to false)
+     * @param  int $offset The number of results to offset for followup queries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['liveWebSearch'] to see the possible values for this operation
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return \AskNews\Model\WebSearchResponse|\AskNews\Model\HTTPValidationError
      */
-    public function liveWebSearch($queries, $lookback = null, $domains = null, string $contentType = self::contentTypes['liveWebSearch'][0])
+    public function liveWebSearch($queries, $lookback = null, $domains = null, $strict = false, $offset = null, string $contentType = self::contentTypes['liveWebSearch'][0])
     {
-        list($response) = $this->liveWebSearchWithHttpInfo($queries, $lookback, $domains, $contentType);
+        list($response) = $this->liveWebSearchWithHttpInfo($queries, $lookback, $domains, $strict, $offset, $contentType);
         return $response;
     }
 
@@ -134,17 +136,19 @@ class WebsearchApi
      * Run a live websearch.
      *
      * @param  string[] $queries A list of queries to be live searched, analyzed, distilled, and structured. (required)
-     * @param  int $lookback Number of days back to allow the websearch to look. Defaults to All time (optional)
+     * @param  int $lookback Number of hours back to allow the websearch to look. Defaults to All time (optional)
      * @param  string[] $domains A list of domains to search. (optional)
+     * @param  bool $strict If true, the websearch will only return results that have a known publication date and are within the lookback period. (optional, default to false)
+     * @param  int $offset The number of results to offset for followup queries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['liveWebSearch'] to see the possible values for this operation
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
      * @return array of \AskNews\Model\WebSearchResponse|\AskNews\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function liveWebSearchWithHttpInfo($queries, $lookback = null, $domains = null, string $contentType = self::contentTypes['liveWebSearch'][0])
+    public function liveWebSearchWithHttpInfo($queries, $lookback = null, $domains = null, $strict = false, $offset = null, string $contentType = self::contentTypes['liveWebSearch'][0])
     {
-        $request = $this->liveWebSearchRequest($queries, $lookback, $domains, $contentType);
+        $request = $this->liveWebSearchRequest($queries, $lookback, $domains, $strict, $offset, $contentType);
 
         try {
             $options = $this->createHttpClientOption();
@@ -295,16 +299,18 @@ class WebsearchApi
      * Run a live websearch.
      *
      * @param  string[] $queries A list of queries to be live searched, analyzed, distilled, and structured. (required)
-     * @param  int $lookback Number of days back to allow the websearch to look. Defaults to All time (optional)
+     * @param  int $lookback Number of hours back to allow the websearch to look. Defaults to All time (optional)
      * @param  string[] $domains A list of domains to search. (optional)
+     * @param  bool $strict If true, the websearch will only return results that have a known publication date and are within the lookback period. (optional, default to false)
+     * @param  int $offset The number of results to offset for followup queries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['liveWebSearch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function liveWebSearchAsync($queries, $lookback = null, $domains = null, string $contentType = self::contentTypes['liveWebSearch'][0])
+    public function liveWebSearchAsync($queries, $lookback = null, $domains = null, $strict = false, $offset = null, string $contentType = self::contentTypes['liveWebSearch'][0])
     {
-        return $this->liveWebSearchAsyncWithHttpInfo($queries, $lookback, $domains, $contentType)
+        return $this->liveWebSearchAsyncWithHttpInfo($queries, $lookback, $domains, $strict, $offset, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -318,17 +324,19 @@ class WebsearchApi
      * Run a live websearch.
      *
      * @param  string[] $queries A list of queries to be live searched, analyzed, distilled, and structured. (required)
-     * @param  int $lookback Number of days back to allow the websearch to look. Defaults to All time (optional)
+     * @param  int $lookback Number of hours back to allow the websearch to look. Defaults to All time (optional)
      * @param  string[] $domains A list of domains to search. (optional)
+     * @param  bool $strict If true, the websearch will only return results that have a known publication date and are within the lookback period. (optional, default to false)
+     * @param  int $offset The number of results to offset for followup queries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['liveWebSearch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function liveWebSearchAsyncWithHttpInfo($queries, $lookback = null, $domains = null, string $contentType = self::contentTypes['liveWebSearch'][0])
+    public function liveWebSearchAsyncWithHttpInfo($queries, $lookback = null, $domains = null, $strict = false, $offset = null, string $contentType = self::contentTypes['liveWebSearch'][0])
     {
         $returnType = '\AskNews\Model\WebSearchResponse';
-        $request = $this->liveWebSearchRequest($queries, $lookback, $domains, $contentType);
+        $request = $this->liveWebSearchRequest($queries, $lookback, $domains, $strict, $offset, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -370,14 +378,16 @@ class WebsearchApi
      * Create request for operation 'liveWebSearch'
      *
      * @param  string[] $queries A list of queries to be live searched, analyzed, distilled, and structured. (required)
-     * @param  int $lookback Number of days back to allow the websearch to look. Defaults to All time (optional)
+     * @param  int $lookback Number of hours back to allow the websearch to look. Defaults to All time (optional)
      * @param  string[] $domains A list of domains to search. (optional)
+     * @param  bool $strict If true, the websearch will only return results that have a known publication date and are within the lookback period. (optional, default to false)
+     * @param  int $offset The number of results to offset for followup queries. (optional)
      * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['liveWebSearch'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function liveWebSearchRequest($queries, $lookback = null, $domains = null, string $contentType = self::contentTypes['liveWebSearch'][0])
+    public function liveWebSearchRequest($queries, $lookback = null, $domains = null, $strict = false, $offset = null, string $contentType = self::contentTypes['liveWebSearch'][0])
     {
 
         // verify the required parameter 'queries' is set
@@ -386,6 +396,8 @@ class WebsearchApi
                 'Missing the required parameter $queries when calling liveWebSearch'
             );
         }
+
+
 
 
 
@@ -420,6 +432,24 @@ class WebsearchApi
             $domains,
             'domains', // param base name
             'array', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $strict,
+            'strict', // param base name
+            'boolean', // openApiType
+            'form', // style
+            true, // explode
+            false // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $offset,
+            'offset', // param base name
+            'integer', // openApiType
             'form', // style
             true, // explode
             false // required

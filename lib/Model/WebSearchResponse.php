@@ -58,7 +58,8 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPITypes = [
         'as_string' => 'string',
-        'as_dicts' => '\AskNews\Model\WebSearchResult[]'
+        'as_dicts' => '\AskNews\Model\WebSearchResult[]',
+        'offset' => 'int'
     ];
 
     /**
@@ -70,7 +71,8 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static $openAPIFormats = [
         'as_string' => null,
-        'as_dicts' => null
+        'as_dicts' => null,
+        'offset' => null
     ];
 
     /**
@@ -80,7 +82,8 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
       */
     protected static array $openAPINullables = [
         'as_string' => false,
-        'as_dicts' => false
+        'as_dicts' => false,
+        'offset' => true
     ];
 
     /**
@@ -170,7 +173,8 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $attributeMap = [
         'as_string' => 'as_string',
-        'as_dicts' => 'as_dicts'
+        'as_dicts' => 'as_dicts',
+        'offset' => 'offset'
     ];
 
     /**
@@ -180,7 +184,8 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $setters = [
         'as_string' => 'setAsString',
-        'as_dicts' => 'setAsDicts'
+        'as_dicts' => 'setAsDicts',
+        'offset' => 'setOffset'
     ];
 
     /**
@@ -190,7 +195,8 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
      */
     protected static $getters = [
         'as_string' => 'getAsString',
-        'as_dicts' => 'getAsDicts'
+        'as_dicts' => 'getAsDicts',
+        'offset' => 'getOffset'
     ];
 
     /**
@@ -252,6 +258,7 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     {
         $this->setIfExists('as_string', $data ?? [], null);
         $this->setIfExists('as_dicts', $data ?? [], null);
+        $this->setIfExists('offset', $data ?? [], null);
     }
 
     /**
@@ -352,6 +359,40 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
             throw new \InvalidArgumentException('non-nullable as_dicts cannot be null');
         }
         $this->container['as_dicts'] = $as_dicts;
+
+        return $this;
+    }
+
+    /**
+     * Gets offset
+     *
+     * @return int|null
+     */
+    public function getOffset()
+    {
+        return $this->container['offset'];
+    }
+
+    /**
+     * Sets offset
+     *
+     * @param int|null $offset offset
+     *
+     * @return self
+     */
+    public function setOffset($offset)
+    {
+        if (is_null($offset)) {
+            array_push($this->openAPINullablesSetToNull, 'offset');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('offset', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['offset'] = $offset;
 
         return $this;
     }

@@ -1,6 +1,6 @@
 <?php
 /**
- * SourcesInner
+ * WebSource
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * SourcesInner Class Doc Comment
+ * WebSource Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,16 +40,16 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebSource implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = 'identifier';
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Sources_inner';
+    protected static $openAPIModelName = 'WebSource';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -265,9 +265,6 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $this->setIfExists('identifier', $data ?? [], null);
         $this->setIfExists('params', $data ?? [], null);
-
-        // Initialize discriminator property with the model name.
-        $this->container['identifier'] = static::$openAPIModelName;
     }
 
     /**

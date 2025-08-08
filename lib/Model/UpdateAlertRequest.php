@@ -296,6 +296,8 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
 
     public const MODEL_META_LLAMA_META_LLAMA_3_1_8_B_INSTRUCT = 'meta-llama/Meta-Llama-3.1-8B-Instruct';
     public const MODEL_GPT_4O_MINI = 'gpt-4o-mini';
+    public const MODEL_GPT_5_MINI = 'gpt-5-mini';
+    public const MODEL_GPT_5_NANO = 'gpt-5-nano';
     public const MODEL_GPT_4O = 'gpt-4o';
     public const MODEL_O3_MINI = 'o3-mini';
     public const MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT = 'meta-llama/Meta-Llama-3.3-70B-Instruct';
@@ -313,6 +315,8 @@ class UpdateAlertRequest implements ModelInterface, ArrayAccess, \JsonSerializab
         return [
             self::MODEL_META_LLAMA_META_LLAMA_3_1_8_B_INSTRUCT,
             self::MODEL_GPT_4O_MINI,
+            self::MODEL_GPT_5_MINI,
+            self::MODEL_GPT_5_NANO,
             self::MODEL_GPT_4O,
             self::MODEL_O3_MINI,
             self::MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT,

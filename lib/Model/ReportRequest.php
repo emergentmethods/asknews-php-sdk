@@ -240,14 +240,15 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
+    public const MODEL_GPT_5 = 'gpt-5';
     public const MODEL_GPT_4O = 'gpt-4o';
-    public const MODEL_GPT_4O_MINI = 'gpt-4o-mini';
+    public const MODEL_GPT_4_1_2025_04_14 = 'gpt-4.1-2025-04-14';
+    public const MODEL_GPT_4_1_MINI_2025_04_14GPT_4O_MINI = 'gpt-4.1-mini-2025-04-14gpt-4o-mini';
     public const MODEL_O3_MINI = 'o3-mini';
     public const MODEL_CLAUDE_3_5_SONNET_LATEST = 'claude-3-5-sonnet-latest';
+    public const MODEL_CLAUDE_SONNET_4_20250514 = 'claude-sonnet-4-20250514';
     public const MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT = 'meta-llama/Meta-Llama-3.1-405B-Instruct';
     public const MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT = 'meta-llama/Meta-Llama-3.3-70B-Instruct';
-    public const MODEL_GPT_4_1_2025_04_14 = 'gpt-4.1-2025-04-14';
-    public const MODEL_GPT_4_1_MINI_2025_04_14 = 'gpt-4.1-mini-2025-04-14';
 
     /**
      * Gets allowable values of the enum
@@ -257,14 +258,15 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getModelAllowableValues()
     {
         return [
+            self::MODEL_GPT_5,
             self::MODEL_GPT_4O,
-            self::MODEL_GPT_4O_MINI,
+            self::MODEL_GPT_4_1_2025_04_14,
+            self::MODEL_GPT_4_1_MINI_2025_04_14GPT_4O_MINI,
             self::MODEL_O3_MINI,
             self::MODEL_CLAUDE_3_5_SONNET_LATEST,
+            self::MODEL_CLAUDE_SONNET_4_20250514,
             self::MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT,
             self::MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT,
-            self::MODEL_GPT_4_1_2025_04_14,
-            self::MODEL_GPT_4_1_MINI_2025_04_14,
         ];
     }
 

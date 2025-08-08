@@ -10,7 +10,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 ## `liveWebSearch()`
 
 ```php
-liveWebSearch($queries, $lookback, $domains): \AskNews\Model\WebSearchResponse
+liveWebSearch($queries, $lookback, $domains, $strict, $offset): \AskNews\Model\WebSearchResponse
 ```
 
 Run a live websearch.
@@ -40,11 +40,13 @@ $apiInstance = new AskNews\Api\WebsearchApi(
     $config
 );
 $queries = array('queries_example'); // string[] | A list of queries to be live searched, analyzed, distilled, and structured.
-$lookback = 56; // int | Number of days back to allow the websearch to look. Defaults to All time
+$lookback = 56; // int | Number of hours back to allow the websearch to look. Defaults to All time
 $domains = array('domains_example'); // string[] | A list of domains to search.
+$strict = false; // bool | If true, the websearch will only return results that have a known publication date and are within the lookback period.
+$offset = 56; // int | The number of results to offset for followup queries.
 
 try {
-    $result = $apiInstance->liveWebSearch($queries, $lookback, $domains);
+    $result = $apiInstance->liveWebSearch($queries, $lookback, $domains, $strict, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebsearchApi->liveWebSearch: ', $e->getMessage(), PHP_EOL;
@@ -56,8 +58,10 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **queries** | [**string[]**](../Model/string.md)| A list of queries to be live searched, analyzed, distilled, and structured. | |
-| **lookback** | **int**| Number of days back to allow the websearch to look. Defaults to All time | [optional] |
+| **lookback** | **int**| Number of hours back to allow the websearch to look. Defaults to All time | [optional] |
 | **domains** | [**string[]**](../Model/string.md)| A list of domains to search. | [optional] |
+| **strict** | **bool**| If true, the websearch will only return results that have a known publication date and are within the lookback period. | [optional] [default to false] |
+| **offset** | **int**| The number of results to offset for followup queries. | [optional] |
 
 ### Return type
 

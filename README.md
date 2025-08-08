@@ -307,6 +307,8 @@ Class | Method | HTTP request | Description
 - [WebSearchResponse](docs/Model/WebSearchResponse.md)
 - [WebSearchResult](docs/Model/WebSearchResult.md)
 - [WebSearchResult1](docs/Model/WebSearchResult1.md)
+- [WebSource](docs/Model/WebSource.md)
+- [WebSourceParams](docs/Model/WebSourceParams.md)
 - [WebhookAction](docs/Model/WebhookAction.md)
 - [WebhookParams](docs/Model/WebhookParams.md)
 

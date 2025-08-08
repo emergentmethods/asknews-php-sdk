@@ -1,6 +1,6 @@
 <?php
 /**
- * SourcesInner
+ * WebSourceParams
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * SourcesInner Class Doc Comment
+ * WebSourceParams Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,16 +40,16 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
+class WebSourceParams implements ModelInterface, ArrayAccess, \JsonSerializable
 {
-    public const DISCRIMINATOR = 'identifier';
+    public const DISCRIMINATOR = null;
 
     /**
       * The original name of the model.
       *
       * @var string
       */
-    protected static $openAPIModelName = 'Sources_inner';
+    protected static $openAPIModelName = 'WebSourceParams';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var string[]
       */
     protected static $openAPITypes = [
-        'identifier' => 'string',
-        'params' => '\AskNews\Model\WebSourceParams'
+        'queries' => 'string[]',
+        'domains' => 'string[]',
+        'strict' => 'bool',
+        'lookback' => 'int'
     ];
 
     /**
@@ -69,8 +71,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'identifier' => null,
-        'params' => null
+        'queries' => null,
+        'domains' => null,
+        'strict' => null,
+        'lookback' => null
     ];
 
     /**
@@ -79,8 +83,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'identifier' => false,
-        'params' => false
+        'queries' => false,
+        'domains' => true,
+        'strict' => false,
+        'lookback' => false
     ];
 
     /**
@@ -169,8 +175,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $attributeMap = [
-        'identifier' => 'identifier',
-        'params' => 'params'
+        'queries' => 'queries',
+        'domains' => 'domains',
+        'strict' => 'strict',
+        'lookback' => 'lookback'
     ];
 
     /**
@@ -179,8 +187,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $setters = [
-        'identifier' => 'setIdentifier',
-        'params' => 'setParams'
+        'queries' => 'setQueries',
+        'domains' => 'setDomains',
+        'strict' => 'setStrict',
+        'lookback' => 'setLookback'
     ];
 
     /**
@@ -189,8 +199,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
      * @var string[]
      */
     protected static $getters = [
-        'identifier' => 'getIdentifier',
-        'params' => 'getParams'
+        'queries' => 'getQueries',
+        'domains' => 'getDomains',
+        'strict' => 'getStrict',
+        'lookback' => 'getLookback'
     ];
 
     /**
@@ -234,19 +246,6 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const IDENTIFIER_WEB = 'web';
-
-    /**
-     * Gets allowable values of the enum
-     *
-     * @return string[]
-     */
-    public function getIdentifierAllowableValues()
-    {
-        return [
-            self::IDENTIFIER_WEB,
-        ];
-    }
 
     /**
      * Associative array for storing property values
@@ -263,11 +262,10 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('identifier', $data ?? [], null);
-        $this->setIfExists('params', $data ?? [], null);
-
-        // Initialize discriminator property with the model name.
-        $this->container['identifier'] = static::$openAPIModelName;
+        $this->setIfExists('queries', $data ?? [], null);
+        $this->setIfExists('domains', $data ?? [], null);
+        $this->setIfExists('strict', $data ?? [], true);
+        $this->setIfExists('lookback', $data ?? [], 24);
     }
 
     /**
@@ -297,20 +295,8 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
     {
         $invalidProperties = [];
 
-        if ($this->container['identifier'] === null) {
-            $invalidProperties[] = "'identifier' can't be null";
-        }
-        $allowedValues = $this->getIdentifierAllowableValues();
-        if (!is_null($this->container['identifier']) && !in_array($this->container['identifier'], $allowedValues, true)) {
-            $invalidProperties[] = sprintf(
-                "invalid value '%s' for 'identifier', must be one of '%s'",
-                $this->container['identifier'],
-                implode("', '", $allowedValues)
-            );
-        }
-
-        if ($this->container['params'] === null) {
-            $invalidProperties[] = "'params' can't be null";
+        if ($this->container['queries'] === null) {
+            $invalidProperties[] = "'queries' can't be null";
         }
         return $invalidProperties;
     }
@@ -328,65 +314,116 @@ class SourcesInner implements ModelInterface, ArrayAccess, \JsonSerializable
 
 
     /**
-     * Gets identifier
+     * Gets queries
      *
-     * @return string
+     * @return string[]
      */
-    public function getIdentifier()
+    public function getQueries()
     {
-        return $this->container['identifier'];
+        return $this->container['queries'];
     }
 
     /**
-     * Sets identifier
+     * Sets queries
      *
-     * @param string $identifier identifier
+     * @param string[] $queries The queries to use for the web search. This is a list of strings.
      *
      * @return self
      */
-    public function setIdentifier($identifier)
+    public function setQueries($queries)
     {
-        if (is_null($identifier)) {
-            throw new \InvalidArgumentException('non-nullable identifier cannot be null');
+        if (is_null($queries)) {
+            throw new \InvalidArgumentException('non-nullable queries cannot be null');
         }
-        $allowedValues = $this->getIdentifierAllowableValues();
-        if (!in_array($identifier, $allowedValues, true)) {
-            throw new \InvalidArgumentException(
-                sprintf(
-                    "Invalid value '%s' for 'identifier', must be one of '%s'",
-                    $identifier,
-                    implode("', '", $allowedValues)
-                )
-            );
-        }
-        $this->container['identifier'] = $identifier;
+        $this->container['queries'] = $queries;
 
         return $this;
     }
 
     /**
-     * Gets params
+     * Gets domains
      *
-     * @return \AskNews\Model\WebSourceParams
+     * @return string[]|null
      */
-    public function getParams()
+    public function getDomains()
     {
-        return $this->container['params'];
+        return $this->container['domains'];
     }
 
     /**
-     * Sets params
+     * Sets domains
      *
-     * @param \AskNews\Model\WebSourceParams $params params
+     * @param string[]|null $domains domains
      *
      * @return self
      */
-    public function setParams($params)
+    public function setDomains($domains)
     {
-        if (is_null($params)) {
-            throw new \InvalidArgumentException('non-nullable params cannot be null');
+        if (is_null($domains)) {
+            array_push($this->openAPINullablesSetToNull, 'domains');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('domains', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
         }
-        $this->container['params'] = $params;
+        $this->container['domains'] = $domains;
+
+        return $this;
+    }
+
+    /**
+     * Gets strict
+     *
+     * @return bool|null
+     */
+    public function getStrict()
+    {
+        return $this->container['strict'];
+    }
+
+    /**
+     * Sets strict
+     *
+     * @param bool|null $strict If true, the web search will only return results that have a known publication date and are within the lookback period.
+     *
+     * @return self
+     */
+    public function setStrict($strict)
+    {
+        if (is_null($strict)) {
+            throw new \InvalidArgumentException('non-nullable strict cannot be null');
+        }
+        $this->container['strict'] = $strict;
+
+        return $this;
+    }
+
+    /**
+     * Gets lookback
+     *
+     * @return int|null
+     */
+    public function getLookback()
+    {
+        return $this->container['lookback'];
+    }
+
+    /**
+     * Sets lookback
+     *
+     * @param int|null $lookback The number of hours back to accept for the web search. If not provided, no lookback will be applied.
+     *
+     * @return self
+     */
+    public function setLookback($lookback)
+    {
+        if (is_null($lookback)) {
+            throw new \InvalidArgumentException('non-nullable lookback cannot be null');
+        }
+        $this->container['lookback'] = $lookback;
 
         return $this;
     }
