@@ -59,7 +59,7 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     protected static $openAPITypes = [
         'as_string' => 'string',
         'as_dicts' => '\AskNews\Model\WebSearchResult[]',
-        'offset' => 'int'
+        'offset' => '\AskNews\Model\Offset3'
     ];
 
     /**
@@ -366,7 +366,7 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Gets offset
      *
-     * @return int|null
+     * @return \AskNews\Model\Offset3|null
      */
     public function getOffset()
     {
@@ -376,7 +376,7 @@ class WebSearchResponse implements ModelInterface, ArrayAccess, \JsonSerializabl
     /**
      * Sets offset
      *
-     * @param int|null $offset offset
+     * @param \AskNews\Model\Offset3|null $offset offset
      *
      * @return self
      */

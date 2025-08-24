@@ -117,7 +117,7 @@ class ForecastApi
      * @param  int $lookback The number of days to look back for the forecast. (optional, default to 14)
      * @param  int $articles_to_use The total number of relevant articles to be extracted from the news archive and used for the forecast. (optional, default to 15)
      * @param  string $method Method to use for the context search Currently only &#39;kw&#39; is supported. (optional, default to 'kw')
-     * @param  string $model The model to use for the forecast. (optional, default to 'claude-3-5-sonnet-latest')
+     * @param  string $model The model to use for the forecast. (optional, default to 'gpt-4.1-2025-04-14')
      * @param  string $cutoff_date The cutoff date for the forecast. String format is &#39;YYYY-MM-DD-HH:MM&#39;. This is useful  for backtesting forecasts. (optional)
      * @param  bool $use_reddit Whether to use Reddit data for the forecast.enterprise customers only. (optional, default to false)
      * @param  string $additional_context Additional context to use for the forecast. (optional)
@@ -129,7 +129,7 @@ class ForecastApi
      * @throws \InvalidArgumentException
      * @return \AskNews\Model\ForecastResponse|\AskNews\Model\HTTPValidationError
      */
-    public function getForecast($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'claude-3-5-sonnet-latest', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
+    public function getForecast($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'gpt-4.1-2025-04-14', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
     {
         list($response) = $this->getForecastWithHttpInfo($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search, $expert, $contentType);
         return $response;
@@ -144,7 +144,7 @@ class ForecastApi
      * @param  int $lookback The number of days to look back for the forecast. (optional, default to 14)
      * @param  int $articles_to_use The total number of relevant articles to be extracted from the news archive and used for the forecast. (optional, default to 15)
      * @param  string $method Method to use for the context search Currently only &#39;kw&#39; is supported. (optional, default to 'kw')
-     * @param  string $model The model to use for the forecast. (optional, default to 'claude-3-5-sonnet-latest')
+     * @param  string $model The model to use for the forecast. (optional, default to 'gpt-4.1-2025-04-14')
      * @param  string $cutoff_date The cutoff date for the forecast. String format is &#39;YYYY-MM-DD-HH:MM&#39;. This is useful  for backtesting forecasts. (optional)
      * @param  bool $use_reddit Whether to use Reddit data for the forecast.enterprise customers only. (optional, default to false)
      * @param  string $additional_context Additional context to use for the forecast. (optional)
@@ -156,7 +156,7 @@ class ForecastApi
      * @throws \InvalidArgumentException
      * @return array of \AskNews\Model\ForecastResponse|\AskNews\Model\HTTPValidationError, HTTP status code, HTTP response headers (array of strings)
      */
-    public function getForecastWithHttpInfo($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'claude-3-5-sonnet-latest', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
+    public function getForecastWithHttpInfo($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'gpt-4.1-2025-04-14', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
     {
         $request = $this->getForecastRequest($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search, $expert, $contentType);
 
@@ -312,7 +312,7 @@ class ForecastApi
      * @param  int $lookback The number of days to look back for the forecast. (optional, default to 14)
      * @param  int $articles_to_use The total number of relevant articles to be extracted from the news archive and used for the forecast. (optional, default to 15)
      * @param  string $method Method to use for the context search Currently only &#39;kw&#39; is supported. (optional, default to 'kw')
-     * @param  string $model The model to use for the forecast. (optional, default to 'claude-3-5-sonnet-latest')
+     * @param  string $model The model to use for the forecast. (optional, default to 'gpt-4.1-2025-04-14')
      * @param  string $cutoff_date The cutoff date for the forecast. String format is &#39;YYYY-MM-DD-HH:MM&#39;. This is useful  for backtesting forecasts. (optional)
      * @param  bool $use_reddit Whether to use Reddit data for the forecast.enterprise customers only. (optional, default to false)
      * @param  string $additional_context Additional context to use for the forecast. (optional)
@@ -323,7 +323,7 @@ class ForecastApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getForecastAsync($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'claude-3-5-sonnet-latest', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
+    public function getForecastAsync($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'gpt-4.1-2025-04-14', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
     {
         return $this->getForecastAsyncWithHttpInfo($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search, $expert, $contentType)
             ->then(
@@ -342,7 +342,7 @@ class ForecastApi
      * @param  int $lookback The number of days to look back for the forecast. (optional, default to 14)
      * @param  int $articles_to_use The total number of relevant articles to be extracted from the news archive and used for the forecast. (optional, default to 15)
      * @param  string $method Method to use for the context search Currently only &#39;kw&#39; is supported. (optional, default to 'kw')
-     * @param  string $model The model to use for the forecast. (optional, default to 'claude-3-5-sonnet-latest')
+     * @param  string $model The model to use for the forecast. (optional, default to 'gpt-4.1-2025-04-14')
      * @param  string $cutoff_date The cutoff date for the forecast. String format is &#39;YYYY-MM-DD-HH:MM&#39;. This is useful  for backtesting forecasts. (optional)
      * @param  bool $use_reddit Whether to use Reddit data for the forecast.enterprise customers only. (optional, default to false)
      * @param  string $additional_context Additional context to use for the forecast. (optional)
@@ -353,7 +353,7 @@ class ForecastApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getForecastAsyncWithHttpInfo($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'claude-3-5-sonnet-latest', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
+    public function getForecastAsyncWithHttpInfo($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'gpt-4.1-2025-04-14', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
     {
         $returnType = '\AskNews\Model\ForecastResponse';
         $request = $this->getForecastRequest($query, $lookback, $articles_to_use, $method, $model, $cutoff_date, $use_reddit, $additional_context, $web_search, $expert, $contentType);
@@ -401,7 +401,7 @@ class ForecastApi
      * @param  int $lookback The number of days to look back for the forecast. (optional, default to 14)
      * @param  int $articles_to_use The total number of relevant articles to be extracted from the news archive and used for the forecast. (optional, default to 15)
      * @param  string $method Method to use for the context search Currently only &#39;kw&#39; is supported. (optional, default to 'kw')
-     * @param  string $model The model to use for the forecast. (optional, default to 'claude-3-5-sonnet-latest')
+     * @param  string $model The model to use for the forecast. (optional, default to 'gpt-4.1-2025-04-14')
      * @param  string $cutoff_date The cutoff date for the forecast. String format is &#39;YYYY-MM-DD-HH:MM&#39;. This is useful  for backtesting forecasts. (optional)
      * @param  bool $use_reddit Whether to use Reddit data for the forecast.enterprise customers only. (optional, default to false)
      * @param  string $additional_context Additional context to use for the forecast. (optional)
@@ -412,7 +412,7 @@ class ForecastApi
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getForecastRequest($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'claude-3-5-sonnet-latest', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
+    public function getForecastRequest($query, $lookback = 14, $articles_to_use = 15, $method = 'kw', $model = 'gpt-4.1-2025-04-14', $cutoff_date = null, $use_reddit = false, $additional_context = null, $web_search = false, $expert = 'general', string $contentType = self::contentTypes['getForecast'][0])
     {
 
         // verify the required parameter 'query' is set

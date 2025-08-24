@@ -114,13 +114,4 @@ class ProfileTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
-
-    /**
-     * Test attribute "impersonates_plan"
-     */
-    public function testPropertyImpersonatesPlan()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
 }

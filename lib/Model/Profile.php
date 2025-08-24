@@ -60,8 +60,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity_type' => 'string',
         'id' => 'string',
         'subscription' => '\AskNews\Model\UserProfileSubscription',
-        'suspended' => 'bool',
-        'impersonates_plan' => 'string'
+        'suspended' => 'bool'
     ];
 
     /**
@@ -75,8 +74,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity_type' => null,
         'id' => null,
         'subscription' => null,
-        'suspended' => null,
-        'impersonates_plan' => null
+        'suspended' => null
     ];
 
     /**
@@ -88,8 +86,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity_type' => false,
         'id' => false,
         'subscription' => false,
-        'suspended' => false,
-        'impersonates_plan' => false
+        'suspended' => false
     ];
 
     /**
@@ -181,8 +178,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity_type' => 'identity_type',
         'id' => 'id',
         'subscription' => 'subscription',
-        'suspended' => 'suspended',
-        'impersonates_plan' => 'impersonates_plan'
+        'suspended' => 'suspended'
     ];
 
     /**
@@ -194,8 +190,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity_type' => 'setIdentityType',
         'id' => 'setId',
         'subscription' => 'setSubscription',
-        'suspended' => 'setSuspended',
-        'impersonates_plan' => 'setImpersonatesPlan'
+        'suspended' => 'setSuspended'
     ];
 
     /**
@@ -207,8 +202,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         'identity_type' => 'getIdentityType',
         'id' => 'getId',
         'subscription' => 'getSubscription',
-        'suspended' => 'getSuspended',
-        'impersonates_plan' => 'getImpersonatesPlan'
+        'suspended' => 'getSuspended'
     ];
 
     /**
@@ -252,7 +246,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         return self::$openAPIModelName;
     }
 
-    public const IDENTITY_TYPE_SERVICE_ACCOUNT = 'service_account';
+    public const IDENTITY_TYPE_USER = 'user';
 
     /**
      * Gets allowable values of the enum
@@ -262,7 +256,7 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
     public function getIdentityTypeAllowableValues()
     {
         return [
-            self::IDENTITY_TYPE_SERVICE_ACCOUNT,
+            self::IDENTITY_TYPE_USER,
         ];
     }
 
@@ -281,11 +275,10 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('identity_type', $data ?? [], 'service_account');
+        $this->setIfExists('identity_type', $data ?? [], 'user');
         $this->setIfExists('id', $data ?? [], null);
         $this->setIfExists('subscription', $data ?? [], null);
         $this->setIfExists('suspended', $data ?? [], false);
-        $this->setIfExists('impersonates_plan', $data ?? [], null);
 
         // Initialize discriminator property with the model name.
         $this->container['identity_type'] = static::$openAPIModelName;
@@ -332,9 +325,6 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
         }
         if ($this->container['subscription'] === null) {
             $invalidProperties[] = "'subscription' can't be null";
-        }
-        if ($this->container['impersonates_plan'] === null) {
-            $invalidProperties[] = "'impersonates_plan' can't be null";
         }
         return $invalidProperties;
     }
@@ -465,33 +455,6 @@ class Profile implements ModelInterface, ArrayAccess, \JsonSerializable
             throw new \InvalidArgumentException('non-nullable suspended cannot be null');
         }
         $this->container['suspended'] = $suspended;
-
-        return $this;
-    }
-
-    /**
-     * Gets impersonates_plan
-     *
-     * @return string
-     */
-    public function getImpersonatesPlan()
-    {
-        return $this->container['impersonates_plan'];
-    }
-
-    /**
-     * Sets impersonates_plan
-     *
-     * @param string $impersonates_plan impersonates_plan
-     *
-     * @return self
-     */
-    public function setImpersonatesPlan($impersonates_plan)
-    {
-        if (is_null($impersonates_plan)) {
-            throw new \InvalidArgumentException('non-nullable impersonates_plan cannot be null');
-        }
-        $this->container['impersonates_plan'] = $impersonates_plan;
 
         return $this;
     }

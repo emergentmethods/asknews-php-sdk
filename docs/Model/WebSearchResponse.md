@@ -6,6 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **as_string** | **string** |  |
 **as_dicts** | [**\AskNews\Model\WebSearchResult[]**](WebSearchResult.md) |  |
-**offset** | **int** |  | [optional]
+**offset** | [**\AskNews\Model\Offset3**](Offset3.md) |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

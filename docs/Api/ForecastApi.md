@@ -43,7 +43,7 @@ $query = 'query_example'; // string | The requested forecast.
 $lookback = 14; // int | The number of days to look back for the forecast.
 $articles_to_use = 15; // int | The total number of relevant articles to be extracted from the news archive and used for the forecast.
 $method = 'kw'; // string | Method to use for the context search Currently only 'kw' is supported.
-$model = 'claude-3-5-sonnet-latest'; // string | The model to use for the forecast.
+$model = 'gpt-4.1-2025-04-14'; // string | The model to use for the forecast.
 $cutoff_date = 'cutoff_date_example'; // string | The cutoff date for the forecast. String format is 'YYYY-MM-DD-HH:MM'. This is useful  for backtesting forecasts.
 $use_reddit = false; // bool | Whether to use Reddit data for the forecast.enterprise customers only.
 $additional_context = 'additional_context_example'; // string | Additional context to use for the forecast.
@@ -66,7 +66,7 @@ try {
 | **lookback** | **int**| The number of days to look back for the forecast. | [optional] [default to 14] |
 | **articles_to_use** | **int**| The total number of relevant articles to be extracted from the news archive and used for the forecast. | [optional] [default to 15] |
 | **method** | **string**| Method to use for the context search Currently only &#39;kw&#39; is supported. | [optional] [default to &#39;kw&#39;] |
-| **model** | **string**| The model to use for the forecast. | [optional] [default to &#39;claude-3-5-sonnet-latest&#39;] |
+| **model** | **string**| The model to use for the forecast. | [optional] [default to &#39;gpt-4.1-2025-04-14&#39;] |
 | **cutoff_date** | **string**| The cutoff date for the forecast. String format is &#39;YYYY-MM-DD-HH:MM&#39;. This is useful  for backtesting forecasts. | [optional] |
 | **use_reddit** | **bool**| Whether to use Reddit data for the forecast.enterprise customers only. | [optional] [default to false] |
 | **additional_context** | **string**| Additional context to use for the forecast. | [optional] |
