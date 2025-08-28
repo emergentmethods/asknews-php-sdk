@@ -84,6 +84,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         'continent' => 'string',
         'assets' => '\AskNews\Model\Assets1',
         'social_embeds' => 'string[]',
+        'bias' => 'string',
         'as_string_key' => 'string'
     ];
 
@@ -122,6 +123,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         'continent' => null,
         'assets' => null,
         'social_embeds' => null,
+        'bias' => null,
         'as_string_key' => null
     ];
 
@@ -158,6 +160,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         'continent' => true,
         'assets' => true,
         'social_embeds' => true,
+        'bias' => true,
         'as_string_key' => false
     ];
 
@@ -274,6 +277,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         'continent' => 'continent',
         'assets' => 'assets',
         'social_embeds' => 'social_embeds',
+        'bias' => 'bias',
         'as_string_key' => 'as_string_key'
     ];
 
@@ -310,6 +314,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         'continent' => 'setContinent',
         'assets' => 'setAssets',
         'social_embeds' => 'setSocialEmbeds',
+        'bias' => 'setBias',
         'as_string_key' => 'setAsStringKey'
     ];
 
@@ -346,6 +351,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         'continent' => 'getContinent',
         'assets' => 'getAssets',
         'social_embeds' => 'getSocialEmbeds',
+        'bias' => 'getBias',
         'as_string_key' => 'getAsStringKey'
     ];
 
@@ -401,6 +407,25 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
     public const CONTINENT_NORTH_AMERICA = 'North America';
     public const CONTINENT_SOUTH_AMERICA = 'South America';
     public const CONTINENT_OCEANIA = 'Oceania';
+    public const BIAS_POLITICAL = 'Political';
+    public const BIAS_GENDER = 'Gender';
+    public const BIAS_CULTURAL = 'Cultural';
+    public const BIAS_AGE = 'Age';
+    public const BIAS_RELIGIOUS = 'Religious';
+    public const BIAS_STATEMENT = 'Statement';
+    public const BIAS_ILLOGICAL_CLAIMS = 'Illogical Claims';
+    public const BIAS_SLANT = 'Slant';
+    public const BIAS_SOURCE_SELECTION = 'Source Selection';
+    public const BIAS_OMISSION_OF_SOURCE_ATTRIBUTION = 'Omission of Source Attribution';
+    public const BIAS_SPIN = 'Spin';
+    public const BIAS_SENSATIONALISM = 'Sensationalism';
+    public const BIAS_NEGATIVITY = 'Negativity';
+    public const BIAS_SUBJECTIVE_ADJECTIVES = 'Subjective Adjectives';
+    public const BIAS_AD_HOMINEM = 'Ad Hominem';
+    public const BIAS_MIND_READING = 'Mind Reading';
+    public const BIAS_OPINION_AS_FACT = 'Opinion-as-Fact';
+    public const BIAS_NONE = 'None';
+    public const BIAS_UNKNOWN = 'Unknown';
 
     /**
      * Gets allowable values of the enum
@@ -432,6 +457,36 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
             self::CONTINENT_NORTH_AMERICA,
             self::CONTINENT_SOUTH_AMERICA,
             self::CONTINENT_OCEANIA,
+        ];
+    }
+
+    /**
+     * Gets allowable values of the enum
+     *
+     * @return string[]
+     */
+    public function getBiasAllowableValues()
+    {
+        return [
+            self::BIAS_POLITICAL,
+            self::BIAS_GENDER,
+            self::BIAS_CULTURAL,
+            self::BIAS_AGE,
+            self::BIAS_RELIGIOUS,
+            self::BIAS_STATEMENT,
+            self::BIAS_ILLOGICAL_CLAIMS,
+            self::BIAS_SLANT,
+            self::BIAS_SOURCE_SELECTION,
+            self::BIAS_OMISSION_OF_SOURCE_ATTRIBUTION,
+            self::BIAS_SPIN,
+            self::BIAS_SENSATIONALISM,
+            self::BIAS_NEGATIVITY,
+            self::BIAS_SUBJECTIVE_ADJECTIVES,
+            self::BIAS_AD_HOMINEM,
+            self::BIAS_MIND_READING,
+            self::BIAS_OPINION_AS_FACT,
+            self::BIAS_NONE,
+            self::BIAS_UNKNOWN,
         ];
     }
 
@@ -477,6 +532,7 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
         $this->setIfExists('continent', $data ?? [], null);
         $this->setIfExists('assets', $data ?? [], null);
         $this->setIfExists('social_embeds', $data ?? [], null);
+        $this->setIfExists('bias', $data ?? [], null);
         $this->setIfExists('as_string_key', $data ?? [], null);
     }
 
@@ -580,6 +636,15 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
             $invalidProperties[] = sprintf(
                 "invalid value '%s' for 'continent', must be one of '%s'",
                 $this->container['continent'],
+                implode("', '", $allowedValues)
+            );
+        }
+
+        $allowedValues = $this->getBiasAllowableValues();
+        if (!is_null($this->container['bias']) && !in_array($this->container['bias'], $allowedValues, true)) {
+            $invalidProperties[] = sprintf(
+                "invalid value '%s' for 'bias', must be one of '%s'",
+                $this->container['bias'],
                 implode("', '", $allowedValues)
             );
         }
@@ -1403,6 +1468,50 @@ class SearchResponseDictItem1 implements ModelInterface, ArrayAccess, \JsonSeria
             }
         }
         $this->container['social_embeds'] = $social_embeds;
+
+        return $this;
+    }
+
+    /**
+     * Gets bias
+     *
+     * @return string|null
+     */
+    public function getBias()
+    {
+        return $this->container['bias'];
+    }
+
+    /**
+     * Sets bias
+     *
+     * @param string|null $bias bias
+     *
+     * @return self
+     */
+    public function setBias($bias)
+    {
+        if (is_null($bias)) {
+            array_push($this->openAPINullablesSetToNull, 'bias');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('bias', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $allowedValues = $this->getBiasAllowableValues();
+        if (!is_null($bias) && !in_array($bias, $allowedValues, true)) {
+            throw new \InvalidArgumentException(
+                sprintf(
+                    "Invalid value '%s' for 'bias', must be one of '%s'",
+                    $bias,
+                    implode("', '", $allowedValues)
+                )
+            );
+        }
+        $this->container['bias'] = $bias;
 
         return $this;
     }

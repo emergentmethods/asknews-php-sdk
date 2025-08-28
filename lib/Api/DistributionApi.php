@@ -3478,8 +3478,8 @@ class DistributionApi
             );
         }
 
-        if ($limit !== null && $limit > 100) {
-            throw new \InvalidArgumentException('invalid value for "$limit" when calling DistributionApi.topNArticlesForDomain, must be smaller than or equal to 100.');
+        if ($limit !== null && $limit > 1000) {
+            throw new \InvalidArgumentException('invalid value for "$limit" when calling DistributionApi.topNArticlesForDomain, must be smaller than or equal to 1000.');
         }
         if ($limit !== null && $limit < 1) {
             throw new \InvalidArgumentException('invalid value for "$limit" when calling DistributionApi.topNArticlesForDomain, must be bigger than or equal to 1.');

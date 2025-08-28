@@ -323,6 +323,15 @@ class SearchResponseDictItem1Test extends TestCase
     }
 
     /**
+     * Test attribute "bias"
+     */
+    public function testPropertyBias()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test attribute "as_string_key"
      */
     public function testPropertyAsStringKey()

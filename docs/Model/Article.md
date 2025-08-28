@@ -31,5 +31,6 @@ Name | Type | Description | Notes
 **continent** | **string** |  | [optional]
 **assets** | [**\AskNews\Model\Assets**](Assets.md) |  | [optional]
 **social_embeds** | **string[]** |  | [optional]
+**bias** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

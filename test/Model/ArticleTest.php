@@ -321,4 +321,13 @@ class ArticleTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "bias"
+     */
+    public function testPropertyBias()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }
