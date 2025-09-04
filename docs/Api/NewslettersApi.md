@@ -36,6 +36,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+
 // Configure sdk credentials
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
@@ -71,7 +72,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -97,6 +98,7 @@ Delete a newsletter contact.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -137,7 +139,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -163,6 +165,7 @@ Get a newsletter.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -202,7 +205,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -228,6 +231,7 @@ Get a newsletter contact.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -269,7 +273,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -295,6 +299,7 @@ Get newsletter contacts.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -334,7 +339,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -360,6 +365,7 @@ Get all created newsletters.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -396,7 +402,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -422,6 +428,7 @@ Get all public newsletters.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -465,7 +472,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -491,6 +498,7 @@ Update a newsletter contact.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -534,7 +542,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -560,6 +568,7 @@ Create a newsletter.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -599,7 +608,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -625,6 +634,7 @@ Create a newsletter contact.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -666,7 +676,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -692,6 +702,7 @@ Update a newsletter.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -733,7 +744,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -759,6 +770,7 @@ Unsubscribe from a newsletter.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -797,7 +809,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 

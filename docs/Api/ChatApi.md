@@ -26,6 +26,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+
 // Configure sdk credentials
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
@@ -62,7 +63,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -88,6 +89,7 @@ Get the chat completions for a given user message. This endpoint follows the Ope
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -127,7 +129,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -153,6 +155,7 @@ Get the headline example questions related to the given queries.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -192,7 +195,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -218,6 +221,7 @@ List the available chat models.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -254,7 +258,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 

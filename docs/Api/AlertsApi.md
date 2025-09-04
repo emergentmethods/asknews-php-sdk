@@ -31,6 +31,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+
 // Configure sdk credentials
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
@@ -67,7 +68,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -93,6 +94,7 @@ Delete an alert.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -131,7 +133,7 @@ void (empty response body)
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -157,6 +159,7 @@ Get an alert.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -198,7 +201,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -224,6 +227,7 @@ Get alert logs.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -275,7 +279,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -301,6 +305,7 @@ Get all created alerts.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -344,7 +349,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -370,6 +375,7 @@ Get all alert logs.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -421,7 +427,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -447,6 +453,7 @@ Update an alert.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -488,7 +495,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 

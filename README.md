@@ -49,6 +49,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+
 // Configure sdk credentials
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
@@ -94,6 +95,7 @@ Class | Method | HTTP request | Description
 *ChatApi* | [**getHeadlineQuestions**](docs/Api/ChatApi.md#getheadlinequestions) | **GET** /v1/chat/questions | Get example headline questions
 *ChatApi* | [**listChatModels**](docs/Api/ChatApi.md#listchatmodels) | **GET** /v1/openai/models | List available chat models
 *DistributionApi* | [**createDomain**](docs/Api/DistributionApi.md#createdomain) | **POST** /v1/distribution/domains | Create a new domain
+*DistributionApi* | [**domainHitShare**](docs/Api/DistributionApi.md#domainhitshare) | **GET** /v1/distribution/stats/hit_share | Get the hit share for a list of domains in a time period
 *DistributionApi* | [**findDomains**](docs/Api/DistributionApi.md#finddomains) | **GET** /v1/distribution/domains | Find domains
 *DistributionApi* | [**getArticleHits**](docs/Api/DistributionApi.md#getarticlehits) | **GET** /v1/distribution/stats/count | Get article hits
 *DistributionApi* | [**getDomain**](docs/Api/DistributionApi.md#getdomain) | **GET** /v1/distribution/domains/{domain_idOrName} | Get a domain by ID or name
@@ -207,6 +209,10 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel79](docs/Model/AbcAPIErrorModel79.md)
 - [AbcAPIErrorModel8](docs/Model/AbcAPIErrorModel8.md)
 - [AbcAPIErrorModel80](docs/Model/AbcAPIErrorModel80.md)
+- [AbcAPIErrorModel81](docs/Model/AbcAPIErrorModel81.md)
+- [AbcAPIErrorModel82](docs/Model/AbcAPIErrorModel82.md)
+- [AbcAPIErrorModel83](docs/Model/AbcAPIErrorModel83.md)
+- [AbcAPIErrorModel84](docs/Model/AbcAPIErrorModel84.md)
 - [AbcAPIErrorModel9](docs/Model/AbcAPIErrorModel9.md)
 - [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
@@ -284,6 +290,8 @@ Class | Method | HTTP request | Description
 - [GraphRelationships](docs/Model/GraphRelationships.md)
 - [GraphResponse](docs/Model/GraphResponse.md)
 - [HTTPValidationError](docs/Model/HTTPValidationError.md)
+- [HitShareItem](docs/Model/HitShareItem.md)
+- [HitShareResponse](docs/Model/HitShareResponse.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
 - [KeyPerson](docs/Model/KeyPerson.md)
 - [ListModelResponse](docs/Model/ListModelResponse.md)
@@ -366,16 +374,8 @@ Class | Method | HTTP request | Description
 
 
 
-- **Type**: `OAuth`
-- **Flow**: `client_credentials`
-- **Authorization URL**: `https://auth.asknews.app/oauth2/auth`
-- **Scopes**: 
-    - **chat**: Chat related operations
-    - **news**: News related operations
-    - **analytics**: Analytics related operations
-    - **stories**: Stories related operations
-    - **profile**: Profile related operations
-    - **reddit**: Reddit related operations
+
+
 
 
 

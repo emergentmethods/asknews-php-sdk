@@ -5,6 +5,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
 | [**createDomain()**](DistributionApi.md#createDomain) | **POST** /v1/distribution/domains | Create a new domain |
+| [**domainHitShare()**](DistributionApi.md#domainHitShare) | **GET** /v1/distribution/stats/hit_share | Get the hit share for a list of domains in a time period |
 | [**findDomains()**](DistributionApi.md#findDomains) | **GET** /v1/distribution/domains | Find domains |
 | [**getArticleHits()**](DistributionApi.md#getArticleHits) | **GET** /v1/distribution/stats/count | Get article hits |
 | [**getDomain()**](DistributionApi.md#getDomain) | **GET** /v1/distribution/domains/{domain_idOrName} | Get a domain by ID or name |
@@ -29,6 +30,7 @@ Create a new domain.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -68,11 +70,83 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `domainHitShare()`
+
+```php
+domainHitShare($domain_names, $start_date, $end_date, $is_publisher): \AskNews\Model\HitShareResponse
+```
+
+Get the hit share for a list of domains in a time period
+
+Get the hit share for a list of domains in a time period.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\DistributionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$domain_names = array('domain_names_example'); // string[] | Domain names to filter by
+$start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
+$end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
+$is_publisher = true; // bool | Only calculate hit share for publisher domains
+
+try {
+    $result = $apiInstance->domainHitShare($domain_names, $start_date, $end_date, $is_publisher);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DistributionApi->domainHitShare: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_names** | [**string[]**](../Model/string.md)| Domain names to filter by | |
+| **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
+| **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
+| **is_publisher** | **bool**| Only calculate hit share for publisher domains | [optional] [default to true] |
+
+### Return type
+
+[**\AskNews\Model\HitShareResponse**](../Model/HitShareResponse.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
@@ -94,6 +168,7 @@ Find domains with optional filters.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -143,7 +218,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -169,6 +244,7 @@ Get the number of hits for articles in a specific domain.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -212,7 +288,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -238,6 +314,7 @@ Get a new domain.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -277,7 +354,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -303,6 +380,7 @@ Get the top N articles by hits.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -346,7 +424,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -372,6 +450,7 @@ Get the top N domain articles by hits.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -417,7 +496,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -443,6 +522,7 @@ Get the top N domains by hits.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -486,7 +566,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -512,6 +592,7 @@ Update an existing domain.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -553,7 +634,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 

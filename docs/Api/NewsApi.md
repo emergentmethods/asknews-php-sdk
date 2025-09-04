@@ -28,6 +28,7 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
+
 // Configure sdk credentials
 $config = new AskNews\Configuration([
   'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
@@ -64,7 +65,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -90,6 +91,7 @@ Get articles given a list of UUIDs.
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -129,7 +131,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -155,6 +157,7 @@ This endpoint is primarly used for transparency and monitoring the diversity of 
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -202,7 +205,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
@@ -228,6 +231,7 @@ Search for any news, up to the last 5 minutes or in our extensive historical arc
 ```php
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
+
 
 
 
@@ -333,7 +337,7 @@ try {
 
 ### Authorization
 
-[Bearer](../../README.md#Bearer), [Bearer](../../README.md#Bearer)
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
 
 ### HTTP request headers
 
