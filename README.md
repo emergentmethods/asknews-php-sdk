@@ -94,15 +94,16 @@ Class | Method | HTTP request | Description
 *ChatApi* | [**getChatCompletions**](docs/Api/ChatApi.md#getchatcompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant
 *ChatApi* | [**getHeadlineQuestions**](docs/Api/ChatApi.md#getheadlinequestions) | **GET** /v1/chat/questions | Get example headline questions
 *ChatApi* | [**listChatModels**](docs/Api/ChatApi.md#listchatmodels) | **GET** /v1/openai/models | List available chat models
-*DistributionApi* | [**createDomain**](docs/Api/DistributionApi.md#createdomain) | **POST** /v1/distribution/domains | Create a new domain
 *DistributionApi* | [**domainHitShare**](docs/Api/DistributionApi.md#domainhitshare) | **GET** /v1/distribution/stats/hit_share | Get the hit share for a list of domains in a time period
 *DistributionApi* | [**findDomains**](docs/Api/DistributionApi.md#finddomains) | **GET** /v1/distribution/domains | Find domains
 *DistributionApi* | [**getArticleHits**](docs/Api/DistributionApi.md#getarticlehits) | **GET** /v1/distribution/stats/count | Get article hits
-*DistributionApi* | [**getDomain**](docs/Api/DistributionApi.md#getdomain) | **GET** /v1/distribution/domains/{domain_idOrName} | Get a domain by ID or name
+*DistributionApi* | [**getDomain**](docs/Api/DistributionApi.md#getdomain) | **GET** /v1/distribution/domains/{name} | Get a domain by name
+*DistributionApi* | [**getDomainQueries**](docs/Api/DistributionApi.md#getdomainqueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles
+*DistributionApi* | [**getHitsForArticles**](docs/Api/DistributionApi.md#gethitsforarticles) | **GET** /v1/distribution/articles/article_hits | Get hits for articles
 *DistributionApi* | [**topNArticlesByHits**](docs/Api/DistributionApi.md#topnarticlesbyhits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits
 *DistributionApi* | [**topNArticlesForDomain**](docs/Api/DistributionApi.md#topnarticlesfordomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain
 *DistributionApi* | [**topNDomainsByHits**](docs/Api/DistributionApi.md#topndomainsbyhits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits
-*DistributionApi* | [**updateDomain**](docs/Api/DistributionApi.md#updatedomain) | **PUT** /v1/distribution/domains/{domain_id} | Update an existing domain
+*DistributionApi* | [**updateDomain**](docs/Api/DistributionApi.md#updatedomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
 *GraphApi* | [**buildGraph**](docs/Api/GraphApi.md#buildgraph) | **POST** /v1/news/graph | Build a custom mega-news-knowledge graph
 *NewsApi* | [**getArticle**](docs/Api/NewsApi.md#getarticle) | **GET** /v1/news/{article_id} | Get an article by its UUID
@@ -127,6 +128,7 @@ Class | Method | HTTP request | Description
 *StoriesApi* | [**getStories**](docs/Api/StoriesApi.md#getstories) | **GET** /v1/stories | Filter and search for top news narratives
 *StoriesApi* | [**getStory**](docs/Api/StoriesApi.md#getstory) | **GET** /v1/stories/{story_id} | Get a story containing updates
 *WebsearchApi* | [**liveWebSearch**](docs/Api/WebsearchApi.md#livewebsearch) | **GET** /v1/chat/websearch | Run a live websearch.
+*WikiApi* | [**searchWiki**](docs/Api/WikiApi.md#searchwiki) | **GET** /v1/wiki/search | Search for Wikipedia context with natural language
 
 ## Models
 
@@ -213,10 +215,21 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel82](docs/Model/AbcAPIErrorModel82.md)
 - [AbcAPIErrorModel83](docs/Model/AbcAPIErrorModel83.md)
 - [AbcAPIErrorModel84](docs/Model/AbcAPIErrorModel84.md)
+- [AbcAPIErrorModel85](docs/Model/AbcAPIErrorModel85.md)
+- [AbcAPIErrorModel86](docs/Model/AbcAPIErrorModel86.md)
+- [AbcAPIErrorModel87](docs/Model/AbcAPIErrorModel87.md)
+- [AbcAPIErrorModel88](docs/Model/AbcAPIErrorModel88.md)
+- [AbcAPIErrorModel89](docs/Model/AbcAPIErrorModel89.md)
 - [AbcAPIErrorModel9](docs/Model/AbcAPIErrorModel9.md)
+- [AbcAPIErrorModel90](docs/Model/AbcAPIErrorModel90.md)
+- [AbcAPIErrorModel91](docs/Model/AbcAPIErrorModel91.md)
+- [AbcAPIErrorModel92](docs/Model/AbcAPIErrorModel92.md)
 - [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
+- [ArticleHitItem](docs/Model/ArticleHitItem.md)
+- [ArticleHitsResponse](docs/Model/ArticleHitsResponse.md)
+- [ArticleIds](docs/Model/ArticleIds.md)
 - [AskNewsSource](docs/Model/AskNewsSource.md)
 - [AsknewsApiErrorsAPIErrorModel](docs/Model/AsknewsApiErrorsAPIErrorModel.md)
 - [AsknewsApiSchemaV1CommonGraphRelationships](docs/Model/AsknewsApiSchemaV1CommonGraphRelationships.md)
@@ -229,6 +242,7 @@ Class | Method | HTTP request | Description
 - [BlueskySourceParams](docs/Model/BlueskySourceParams.md)
 - [BodyBuildGraph](docs/Model/BodyBuildGraph.md)
 - [Choice](docs/Model/Choice.md)
+- [CirrusMetadata](docs/Model/CirrusMetadata.md)
 - [Classification](docs/Model/Classification.md)
 - [ClusterProbabilitiesValue](docs/Model/ClusterProbabilitiesValue.md)
 - [Continent](docs/Model/Continent.md)
@@ -264,11 +278,14 @@ Class | Method | HTTP request | Description
 - [CreateDeepNewsResponseStreamSourcesWebSource](docs/Model/CreateDeepNewsResponseStreamSourcesWebSource.md)
 - [CreateDeepNewsResponseUsage](docs/Model/CreateDeepNewsResponseUsage.md)
 - [CreateDeepNewsResponseUsage1](docs/Model/CreateDeepNewsResponseUsage1.md)
-- [CreateDomainRequest](docs/Model/CreateDomainRequest.md)
 - [CreateNewsletterRequest](docs/Model/CreateNewsletterRequest.md)
 - [DeepNewsResponseSources](docs/Model/DeepNewsResponseSources.md)
 - [DeepNewsResponseSources1](docs/Model/DeepNewsResponseSources1.md)
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
+- [DomainQueriesResponse](docs/Model/DomainQueriesResponse.md)
+- [DomainQueryArticleItem](docs/Model/DomainQueryArticleItem.md)
+- [DomainQueryClusterItem](docs/Model/DomainQueryClusterItem.md)
+- [DomainQueryItem](docs/Model/DomainQueryItem.md)
 - [DomainUrl](docs/Model/DomainUrl.md)
 - [DomainUrl1](docs/Model/DomainUrl1.md)
 - [EmailAction](docs/Model/EmailAction.md)
@@ -307,6 +324,8 @@ Class | Method | HTTP request | Description
 - [Offset2](docs/Model/Offset2.md)
 - [Offset3](docs/Model/Offset3.md)
 - [Offset4](docs/Model/Offset4.md)
+- [OrganizationProfile](docs/Model/OrganizationProfile.md)
+- [OrganizationProfileSubscription](docs/Model/OrganizationProfileSubscription.md)
 - [PaginatedResponseAlertLog](docs/Model/PaginatedResponseAlertLog.md)
 - [PaginatedResponseAlertResponse](docs/Model/PaginatedResponseAlertResponse.md)
 - [PaginatedResponseNewsletterPublicResponse](docs/Model/PaginatedResponseNewsletterPublicResponse.md)
@@ -356,6 +375,7 @@ Class | Method | HTTP request | Description
 - [UpdateNewsletterRequest](docs/Model/UpdateNewsletterRequest.md)
 - [User](docs/Model/User.md)
 - [UserProfile](docs/Model/UserProfile.md)
+- [UserProfileOrganization](docs/Model/UserProfileOrganization.md)
 - [UserProfileSubscription](docs/Model/UserProfileSubscription.md)
 - [ValidationError](docs/Model/ValidationError.md)
 - [ValidationErrorItem](docs/Model/ValidationErrorItem.md)
@@ -369,6 +389,8 @@ Class | Method | HTTP request | Description
 - [WebSourceParams](docs/Model/WebSourceParams.md)
 - [WebhookAction](docs/Model/WebhookAction.md)
 - [WebhookParams](docs/Model/WebhookParams.md)
+- [WikiResponseDictItem](docs/Model/WikiResponseDictItem.md)
+- [WikiSearchResponse](docs/Model/WikiSearchResponse.md)
 
 ## Authorization
 

@@ -4,9 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**identity_type** | **string** |  | [optional] [default to 'user']
+**identity_type** | **string** |  | [optional] [default to 'organization']
 **id** | **string** |  |
-**subscription** | [**\AskNews\Model\UserProfileSubscription**](UserProfileSubscription.md) |  |
+**subscription** | [**\AskNews\Model\OrganizationProfileSubscription**](OrganizationProfileSubscription.md) |  |
+**organization** | [**\AskNews\Model\UserProfileOrganization**](UserProfileOrganization.md) |  | [optional]
 **suspended** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

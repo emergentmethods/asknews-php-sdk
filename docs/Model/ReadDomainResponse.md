@@ -6,7 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **string** |  |
 **name** | **string** |  |
+**owner** | **string** |  | [optional]
 **is_tollbit** | **bool** |  | [optional] [default to false]
+**publisher** | **bool** |  | [optional] [default to false]
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  | [optional]
 

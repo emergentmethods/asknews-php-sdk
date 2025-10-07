@@ -4,82 +4,17 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**createDomain()**](DistributionApi.md#createDomain) | **POST** /v1/distribution/domains | Create a new domain |
 | [**domainHitShare()**](DistributionApi.md#domainHitShare) | **GET** /v1/distribution/stats/hit_share | Get the hit share for a list of domains in a time period |
 | [**findDomains()**](DistributionApi.md#findDomains) | **GET** /v1/distribution/domains | Find domains |
 | [**getArticleHits()**](DistributionApi.md#getArticleHits) | **GET** /v1/distribution/stats/count | Get article hits |
-| [**getDomain()**](DistributionApi.md#getDomain) | **GET** /v1/distribution/domains/{domain_idOrName} | Get a domain by ID or name |
+| [**getDomain()**](DistributionApi.md#getDomain) | **GET** /v1/distribution/domains/{name} | Get a domain by name |
+| [**getDomainQueries()**](DistributionApi.md#getDomainQueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles |
+| [**getHitsForArticles()**](DistributionApi.md#getHitsForArticles) | **GET** /v1/distribution/articles/article_hits | Get hits for articles |
 | [**topNArticlesByHits()**](DistributionApi.md#topNArticlesByHits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits |
 | [**topNArticlesForDomain()**](DistributionApi.md#topNArticlesForDomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain |
 | [**topNDomainsByHits()**](DistributionApi.md#topNDomainsByHits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits |
-| [**updateDomain()**](DistributionApi.md#updateDomain) | **PUT** /v1/distribution/domains/{domain_id} | Update an existing domain |
+| [**updateDomain()**](DistributionApi.md#updateDomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain |
 
-
-## `createDomain()`
-
-```php
-createDomain($create_domain_request): \AskNews\Model\ReadDomainResponse
-```
-
-Create a new domain
-
-Create a new domain.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
-
-
-$apiInstance = new AskNews\Api\DistributionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$create_domain_request = new \AskNews\Model\CreateDomainRequest(); // \AskNews\Model\CreateDomainRequest
-
-try {
-    $result = $apiInstance->createDomain($create_domain_request);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DistributionApi->createDomain: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **create_domain_request** | [**\AskNews\Model\CreateDomainRequest**](../Model/CreateDomainRequest.md)|  | |
-
-### Return type
-
-[**\AskNews\Model\ReadDomainResponse**](../Model/ReadDomainResponse.md)
-
-### Authorization
-
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
-
-### HTTP request headers
-
-- **Content-Type**: `application/json`
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
 
 ## `domainHitShare()`
 
@@ -156,7 +91,7 @@ try {
 ## `findDomains()`
 
 ```php
-findDomains($page, $per_page, $names, $include_ids, $exclude_ids, $is_tollbit): \AskNews\Model\PaginatedResponseReadDomainResponse
+findDomains($page, $per_page, $names, $is_tollbit, $publisher): \AskNews\Model\PaginatedResponseReadDomainResponse
 ```
 
 Find domains
@@ -189,12 +124,11 @@ $apiInstance = new AskNews\Api\DistributionApi(
 $page = 1; // int | Page number for pagination
 $per_page = 10; // int | Number of items per page
 $names = array('names_example'); // string[] | List of domain names to filter by
-$include_ids = array('include_ids_example'); // string[] | List of domain IDs to include in the response
-$exclude_ids = array('exclude_ids_example'); // string[] | List of domain IDs to exclude from the response
 $is_tollbit = True; // bool | Filter by tollbit status
+$publisher = True; // bool | Filter by publisher status
 
 try {
-    $result = $apiInstance->findDomains($page, $per_page, $names, $include_ids, $exclude_ids, $is_tollbit);
+    $result = $apiInstance->findDomains($page, $per_page, $names, $is_tollbit, $publisher);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->findDomains: ', $e->getMessage(), PHP_EOL;
@@ -208,9 +142,8 @@ try {
 | **page** | **int**| Page number for pagination | [optional] [default to 1] |
 | **per_page** | **int**| Number of items per page | [optional] [default to 10] |
 | **names** | [**string[]**](../Model/string.md)| List of domain names to filter by | [optional] |
-| **include_ids** | [**string[]**](../Model/string.md)| List of domain IDs to include in the response | [optional] |
-| **exclude_ids** | [**string[]**](../Model/string.md)| List of domain IDs to exclude from the response | [optional] |
 | **is_tollbit** | **bool**| Filter by tollbit status | [optional] |
+| **publisher** | **bool**| Filter by publisher status | [optional] |
 
 ### Return type
 
@@ -232,7 +165,7 @@ try {
 ## `getArticleHits()`
 
 ```php
-getArticleHits($domain, $start_date, $end_date): \AskNews\Model\CountResponse
+getArticleHits($domain_name, $start_date, $end_date): \AskNews\Model\CountResponse
 ```
 
 Get article hits
@@ -262,12 +195,12 @@ $apiInstance = new AskNews\Api\DistributionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | Domain name to filter by
+$domain_name = 'domain_name_example'; // string | Domain name to filter by
 $start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
 $end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
 
 try {
-    $result = $apiInstance->getArticleHits($domain, $start_date, $end_date);
+    $result = $apiInstance->getArticleHits($domain_name, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->getArticleHits: ', $e->getMessage(), PHP_EOL;
@@ -278,7 +211,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domain** | **string**| Domain name to filter by | |
+| **domain_name** | **string**| Domain name to filter by | |
 | **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
 | **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
 
@@ -302,12 +235,12 @@ try {
 ## `getDomain()`
 
 ```php
-getDomain($domain_id_or_name): \AskNews\Model\ReadDomainResponse
+getDomain($name): \AskNews\Model\ReadDomainResponse
 ```
 
-Get a domain by ID or name
+Get a domain by name
 
-Get a new domain.
+Get a domain.
 
 ### Example
 
@@ -332,10 +265,10 @@ $apiInstance = new AskNews\Api\DistributionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain_id_or_name = 'domain_id_or_name_example'; // string
+$name = 'name_example'; // string
 
 try {
-    $result = $apiInstance->getDomain($domain_id_or_name);
+    $result = $apiInstance->getDomain($name);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->getDomain: ', $e->getMessage(), PHP_EOL;
@@ -346,7 +279,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domain_id_or_name** | **string**|  | |
+| **name** | **string**|  | |
 
 ### Return type
 
@@ -365,10 +298,152 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
+## `getDomainQueries()`
+
+```php
+getDomainQueries($domain_name, $limit, $start_date, $end_date): \AskNews\Model\DomainQueriesResponse
+```
+
+Get queries that surfaced domain articles
+
+Get article hits.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\DistributionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$domain_name = 'domain_name_example'; // string | Domain name to filter by
+$limit = 10; // int | Limit for the number of articles
+$start_date = 56; // int | Start date to filter by
+$end_date = 56; // int | End date to filter by
+
+try {
+    $result = $apiInstance->getDomainQueries($domain_name, $limit, $start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DistributionApi->getDomainQueries: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_name** | **string**| Domain name to filter by | |
+| **limit** | **int**| Limit for the number of articles | [optional] [default to 10] |
+| **start_date** | **int**| Start date to filter by | [optional] |
+| **end_date** | **int**| End date to filter by | [optional] |
+
+### Return type
+
+[**\AskNews\Model\DomainQueriesResponse**](../Model/DomainQueriesResponse.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getHitsForArticles()`
+
+```php
+getHitsForArticles($article_ids, $start_date, $end_date): \AskNews\Model\ArticleHitsResponse
+```
+
+Get hits for articles
+
+Get article hits.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\DistributionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$article_ids = new \AskNews\Model\\AskNews\Model\ArticleIds(); // \AskNews\Model\ArticleIds | Article ids to filter by
+$start_date = 56; // int | Start date to filter by
+$end_date = 56; // int | End date to filter by
+
+try {
+    $result = $apiInstance->getHitsForArticles($article_ids, $start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DistributionApi->getHitsForArticles: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **article_ids** | [**\AskNews\Model\ArticleIds**](../Model/.md)| Article ids to filter by | |
+| **start_date** | **int**| Start date to filter by | [optional] |
+| **end_date** | **int**| End date to filter by | [optional] |
+
+### Return type
+
+[**\AskNews\Model\ArticleHitsResponse**](../Model/ArticleHitsResponse.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
 ## `topNArticlesByHits()`
 
 ```php
-topNArticlesByHits($limit, $start_date, $end_date): \AskNews\Model\TopNArticlesByHitsResponse
+topNArticlesByHits($limit, $start_date, $end_date, $domain_names): \AskNews\Model\TopNArticlesByHitsResponse
 ```
 
 Get the top N articles by hits
@@ -401,9 +476,10 @@ $apiInstance = new AskNews\Api\DistributionApi(
 $limit = 10; // int | Number of top domains to return
 $start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
 $end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
+$domain_names = array('domain_names_example'); // string[] | List of domain names to filter by
 
 try {
-    $result = $apiInstance->topNArticlesByHits($limit, $start_date, $end_date);
+    $result = $apiInstance->topNArticlesByHits($limit, $start_date, $end_date, $domain_names);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->topNArticlesByHits: ', $e->getMessage(), PHP_EOL;
@@ -417,6 +493,7 @@ try {
 | **limit** | **int**| Number of top domains to return | [optional] [default to 10] |
 | **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
 | **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
+| **domain_names** | [**string[]**](../Model/string.md)| List of domain names to filter by | [optional] |
 
 ### Return type
 
@@ -438,7 +515,7 @@ try {
 ## `topNArticlesForDomain()`
 
 ```php
-topNArticlesForDomain($domain, $limit, $start_date, $end_date): \AskNews\Model\TopNArticlesForDomainResponse
+topNArticlesForDomain($domain_name, $limit, $start_date, $end_date): \AskNews\Model\TopNArticlesForDomainResponse
 ```
 
 Get the top N articles by hits for domain
@@ -468,13 +545,13 @@ $apiInstance = new AskNews\Api\DistributionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain = 'domain_example'; // string | Domain name to filter by
+$domain_name = 'domain_name_example'; // string | Domain name to filter by
 $limit = 10; // int | Number of top domain articles to return
 $start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
 $end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
 
 try {
-    $result = $apiInstance->topNArticlesForDomain($domain, $limit, $start_date, $end_date);
+    $result = $apiInstance->topNArticlesForDomain($domain_name, $limit, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->topNArticlesForDomain: ', $e->getMessage(), PHP_EOL;
@@ -485,7 +562,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domain** | **string**| Domain name to filter by | |
+| **domain_name** | **string**| Domain name to filter by | |
 | **limit** | **int**| Number of top domain articles to return | [optional] [default to 10] |
 | **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
 | **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
@@ -510,7 +587,7 @@ try {
 ## `topNDomainsByHits()`
 
 ```php
-topNDomainsByHits($limit, $start_date, $end_date): \AskNews\Model\TopNDomainsByHitsResponse
+topNDomainsByHits($limit, $start_date, $end_date, $names): \AskNews\Model\TopNDomainsByHitsResponse
 ```
 
 Get the top N domains by hits
@@ -543,9 +620,10 @@ $apiInstance = new AskNews\Api\DistributionApi(
 $limit = 10; // int | Number of top domains to return
 $start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
 $end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
+$names = array('names_example'); // string[] | List of domain names to filter by
 
 try {
-    $result = $apiInstance->topNDomainsByHits($limit, $start_date, $end_date);
+    $result = $apiInstance->topNDomainsByHits($limit, $start_date, $end_date, $names);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->topNDomainsByHits: ', $e->getMessage(), PHP_EOL;
@@ -559,6 +637,7 @@ try {
 | **limit** | **int**| Number of top domains to return | [optional] [default to 10] |
 | **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
 | **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
+| **names** | [**string[]**](../Model/string.md)| List of domain names to filter by | [optional] |
 
 ### Return type
 
@@ -580,7 +659,7 @@ try {
 ## `updateDomain()`
 
 ```php
-updateDomain($domain_id, $update_domain_request): \AskNews\Model\ReadDomainResponse
+updateDomain($name, $update_domain_request): \AskNews\Model\ReadDomainResponse
 ```
 
 Update an existing domain
@@ -610,11 +689,11 @@ $apiInstance = new AskNews\Api\DistributionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain_id = 'domain_id_example'; // string
+$name = 'name_example'; // string
 $update_domain_request = new \AskNews\Model\UpdateDomainRequest(); // \AskNews\Model\UpdateDomainRequest
 
 try {
-    $result = $apiInstance->updateDomain($domain_id, $update_domain_request);
+    $result = $apiInstance->updateDomain($name, $update_domain_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->updateDomain: ', $e->getMessage(), PHP_EOL;
@@ -625,7 +704,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domain_id** | **string**|  | |
+| **name** | **string**|  | |
 | **update_domain_request** | [**\AskNews\Model\UpdateDomainRequest**](../Model/UpdateDomainRequest.md)|  | |
 
 ### Return type

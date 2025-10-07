@@ -28,6 +28,7 @@ class AskNewsSDK
     public Api\RedditApi $reddit;
     public Api\StoriesApi $stories;
     public Api\WebsearchApi $websearch;
+    public Api\WikiApi $wiki;
 
     /**
      * Constructor
@@ -52,5 +53,6 @@ class AskNewsSDK
         $this->reddit = new Api\RedditApi(null, $_configuration);
         $this->stories = new Api\StoriesApi(null, $_configuration);
         $this->websearch = new Api\WebsearchApi(null, $_configuration);
+        $this->wiki = new Api\WikiApi(null, $_configuration);
     }
 }
