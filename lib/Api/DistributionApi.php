@@ -72,9 +72,6 @@ class DistributionApi
         'getDomainQueries' => [
             'application/json',
         ],
-        'getHitsForArticles' => [
-            'application/json',
-        ],
         'topNArticlesByHits' => [
             'application/json',
         ],
@@ -148,7 +145,7 @@ class DistributionApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\HitShareResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel81|\AskNews\Model\AbcAPIErrorModel82|\AskNews\Model\AbcAPIErrorModel83|\AskNews\Model\AbcAPIErrorModel84|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\HitShareResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel77|\AskNews\Model\AbcAPIErrorModel78|\AskNews\Model\AbcAPIErrorModel79|\AskNews\Model\AbcAPIErrorModel80|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function domainHitShare($domain_names, $start_date = null, $end_date = null, $is_publisher = true, string $contentType = self::contentTypes['domainHitShare'][0])
     {
@@ -169,7 +166,7 @@ class DistributionApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\HitShareResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel81|\AskNews\Model\AbcAPIErrorModel82|\AskNews\Model\AbcAPIErrorModel83|\AskNews\Model\AbcAPIErrorModel84|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\HitShareResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel77|\AskNews\Model\AbcAPIErrorModel78|\AskNews\Model\AbcAPIErrorModel79|\AskNews\Model\AbcAPIErrorModel80|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function domainHitShareWithHttpInfo($domain_names, $start_date = null, $end_date = null, $is_publisher = true, string $contentType = self::contentTypes['domainHitShare'][0])
     {
@@ -266,11 +263,11 @@ class DistributionApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel81' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel77' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel81' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel77' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -288,16 +285,16 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel81', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel77', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel82' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel78' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel82' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel78' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -315,16 +312,16 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel82', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel78', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel83' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel79' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel83' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel79' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -342,16 +339,16 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel83', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel79', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel84' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel80' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel84' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel80' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -369,7 +366,7 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel84', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel80', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -451,7 +448,7 @@ class DistributionApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel81',
+                        '\AskNews\Model\AbcAPIErrorModel77',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -459,7 +456,7 @@ class DistributionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel82',
+                        '\AskNews\Model\AbcAPIErrorModel78',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -467,7 +464,7 @@ class DistributionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel83',
+                        '\AskNews\Model\AbcAPIErrorModel79',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -475,7 +472,7 @@ class DistributionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel84',
+                        '\AskNews\Model\AbcAPIErrorModel80',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1365,7 +1362,7 @@ class DistributionApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\CountResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel85|\AskNews\Model\AbcAPIErrorModel86|\AskNews\Model\AbcAPIErrorModel87|\AskNews\Model\AbcAPIErrorModel88|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\CountResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel81|\AskNews\Model\AbcAPIErrorModel82|\AskNews\Model\AbcAPIErrorModel83|\AskNews\Model\AbcAPIErrorModel84|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function getArticleHits($domain_name, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getArticleHits'][0])
     {
@@ -1385,7 +1382,7 @@ class DistributionApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\CountResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel85|\AskNews\Model\AbcAPIErrorModel86|\AskNews\Model\AbcAPIErrorModel87|\AskNews\Model\AbcAPIErrorModel88|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\CountResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel81|\AskNews\Model\AbcAPIErrorModel82|\AskNews\Model\AbcAPIErrorModel83|\AskNews\Model\AbcAPIErrorModel84|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function getArticleHitsWithHttpInfo($domain_name, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getArticleHits'][0])
     {
@@ -1482,11 +1479,11 @@ class DistributionApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel85' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel81' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel85' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel81' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1504,16 +1501,16 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel85', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel81', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel86' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel82' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel86' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel82' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1531,16 +1528,16 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel86', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel82', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel87' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel83' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel87' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel83' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1558,16 +1555,16 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel87', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel83', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel88' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel84' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel88' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel84' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -1585,7 +1582,7 @@ class DistributionApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel88', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel84', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -1667,7 +1664,7 @@ class DistributionApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel85',
+                        '\AskNews\Model\AbcAPIErrorModel81',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1675,7 +1672,7 @@ class DistributionApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel86',
+                        '\AskNews\Model\AbcAPIErrorModel82',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1683,7 +1680,7 @@ class DistributionApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel87',
+                        '\AskNews\Model\AbcAPIErrorModel83',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1691,7 +1688,7 @@ class DistributionApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel88',
+                        '\AskNews\Model\AbcAPIErrorModel84',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -2505,7 +2502,7 @@ class DistributionApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\DomainQueriesResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel77|\AskNews\Model\AbcAPIErrorModel78|\AskNews\Model\AbcAPIErrorModel79|\AskNews\Model\AbcAPIErrorModel80|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\DomainQueriesResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel73|\AskNews\Model\AbcAPIErrorModel74|\AskNews\Model\AbcAPIErrorModel75|\AskNews\Model\AbcAPIErrorModel76|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function getDomainQueries($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
     {
@@ -2526,7 +2523,7 @@ class DistributionApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\DomainQueriesResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel77|\AskNews\Model\AbcAPIErrorModel78|\AskNews\Model\AbcAPIErrorModel79|\AskNews\Model\AbcAPIErrorModel80|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\DomainQueriesResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel73|\AskNews\Model\AbcAPIErrorModel74|\AskNews\Model\AbcAPIErrorModel75|\AskNews\Model\AbcAPIErrorModel76|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function getDomainQueriesWithHttpInfo($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
     {
@@ -2592,604 +2589,6 @@ class DistributionApi
 
                     return [
                         ObjectSerializer::deserialize($content, '\AskNews\Model\DomainQueriesResponse', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 422:
-                    if ('\AskNews\Model\ValidationErrorModel' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\ValidationErrorModel' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\ValidationErrorModel', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel77' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel77' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel77', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel78' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel78' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel78', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel79' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel79' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel79', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel80' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel80' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel80', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                case 500:
-                    if ('\AskNews\Model\AsknewsApiErrorsAPIErrorModel' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AsknewsApiErrorsAPIErrorModel' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AsknewsApiErrorsAPIErrorModel', []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-            }
-
-            $returnType = '\AskNews\Model\DomainQueriesResponse';
-            if ($returnType === '\SplFileObject') {
-                $content = $response->getBody(); //stream goes to serializer
-            } else {
-                $content = (string) $response->getBody();
-                if ($returnType !== 'string') {
-                    try {
-                        $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                    } catch (\JsonException $exception) {
-                        throw new ApiException(
-                            sprintf(
-                                'Error JSON decoding server response (%s)',
-                                $request->getUri()
-                            ),
-                            $statusCode,
-                            $response->getHeaders(),
-                            $content
-                        );
-                    }
-                }
-            }
-
-            return [
-                ObjectSerializer::deserialize($content, $returnType, []),
-                $response->getStatusCode(),
-                $response->getHeaders()
-            ];
-
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\DomainQueriesResponse',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 422:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\ValidationErrorModel',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 405:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel77',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 403:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel78',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 401:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel79',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 400:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel80',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-                case 500:
-                    $data = ObjectSerializer::deserialize(
-                        $e->getResponseBody(),
-                        '\AskNews\Model\AsknewsApiErrorsAPIErrorModel',
-                        $e->getResponseHeaders()
-                    );
-                    $e->setResponseObject($data);
-                    break;
-            }
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation getDomainQueriesAsync
-     *
-     * Get queries that surfaced domain articles
-     *
-     * @param  string $domain_name Domain name to filter by (required)
-     * @param  int $limit Limit for the number of articles (optional, default to 10)
-     * @param  int $start_date Start date to filter by (optional)
-     * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainQueries'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getDomainQueriesAsync($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
-    {
-        return $this->getDomainQueriesAsyncWithHttpInfo($domain_name, $limit, $start_date, $end_date, $contentType)
-            ->then(
-                function ($response) {
-                    return $response[0];
-                }
-            );
-    }
-
-    /**
-     * Operation getDomainQueriesAsyncWithHttpInfo
-     *
-     * Get queries that surfaced domain articles
-     *
-     * @param  string $domain_name Domain name to filter by (required)
-     * @param  int $limit Limit for the number of articles (optional, default to 10)
-     * @param  int $start_date Start date to filter by (optional)
-     * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainQueries'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Promise\PromiseInterface
-     */
-    public function getDomainQueriesAsyncWithHttpInfo($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
-    {
-        $returnType = '\AskNews\Model\DomainQueriesResponse';
-        $request = $this->getDomainQueriesRequest($domain_name, $limit, $start_date, $end_date, $contentType);
-
-        return $this->client
-            ->sendAsync($request, $this->createHttpClientOption())
-            ->then(
-                function ($response) use ($returnType) {
-                    if ($returnType === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ($returnType !== 'string') {
-                            $content = json_decode($content);
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, $returnType, []),
-                        $response->getStatusCode(),
-                        $response->getHeaders()
-                    ];
-                },
-                function ($exception) {
-                    $response = $exception->getResponse();
-                    $statusCode = $response->getStatusCode();
-                    throw new ApiException(
-                        sprintf(
-                            '[%d] Error connecting to the API (%s)',
-                            $statusCode,
-                            $exception->getRequest()->getUri()
-                        ),
-                        $statusCode,
-                        $response->getHeaders(),
-                        (string) $response->getBody()
-                    );
-                }
-            );
-    }
-
-    /**
-     * Create request for operation 'getDomainQueries'
-     *
-     * @param  string $domain_name Domain name to filter by (required)
-     * @param  int $limit Limit for the number of articles (optional, default to 10)
-     * @param  int $start_date Start date to filter by (optional)
-     * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainQueries'] to see the possible values for this operation
-     *
-     * @throws \InvalidArgumentException
-     * @return \GuzzleHttp\Psr7\Request
-     */
-    public function getDomainQueriesRequest($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
-    {
-
-        // verify the required parameter 'domain_name' is set
-        if ($domain_name === null || (is_array($domain_name) && count($domain_name) === 0)) {
-            throw new \InvalidArgumentException(
-                'Missing the required parameter $domain_name when calling getDomainQueries'
-            );
-        }
-
-
-
-
-
-        $resourcePath = '/v1/distribution/articles/domain_queries';
-        $formParams = [];
-        $queryParams = [];
-        $headerParams = [];
-        $httpBody = '';
-        $multipart = false;
-
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $domain_name,
-            'domain_name', // param base name
-            'string', // openApiType
-            'form', // style
-            true, // explode
-            true // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $limit,
-            'limit', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $start_date,
-            'start_date', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-        // query params
-        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $end_date,
-            'end_date', // param base name
-            'integer', // openApiType
-            'form', // style
-            true, // explode
-            false // required
-        ) ?? []);
-
-
-
-
-        $headers = $this->headerSelector->selectHeaders(
-            ['application/json', ],
-            $contentType,
-            $multipart
-        );
-
-        // for model (json/xml)
-        if (count($formParams) > 0) {
-            if ($multipart) {
-                $multipartContents = [];
-                foreach ($formParams as $formParamName => $formParamValue) {
-                    $formParamValueItems = is_array($formParamValue) ? $formParamValue : [$formParamValue];
-                    foreach ($formParamValueItems as $formParamValueItem) {
-                        $multipartContents[] = [
-                            'name' => $formParamName,
-                            'contents' => $formParamValueItem
-                        ];
-                    }
-                }
-                // for HTTP post (form)
-                $httpBody = new MultipartStream($multipartContents);
-
-            } elseif (stripos($headers['Content-Type'], 'application/json') !== false) {
-                # if Content-Type contains "application/json", json_encode the form parameters
-                $httpBody = \GuzzleHttp\Utils::jsonEncode($formParams);
-            } else {
-                // for HTTP post (form)
-                $httpBody = ObjectSerializer::buildQuery($formParams);
-            }
-        }
-
-        if (!empty($this->config->getApiKey())) {
-            $headers['Authorization'] = 'Bearer ' . $this->config->getApiKey();
-        } else {
-            if (!empty($this->config->getAccessToken())) {
-                $now = time();
-                $buffer = 10;
-                if ($this->config->getAccessToken()->expires - $buffer < $now) {
-                    $this->config->setAccessToken(null);
-                }
-            }
-
-            if (empty($this->config->getAccessToken()) && !empty($this->config->getClientId()) && !empty($this->config->getClientSecret()) && !empty($this->config->getScopes())) {
-                $response = $this->client->send(new Request(
-                    'POST',
-                    $this->config->getAuthUrl(),
-                    [
-                        'Content-Type' => 'application/x-www-form-urlencoded',
-                        'User-Agent' => $this->config->getUserAgent(),
-                        'Authorization' => 'Basic ' . base64_encode($this->config->getClientId() . ':' . $this->config->getClientSecret())
-                    ],
-                    http_build_query([
-                        'grant_type' => 'client_credentials',
-                        'scope' => implode(' ', $this->config->getScopes()),
-                    ])
-                ));
-
-                $data = json_decode($response->getBody()->getContents());
-                $this->config->setAccessToken(
-                    new AccessToken($data->token_type, $data->access_token, $data->expires_in + time(), $this->config->getScopes())
-                );
-            }
-
-            if (!empty($this->config->getAccessToken())) {
-                $token = $this->config->getAccessToken();
-                $headers['Authorization'] = $token->tokenType . ' ' . $token->tokenValue;
-            }
-        }
-
-        $defaultHeaders = [];
-        if ($this->config->getUserAgent()) {
-            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
-        }
-
-        $headers = array_merge(
-            $defaultHeaders,
-            $headerParams,
-            $headers
-        );
-
-        $operationHost = $this->config->getHost();
-        $query = ObjectSerializer::buildQuery($queryParams);
-        return new Request(
-            'GET',
-            $operationHost . $resourcePath . ($query ? "?{$query}" : ''),
-            $headers,
-            $httpBody
-        );
-    }
-
-    /**
-     * Operation getHitsForArticles
-     *
-     * Get hits for articles
-     *
-     * @param  \AskNews\Model\ArticleIds $article_ids Article ids to filter by (required)
-     * @param  int $start_date Start date to filter by (optional)
-     * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHitsForArticles'] to see the possible values for this operation
-     *
-     * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return \AskNews\Model\ArticleHitsResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel73|\AskNews\Model\AbcAPIErrorModel74|\AskNews\Model\AbcAPIErrorModel75|\AskNews\Model\AbcAPIErrorModel76|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
-     */
-    public function getHitsForArticles($article_ids, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getHitsForArticles'][0])
-    {
-        list($response) = $this->getHitsForArticlesWithHttpInfo($article_ids, $start_date, $end_date, $contentType);
-        return $response;
-    }
-
-    /**
-     * Operation getHitsForArticlesWithHttpInfo
-     *
-     * Get hits for articles
-     *
-     * @param  \AskNews\Model\ArticleIds $article_ids Article ids to filter by (required)
-     * @param  int $start_date Start date to filter by (optional)
-     * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHitsForArticles'] to see the possible values for this operation
-     *
-     * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
-     * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\ArticleHitsResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel73|\AskNews\Model\AbcAPIErrorModel74|\AskNews\Model\AbcAPIErrorModel75|\AskNews\Model\AbcAPIErrorModel76|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function getHitsForArticlesWithHttpInfo($article_ids, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getHitsForArticles'][0])
-    {
-        $request = $this->getHitsForArticlesRequest($article_ids, $start_date, $end_date, $contentType);
-
-        try {
-            $options = $this->createHttpClientOption();
-            try {
-                $response = $this->client->send($request, $options);
-            } catch (RequestException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
-                    $e->getResponse() ? (string) $e->getResponse()->getBody() : null
-                );
-            } catch (ConnectException $e) {
-                throw new ApiException(
-                    "[{$e->getCode()}] {$e->getMessage()}",
-                    (int) $e->getCode(),
-                    null,
-                    null
-                );
-            }
-
-            $statusCode = $response->getStatusCode();
-
-            if ($statusCode < 200 || $statusCode > 299) {
-                throw new ApiException(
-                    sprintf(
-                        '[%d] Error connecting to the API (%s)',
-                        $statusCode,
-                        (string) $request->getUri()
-                    ),
-                    $statusCode,
-                    $response->getHeaders(),
-                    (string) $response->getBody()
-                );
-            }
-
-            switch($statusCode) {
-                case 200:
-                    if ('\AskNews\Model\ArticleHitsResponse' === '\SplFileObject') {
-                        $content = $response->getBody(); //stream goes to serializer
-                    } else {
-                        $content = (string) $response->getBody();
-                        if ('\AskNews\Model\ArticleHitsResponse' !== 'string') {
-                            try {
-                                $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
-                            } catch (\JsonException $exception) {
-                                throw new ApiException(
-                                    sprintf(
-                                        'Error JSON decoding server response (%s)',
-                                        $request->getUri()
-                                    ),
-                                    $statusCode,
-                                    $response->getHeaders(),
-                                    $content
-                                );
-                            }
-                        }
-                    }
-
-                    return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\ArticleHitsResponse', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -3357,7 +2756,7 @@ class DistributionApi
                     ];
             }
 
-            $returnType = '\AskNews\Model\ArticleHitsResponse';
+            $returnType = '\AskNews\Model\DomainQueriesResponse';
             if ($returnType === '\SplFileObject') {
                 $content = $response->getBody(); //stream goes to serializer
             } else {
@@ -3390,7 +2789,7 @@ class DistributionApi
                 case 200:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\ArticleHitsResponse',
+                        '\AskNews\Model\DomainQueriesResponse',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -3449,21 +2848,22 @@ class DistributionApi
     }
 
     /**
-     * Operation getHitsForArticlesAsync
+     * Operation getDomainQueriesAsync
      *
-     * Get hits for articles
+     * Get queries that surfaced domain articles
      *
-     * @param  \AskNews\Model\ArticleIds $article_ids Article ids to filter by (required)
+     * @param  string $domain_name Domain name to filter by (required)
+     * @param  int $limit Limit for the number of articles (optional, default to 10)
      * @param  int $start_date Start date to filter by (optional)
      * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHitsForArticles'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainQueries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHitsForArticlesAsync($article_ids, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getHitsForArticles'][0])
+    public function getDomainQueriesAsync($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
     {
-        return $this->getHitsForArticlesAsyncWithHttpInfo($article_ids, $start_date, $end_date, $contentType)
+        return $this->getDomainQueriesAsyncWithHttpInfo($domain_name, $limit, $start_date, $end_date, $contentType)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -3472,22 +2872,23 @@ class DistributionApi
     }
 
     /**
-     * Operation getHitsForArticlesAsyncWithHttpInfo
+     * Operation getDomainQueriesAsyncWithHttpInfo
      *
-     * Get hits for articles
+     * Get queries that surfaced domain articles
      *
-     * @param  \AskNews\Model\ArticleIds $article_ids Article ids to filter by (required)
+     * @param  string $domain_name Domain name to filter by (required)
+     * @param  int $limit Limit for the number of articles (optional, default to 10)
      * @param  int $start_date Start date to filter by (optional)
      * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHitsForArticles'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainQueries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function getHitsForArticlesAsyncWithHttpInfo($article_ids, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getHitsForArticles'][0])
+    public function getDomainQueriesAsyncWithHttpInfo($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
     {
-        $returnType = '\AskNews\Model\ArticleHitsResponse';
-        $request = $this->getHitsForArticlesRequest($article_ids, $start_date, $end_date, $contentType);
+        $returnType = '\AskNews\Model\DomainQueriesResponse';
+        $request = $this->getDomainQueriesRequest($domain_name, $limit, $start_date, $end_date, $contentType);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -3526,30 +2927,32 @@ class DistributionApi
     }
 
     /**
-     * Create request for operation 'getHitsForArticles'
+     * Create request for operation 'getDomainQueries'
      *
-     * @param  \AskNews\Model\ArticleIds $article_ids Article ids to filter by (required)
+     * @param  string $domain_name Domain name to filter by (required)
+     * @param  int $limit Limit for the number of articles (optional, default to 10)
      * @param  int $start_date Start date to filter by (optional)
      * @param  int $end_date End date to filter by (optional)
-     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getHitsForArticles'] to see the possible values for this operation
+     * @param  string $contentType The value for the Content-Type header. Check self::contentTypes['getDomainQueries'] to see the possible values for this operation
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    public function getHitsForArticlesRequest($article_ids, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getHitsForArticles'][0])
+    public function getDomainQueriesRequest($domain_name, $limit = 10, $start_date = null, $end_date = null, string $contentType = self::contentTypes['getDomainQueries'][0])
     {
 
-        // verify the required parameter 'article_ids' is set
-        if ($article_ids === null || (is_array($article_ids) && count($article_ids) === 0)) {
+        // verify the required parameter 'domain_name' is set
+        if ($domain_name === null || (is_array($domain_name) && count($domain_name) === 0)) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $article_ids when calling getHitsForArticles'
+                'Missing the required parameter $domain_name when calling getDomainQueries'
             );
         }
 
 
 
 
-        $resourcePath = '/v1/distribution/articles/article_hits';
+
+        $resourcePath = '/v1/distribution/articles/domain_queries';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -3558,12 +2961,21 @@ class DistributionApi
 
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
-            $article_ids,
-            'article_ids', // param base name
-            'anyOf&lt;array,array&gt;', // openApiType
+            $domain_name,
+            'domain_name', // param base name
+            'string', // openApiType
             'form', // style
             true, // explode
             true // required
+        ) ?? []);
+        // query params
+        $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(
+            $limit,
+            'limit', // param base name
+            'integer', // openApiType
+            'form', // style
+            true, // explode
+            false // required
         ) ?? []);
         // query params
         $queryParams = array_merge($queryParams, ObjectSerializer::toQueryValue(

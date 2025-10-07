@@ -99,7 +99,6 @@ Class | Method | HTTP request | Description
 *DistributionApi* | [**getArticleHits**](docs/Api/DistributionApi.md#getarticlehits) | **GET** /v1/distribution/stats/count | Get article hits
 *DistributionApi* | [**getDomain**](docs/Api/DistributionApi.md#getdomain) | **GET** /v1/distribution/domains/{name} | Get a domain by name
 *DistributionApi* | [**getDomainQueries**](docs/Api/DistributionApi.md#getdomainqueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles
-*DistributionApi* | [**getHitsForArticles**](docs/Api/DistributionApi.md#gethitsforarticles) | **GET** /v1/distribution/articles/article_hits | Get hits for articles
 *DistributionApi* | [**topNArticlesByHits**](docs/Api/DistributionApi.md#topnarticlesbyhits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits
 *DistributionApi* | [**topNArticlesForDomain**](docs/Api/DistributionApi.md#topnarticlesfordomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain
 *DistributionApi* | [**topNDomainsByHits**](docs/Api/DistributionApi.md#topndomainsbyhits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits
@@ -219,17 +218,10 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel86](docs/Model/AbcAPIErrorModel86.md)
 - [AbcAPIErrorModel87](docs/Model/AbcAPIErrorModel87.md)
 - [AbcAPIErrorModel88](docs/Model/AbcAPIErrorModel88.md)
-- [AbcAPIErrorModel89](docs/Model/AbcAPIErrorModel89.md)
 - [AbcAPIErrorModel9](docs/Model/AbcAPIErrorModel9.md)
-- [AbcAPIErrorModel90](docs/Model/AbcAPIErrorModel90.md)
-- [AbcAPIErrorModel91](docs/Model/AbcAPIErrorModel91.md)
-- [AbcAPIErrorModel92](docs/Model/AbcAPIErrorModel92.md)
 - [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
-- [ArticleHitItem](docs/Model/ArticleHitItem.md)
-- [ArticleHitsResponse](docs/Model/ArticleHitsResponse.md)
-- [ArticleIds](docs/Model/ArticleIds.md)
 - [AskNewsSource](docs/Model/AskNewsSource.md)
 - [AsknewsApiErrorsAPIErrorModel](docs/Model/AsknewsApiErrorsAPIErrorModel.md)
 - [AsknewsApiSchemaV1CommonGraphRelationships](docs/Model/AsknewsApiSchemaV1CommonGraphRelationships.md)

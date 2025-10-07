@@ -132,18 +132,6 @@ class DistributionApiTest extends TestCase
     }
 
     /**
-     * Test case for getHitsForArticles
-     *
-     * Get hits for articles.
-     *
-     */
-    public function testGetHitsForArticles()
-    {
-        // TODO: implement
-        self::markTestIncomplete('Not implemented');
-    }
-
-    /**
      * Test case for topNArticlesByHits
      *
      * Get the top N articles by hits.

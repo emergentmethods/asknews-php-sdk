@@ -9,7 +9,6 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**getArticleHits()**](DistributionApi.md#getArticleHits) | **GET** /v1/distribution/stats/count | Get article hits |
 | [**getDomain()**](DistributionApi.md#getDomain) | **GET** /v1/distribution/domains/{name} | Get a domain by name |
 | [**getDomainQueries()**](DistributionApi.md#getDomainQueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles |
-| [**getHitsForArticles()**](DistributionApi.md#getHitsForArticles) | **GET** /v1/distribution/articles/article_hits | Get hits for articles |
 | [**topNArticlesByHits()**](DistributionApi.md#topNArticlesByHits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits |
 | [**topNArticlesForDomain()**](DistributionApi.md#topNArticlesForDomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain |
 | [**topNDomainsByHits()**](DistributionApi.md#topNDomainsByHits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits |
@@ -356,76 +355,6 @@ try {
 ### Return type
 
 [**\AskNews\Model\DomainQueriesResponse**](../Model/DomainQueriesResponse.md)
-
-### Authorization
-
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getHitsForArticles()`
-
-```php
-getHitsForArticles($article_ids, $start_date, $end_date): \AskNews\Model\ArticleHitsResponse
-```
-
-Get hits for articles
-
-Get article hits.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
-
-
-$apiInstance = new AskNews\Api\DistributionApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$article_ids = new \AskNews\Model\\AskNews\Model\ArticleIds(); // \AskNews\Model\ArticleIds | Article ids to filter by
-$start_date = 56; // int | Start date to filter by
-$end_date = 56; // int | End date to filter by
-
-try {
-    $result = $apiInstance->getHitsForArticles($article_ids, $start_date, $end_date);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling DistributionApi->getHitsForArticles: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **article_ids** | [**\AskNews\Model\ArticleIds**](../Model/.md)| Article ids to filter by | |
-| **start_date** | **int**| Start date to filter by | [optional] |
-| **end_date** | **int**| End date to filter by | [optional] |
-
-### Return type
-
-[**\AskNews\Model\ArticleHitsResponse**](../Model/ArticleHitsResponse.md)
 
 ### Authorization
 
