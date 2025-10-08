@@ -300,7 +300,7 @@ try {
 ## `getDomainQueries()`
 
 ```php
-getDomainQueries($domain_name, $limit, $start_date, $end_date): \AskNews\Model\DomainQueriesResponse
+getDomainQueries($domain_names, $limit, $start_date, $end_date): \AskNews\Model\DomainQueriesResponse
 ```
 
 Get queries that surfaced domain articles
@@ -330,13 +330,13 @@ $apiInstance = new AskNews\Api\DistributionApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domain_name = 'domain_name_example'; // string | Domain name to filter by
+$domain_names = array('domain_names_example'); // string[] | Domain names to filter by
 $limit = 10; // int | Limit for the number of articles
 $start_date = 56; // int | Start date to filter by
 $end_date = 56; // int | End date to filter by
 
 try {
-    $result = $apiInstance->getDomainQueries($domain_name, $limit, $start_date, $end_date);
+    $result = $apiInstance->getDomainQueries($domain_names, $limit, $start_date, $end_date);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->getDomainQueries: ', $e->getMessage(), PHP_EOL;
@@ -347,7 +347,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domain_name** | **string**| Domain name to filter by | |
+| **domain_names** | [**string[]**](../Model/string.md)| Domain names to filter by | |
 | **limit** | **int**| Limit for the number of articles | [optional] [default to 10] |
 | **start_date** | **int**| Start date to filter by | [optional] |
 | **end_date** | **int**| End date to filter by | [optional] |
