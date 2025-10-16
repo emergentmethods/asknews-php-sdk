@@ -6,6 +6,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | ------------- | ------------- | ------------- |
 | [**getArticle()**](NewsApi.md#getArticle) | **GET** /v1/news/{article_id} | Get an article by its UUID |
 | [**getArticles()**](NewsApi.md#getArticles) | **GET** /v1/news | Get multiple articles by UUID |
+| [**getIndexCounts()**](NewsApi.md#getIndexCounts) | **GET** /v1/index_counts | Get the index counts underlying AskNews |
 | [**getSourcesReport()**](NewsApi.md#getSourcesReport) | **GET** /v1/sources | Get the sources underlying AskNews |
 | [**searchNews()**](NewsApi.md#searchNews) | **GET** /v1/news/search | Search for enriched real-time news context |
 
@@ -128,6 +129,78 @@ try {
 ### Return type
 
 [**\AskNews\Model\SearchResponseDictItem[]**](../Model/SearchResponseDictItem.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `getIndexCounts()`
+
+```php
+getIndexCounts($domains, $start_datetime, $end_datetime, $sampling): \AskNews\Model\IndexCountItem[]
+```
+
+Get the index counts underlying AskNews
+
+This endpoint is primarly used for the publisher dashboard, to show the number of articles indexed per source.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\NewsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$domains = array('domains_example'); // string[] | Domain or list of domains to get indexing counts for
+$start_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Start timestamp to filter by
+$end_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | End timestamp to filter by
+$sampling = '1h'; // string | Sampling to use
+
+try {
+    $result = $apiInstance->getIndexCounts($domains, $start_datetime, $end_datetime, $sampling);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling NewsApi->getIndexCounts: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domains** | [**string[]**](../Model/string.md)| Domain or list of domains to get indexing counts for | |
+| **start_datetime** | **\DateTime**| Start timestamp to filter by | [optional] |
+| **end_datetime** | **\DateTime**| End timestamp to filter by | [optional] |
+| **sampling** | **string**| Sampling to use | [optional] [default to &#39;1h&#39;] |
+
+### Return type
+
+[**\AskNews\Model\IndexCountItem[]**](../Model/IndexCountItem.md)
 
 ### Authorization
 

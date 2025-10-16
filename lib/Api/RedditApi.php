@@ -124,7 +124,7 @@ class RedditApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\RedditResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel45|\AskNews\Model\AbcAPIErrorModel46|\AskNews\Model\AbcAPIErrorModel47|\AskNews\Model\AbcAPIErrorModel48|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\RedditResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel49|\AskNews\Model\AbcAPIErrorModel50|\AskNews\Model\AbcAPIErrorModel51|\AskNews\Model\AbcAPIErrorModel52|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function searchReddit($keywords, $n_threads = 5, $method = 'kw', $deep = false, $return_type = 'string', $time_filter = 'day', $sort = 'relevance', string $contentType = self::contentTypes['searchReddit'][0])
     {
@@ -148,7 +148,7 @@ class RedditApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\RedditResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel45|\AskNews\Model\AbcAPIErrorModel46|\AskNews\Model\AbcAPIErrorModel47|\AskNews\Model\AbcAPIErrorModel48|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\RedditResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel49|\AskNews\Model\AbcAPIErrorModel50|\AskNews\Model\AbcAPIErrorModel51|\AskNews\Model\AbcAPIErrorModel52|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchRedditWithHttpInfo($keywords, $n_threads = 5, $method = 'kw', $deep = false, $return_type = 'string', $time_filter = 'day', $sort = 'relevance', string $contentType = self::contentTypes['searchReddit'][0])
     {
@@ -245,11 +245,11 @@ class RedditApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel45' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel49' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel45' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel49' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -267,16 +267,16 @@ class RedditApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel45', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel49', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel46' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel50' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel46' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel50' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -294,16 +294,16 @@ class RedditApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel46', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel50', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel47' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel51' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel47' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel51' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -321,16 +321,16 @@ class RedditApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel47', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel51', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel48' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel52' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel48' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel52' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -348,7 +348,7 @@ class RedditApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel48', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel52', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -430,7 +430,7 @@ class RedditApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel45',
+                        '\AskNews\Model\AbcAPIErrorModel49',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -438,7 +438,7 @@ class RedditApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel46',
+                        '\AskNews\Model\AbcAPIErrorModel50',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -446,7 +446,7 @@ class RedditApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel47',
+                        '\AskNews\Model\AbcAPIErrorModel51',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -454,7 +454,7 @@ class RedditApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel48',
+                        '\AskNews\Model\AbcAPIErrorModel52',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

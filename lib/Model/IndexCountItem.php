@@ -1,6 +1,6 @@
 <?php
 /**
- * AbcAPIErrorModel91
+ * IndexCountItem
  *
  * PHP version 7.4
  *
@@ -32,7 +32,7 @@ use \ArrayAccess;
 use \AskNews\ObjectSerializer;
 
 /**
- * AbcAPIErrorModel91 Class Doc Comment
+ * IndexCountItem Class Doc Comment
  *
  * @category Class
  * @package  AskNews
@@ -40,7 +40,7 @@ use \AskNews\ObjectSerializer;
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializable
+class IndexCountItem implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -49,7 +49,7 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
       *
       * @var string
       */
-    protected static $openAPIModelName = 'abc__APIErrorModel__91';
+    protected static $openAPIModelName = 'IndexCountItem';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -57,8 +57,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var string[]
       */
     protected static $openAPITypes = [
-        'code' => 'int',
-        'detail' => 'string'
+        'start' => '\DateTime',
+        'end' => '\DateTime',
+        'count' => 'int'
     ];
 
     /**
@@ -69,8 +70,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'code' => null,
-        'detail' => null
+        'start' => 'date-time',
+        'end' => 'date-time',
+        'count' => null
     ];
 
     /**
@@ -79,8 +81,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'code' => false,
-        'detail' => false
+        'start' => false,
+        'end' => false,
+        'count' => false
     ];
 
     /**
@@ -169,8 +172,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $attributeMap = [
-        'code' => 'code',
-        'detail' => 'detail'
+        'start' => 'start',
+        'end' => 'end',
+        'count' => 'count'
     ];
 
     /**
@@ -179,8 +183,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $setters = [
-        'code' => 'setCode',
-        'detail' => 'setDetail'
+        'start' => 'setStart',
+        'end' => 'setEnd',
+        'count' => 'setCount'
     ];
 
     /**
@@ -189,8 +194,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
      * @var string[]
      */
     protected static $getters = [
-        'code' => 'getCode',
-        'detail' => 'getDetail'
+        'start' => 'getStart',
+        'end' => 'getEnd',
+        'count' => 'getCount'
     ];
 
     /**
@@ -250,8 +256,9 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
      */
     public function __construct(?array $data = null)
     {
-        $this->setIfExists('code', $data ?? [], null);
-        $this->setIfExists('detail', $data ?? [], null);
+        $this->setIfExists('start', $data ?? [], null);
+        $this->setIfExists('end', $data ?? [], null);
+        $this->setIfExists('count', $data ?? [], null);
     }
 
     /**
@@ -281,11 +288,14 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
     {
         $invalidProperties = [];
 
-        if ($this->container['code'] === null) {
-            $invalidProperties[] = "'code' can't be null";
+        if ($this->container['start'] === null) {
+            $invalidProperties[] = "'start' can't be null";
         }
-        if ($this->container['detail'] === null) {
-            $invalidProperties[] = "'detail' can't be null";
+        if ($this->container['end'] === null) {
+            $invalidProperties[] = "'end' can't be null";
+        }
+        if ($this->container['count'] === null) {
+            $invalidProperties[] = "'count' can't be null";
         }
         return $invalidProperties;
     }
@@ -303,55 +313,82 @@ class AbcAPIErrorModel91 implements ModelInterface, ArrayAccess, \JsonSerializab
 
 
     /**
-     * Gets code
+     * Gets start
      *
-     * @return int
+     * @return \DateTime
      */
-    public function getCode()
+    public function getStart()
     {
-        return $this->container['code'];
+        return $this->container['start'];
     }
 
     /**
-     * Sets code
+     * Sets start
      *
-     * @param int $code code
+     * @param \DateTime $start start
      *
      * @return self
      */
-    public function setCode($code)
+    public function setStart($start)
     {
-        if (is_null($code)) {
-            throw new \InvalidArgumentException('non-nullable code cannot be null');
+        if (is_null($start)) {
+            throw new \InvalidArgumentException('non-nullable start cannot be null');
         }
-        $this->container['code'] = $code;
+        $this->container['start'] = $start;
 
         return $this;
     }
 
     /**
-     * Gets detail
+     * Gets end
      *
-     * @return string
+     * @return \DateTime
      */
-    public function getDetail()
+    public function getEnd()
     {
-        return $this->container['detail'];
+        return $this->container['end'];
     }
 
     /**
-     * Sets detail
+     * Sets end
      *
-     * @param string $detail detail
+     * @param \DateTime $end end
      *
      * @return self
      */
-    public function setDetail($detail)
+    public function setEnd($end)
     {
-        if (is_null($detail)) {
-            throw new \InvalidArgumentException('non-nullable detail cannot be null');
+        if (is_null($end)) {
+            throw new \InvalidArgumentException('non-nullable end cannot be null');
         }
-        $this->container['detail'] = $detail;
+        $this->container['end'] = $end;
+
+        return $this;
+    }
+
+    /**
+     * Gets count
+     *
+     * @return int
+     */
+    public function getCount()
+    {
+        return $this->container['count'];
+    }
+
+    /**
+     * Sets count
+     *
+     * @param int $count count
+     *
+     * @return self
+     */
+    public function setCount($count)
+    {
+        if (is_null($count)) {
+            throw new \InvalidArgumentException('non-nullable count cannot be null');
+        }
+        $this->container['count'] = $count;
 
         return $this;
     }

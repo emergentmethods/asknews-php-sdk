@@ -121,7 +121,7 @@ class AnalyticsApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\FinanceResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel37|\AskNews\Model\AbcAPIErrorModel38|\AskNews\Model\AbcAPIErrorModel39|\AskNews\Model\AbcAPIErrorModel40|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\FinanceResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel41|\AskNews\Model\AbcAPIErrorModel42|\AskNews\Model\AbcAPIErrorModel43|\AskNews\Model\AbcAPIErrorModel44|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function getAssetSentiment($asset, $metric = 'news_positive', $date_from = null, $date_to = null, string $contentType = self::contentTypes['getAssetSentiment'][0])
     {
@@ -142,7 +142,7 @@ class AnalyticsApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\FinanceResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel37|\AskNews\Model\AbcAPIErrorModel38|\AskNews\Model\AbcAPIErrorModel39|\AskNews\Model\AbcAPIErrorModel40|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\FinanceResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel41|\AskNews\Model\AbcAPIErrorModel42|\AskNews\Model\AbcAPIErrorModel43|\AskNews\Model\AbcAPIErrorModel44|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function getAssetSentimentWithHttpInfo($asset, $metric = 'news_positive', $date_from = null, $date_to = null, string $contentType = self::contentTypes['getAssetSentiment'][0])
     {
@@ -239,11 +239,11 @@ class AnalyticsApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel37' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel41' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel37' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel41' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -261,16 +261,16 @@ class AnalyticsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel37', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel41', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel38' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel42' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel38' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel42' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -288,16 +288,16 @@ class AnalyticsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel38', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel42', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel39' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel43' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel39' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel43' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -315,16 +315,16 @@ class AnalyticsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel39', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel43', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel40' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel44' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel40' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel44' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -342,7 +342,7 @@ class AnalyticsApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel40', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel44', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -424,7 +424,7 @@ class AnalyticsApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel37',
+                        '\AskNews\Model\AbcAPIErrorModel41',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -432,7 +432,7 @@ class AnalyticsApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel38',
+                        '\AskNews\Model\AbcAPIErrorModel42',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -440,7 +440,7 @@ class AnalyticsApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel39',
+                        '\AskNews\Model\AbcAPIErrorModel43',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -448,7 +448,7 @@ class AnalyticsApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel40',
+                        '\AskNews\Model\AbcAPIErrorModel44',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

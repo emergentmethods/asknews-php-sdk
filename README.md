@@ -88,6 +88,7 @@ Class | Method | HTTP request | Description
 *AlertsApi* | [**getAlerts**](docs/Api/AlertsApi.md#getalerts) | **GET** /v1/chat/alerts | Get all created alerts
 *AlertsApi* | [**getAllAlertLogs**](docs/Api/AlertsApi.md#getallalertlogs) | **GET** /v1/chat/alerts/logs | Get all alert logs
 *AlertsApi* | [**putAlert**](docs/Api/AlertsApi.md#putalert) | **PUT** /v1/chat/alerts/{alert_id} | Update an alert
+*AlertsApi* | [**runAlert**](docs/Api/AlertsApi.md#runalert) | **GET** /v1/chat/alerts/{alert_id}/run | Run an existing alert
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
 *AutofilterApi* | [**autofilter**](docs/Api/AutofilterApi.md#autofilter) | **GET** /v1/chat/autofilter | Generate filter params for AskNews endpoints
 *ChatApi* | [**deepNews**](docs/Api/ChatApi.md#deepnews) | **POST** /v1/chat/deepnews | Deep research into real-time news, archive news, and Google.
@@ -107,6 +108,7 @@ Class | Method | HTTP request | Description
 *GraphApi* | [**buildGraph**](docs/Api/GraphApi.md#buildgraph) | **POST** /v1/news/graph | Build a custom mega-news-knowledge graph
 *NewsApi* | [**getArticle**](docs/Api/NewsApi.md#getarticle) | **GET** /v1/news/{article_id} | Get an article by its UUID
 *NewsApi* | [**getArticles**](docs/Api/NewsApi.md#getarticles) | **GET** /v1/news | Get multiple articles by UUID
+*NewsApi* | [**getIndexCounts**](docs/Api/NewsApi.md#getindexcounts) | **GET** /v1/index_counts | Get the index counts underlying AskNews
 *NewsApi* | [**getSourcesReport**](docs/Api/NewsApi.md#getsourcesreport) | **GET** /v1/sources | Get the sources underlying AskNews
 *NewsApi* | [**searchNews**](docs/Api/NewsApi.md#searchnews) | **GET** /v1/news/search | Search for enriched real-time news context
 *NewslettersApi* | [**deleteNewsletter**](docs/Api/NewslettersApi.md#deletenewsletter) | **DELETE** /v1/chat/newsletters/{newsletter_id} | Delete a newsletter
@@ -218,7 +220,11 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel86](docs/Model/AbcAPIErrorModel86.md)
 - [AbcAPIErrorModel87](docs/Model/AbcAPIErrorModel87.md)
 - [AbcAPIErrorModel88](docs/Model/AbcAPIErrorModel88.md)
+- [AbcAPIErrorModel89](docs/Model/AbcAPIErrorModel89.md)
 - [AbcAPIErrorModel9](docs/Model/AbcAPIErrorModel9.md)
+- [AbcAPIErrorModel90](docs/Model/AbcAPIErrorModel90.md)
+- [AbcAPIErrorModel91](docs/Model/AbcAPIErrorModel91.md)
+- [AbcAPIErrorModel92](docs/Model/AbcAPIErrorModel92.md)
 - [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
@@ -301,6 +307,7 @@ Class | Method | HTTP request | Description
 - [HTTPValidationError](docs/Model/HTTPValidationError.md)
 - [HitShareItem](docs/Model/HitShareItem.md)
 - [HitShareResponse](docs/Model/HitShareResponse.md)
+- [IndexCountItem](docs/Model/IndexCountItem.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
 - [KeyPerson](docs/Model/KeyPerson.md)
 - [ListModelResponse](docs/Model/ListModelResponse.md)

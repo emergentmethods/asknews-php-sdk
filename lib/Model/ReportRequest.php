@@ -247,6 +247,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
     public const MODEL_O3_MINI = 'o3-mini';
     public const MODEL_CLAUDE_3_5_SONNET_LATEST = 'claude-3-5-sonnet-latest';
     public const MODEL_CLAUDE_SONNET_4_20250514 = 'claude-sonnet-4-20250514';
+    public const MODEL_CLAUDE_SONNET_4_5_20250929 = 'claude-sonnet-4-5-20250929';
     public const MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT = 'meta-llama/Meta-Llama-3.1-405B-Instruct';
     public const MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT = 'meta-llama/Meta-Llama-3.3-70B-Instruct';
 
@@ -265,6 +266,7 @@ class ReportRequest implements ModelInterface, ArrayAccess, \JsonSerializable
             self::MODEL_O3_MINI,
             self::MODEL_CLAUDE_3_5_SONNET_LATEST,
             self::MODEL_CLAUDE_SONNET_4_20250514,
+            self::MODEL_CLAUDE_SONNET_4_5_20250929,
             self::MODEL_META_LLAMA_META_LLAMA_3_1_405_B_INSTRUCT,
             self::MODEL_META_LLAMA_META_LLAMA_3_3_70_B_INSTRUCT,
         ];

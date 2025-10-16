@@ -154,4 +154,16 @@ class AlertsApiTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test case for runAlert
+     *
+     * Run an existing alert.
+     *
+     */
+    public function testRunAlert()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

@@ -11,6 +11,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**getAlerts()**](AlertsApi.md#getAlerts) | **GET** /v1/chat/alerts | Get all created alerts |
 | [**getAllAlertLogs()**](AlertsApi.md#getAllAlertLogs) | **GET** /v1/chat/alerts/logs | Get all alert logs |
 | [**putAlert()**](AlertsApi.md#putAlert) | **PUT** /v1/chat/alerts/{alert_id} | Update an alert |
+| [**runAlert()**](AlertsApi.md#runAlert) | **GET** /v1/chat/alerts/{alert_id}/run | Run an existing alert |
 
 
 ## `createAlert()`
@@ -500,6 +501,74 @@ try {
 ### HTTP request headers
 
 - **Content-Type**: `application/json`
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `runAlert()`
+
+```php
+runAlert($alert_id, $user_id): \AskNews\Model\AlertResponse
+```
+
+Run an existing alert
+
+Get an alert.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+
+// Configure sdk credentials
+$config = new AskNews\Configuration([
+  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
+  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
+  'scopes' => ['news', 'chat', 'stories', 'analytics']
+]);
+
+
+$apiInstance = new AskNews\Api\AlertsApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$alert_id = 'alert_id_example'; // string | The alert ID
+$user_id = 'user_id_example'; // string | The ID of the user to get logs for
+
+try {
+    $result = $apiInstance->runAlert($alert_id, $user_id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling AlertsApi->runAlert: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **alert_id** | **string**| The alert ID | |
+| **user_id** | **string**| The ID of the user to get logs for | [optional] |
+
+### Return type
+
+[**\AskNews\Model\AlertResponse**](../Model/AlertResponse.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: `application/json`
 
 [[Back to top]](#) [[Back to API list]](../../README.md#endpoints)

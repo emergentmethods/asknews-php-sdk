@@ -127,7 +127,7 @@ class ChatApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\CreateDeepNewsResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel25|\AskNews\Model\AbcAPIErrorModel26|\AskNews\Model\AbcAPIErrorModel27|\AskNews\Model\AbcAPIErrorModel28|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\CreateDeepNewsResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel29|\AskNews\Model\AbcAPIErrorModel30|\AskNews\Model\AbcAPIErrorModel31|\AskNews\Model\AbcAPIErrorModel32|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function deepNews($create_deep_news_request, string $contentType = self::contentTypes['deepNews'][0])
     {
@@ -145,7 +145,7 @@ class ChatApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\CreateDeepNewsResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel25|\AskNews\Model\AbcAPIErrorModel26|\AskNews\Model\AbcAPIErrorModel27|\AskNews\Model\AbcAPIErrorModel28|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\CreateDeepNewsResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel29|\AskNews\Model\AbcAPIErrorModel30|\AskNews\Model\AbcAPIErrorModel31|\AskNews\Model\AbcAPIErrorModel32|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function deepNewsWithHttpInfo($create_deep_news_request, string $contentType = self::contentTypes['deepNews'][0])
     {
@@ -242,11 +242,11 @@ class ChatApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel25' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel29' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel25' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel29' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -264,16 +264,16 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel25', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel29', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel26' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel30' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel26' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel30' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -291,16 +291,16 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel26', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel30', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel27' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel31' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel27' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel31' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -318,16 +318,16 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel27', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel31', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel28' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel32' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel28' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel32' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -345,7 +345,7 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel28', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel32', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -427,7 +427,7 @@ class ChatApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel25',
+                        '\AskNews\Model\AbcAPIErrorModel29',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -435,7 +435,7 @@ class ChatApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel26',
+                        '\AskNews\Model\AbcAPIErrorModel30',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -443,7 +443,7 @@ class ChatApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel27',
+                        '\AskNews\Model\AbcAPIErrorModel31',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -451,7 +451,7 @@ class ChatApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel28',
+                        '\AskNews\Model\AbcAPIErrorModel32',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -680,7 +680,7 @@ class ChatApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\CreateChatCompletionResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel21|\AskNews\Model\AbcAPIErrorModel22|\AskNews\Model\AbcAPIErrorModel23|\AskNews\Model\AbcAPIErrorModel24|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\CreateChatCompletionResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel25|\AskNews\Model\AbcAPIErrorModel26|\AskNews\Model\AbcAPIErrorModel27|\AskNews\Model\AbcAPIErrorModel28|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function getChatCompletions($create_chat_completion_request, string $contentType = self::contentTypes['getChatCompletions'][0])
     {
@@ -698,7 +698,7 @@ class ChatApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\CreateChatCompletionResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel21|\AskNews\Model\AbcAPIErrorModel22|\AskNews\Model\AbcAPIErrorModel23|\AskNews\Model\AbcAPIErrorModel24|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\CreateChatCompletionResponse1|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel25|\AskNews\Model\AbcAPIErrorModel26|\AskNews\Model\AbcAPIErrorModel27|\AskNews\Model\AbcAPIErrorModel28|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function getChatCompletionsWithHttpInfo($create_chat_completion_request, string $contentType = self::contentTypes['getChatCompletions'][0])
     {
@@ -795,11 +795,11 @@ class ChatApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel21' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel25' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel21' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel25' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -817,16 +817,16 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel21', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel25', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel22' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel26' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel22' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel26' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -844,16 +844,16 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel22', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel26', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel23' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel27' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel23' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel27' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -871,16 +871,16 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel23', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel27', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel24' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel28' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel24' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel28' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -898,7 +898,7 @@ class ChatApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel24', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel28', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -980,7 +980,7 @@ class ChatApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel21',
+                        '\AskNews\Model\AbcAPIErrorModel25',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -988,7 +988,7 @@ class ChatApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel22',
+                        '\AskNews\Model\AbcAPIErrorModel26',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -996,7 +996,7 @@ class ChatApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel23',
+                        '\AskNews\Model\AbcAPIErrorModel27',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -1004,7 +1004,7 @@ class ChatApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel24',
+                        '\AskNews\Model\AbcAPIErrorModel28',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

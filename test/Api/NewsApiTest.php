@@ -96,6 +96,18 @@ class NewsApiTest extends TestCase
     }
 
     /**
+     * Test case for getIndexCounts
+     *
+     * Get the index counts underlying AskNews.
+     *
+     */
+    public function testGetIndexCounts()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
      * Test case for getSourcesReport
      *
      * Get the sources underlying AskNews.

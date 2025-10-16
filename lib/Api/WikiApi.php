@@ -125,7 +125,7 @@ class WikiApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return \AskNews\Model\WikiSearchResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel85|\AskNews\Model\AbcAPIErrorModel86|\AskNews\Model\AbcAPIErrorModel87|\AskNews\Model\AbcAPIErrorModel88|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
+     * @return \AskNews\Model\WikiSearchResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel89|\AskNews\Model\AbcAPIErrorModel90|\AskNews\Model\AbcAPIErrorModel91|\AskNews\Model\AbcAPIErrorModel92|\AskNews\Model\AsknewsApiErrorsAPIErrorModel
      */
     public function searchWiki($query = '', $neighbor_chunks = null, $n_documents = null, $full_articles = null, $hybrid_search = null, $string_guarantee = null, $diversify = null, $include_main_section = null, string $contentType = self::contentTypes['searchWiki'][0])
     {
@@ -150,7 +150,7 @@ class WikiApi
      *
      * @throws \AskNews\ApiException on non-2xx response or if the response body is not in the expected format
      * @throws \InvalidArgumentException
-     * @return array of \AskNews\Model\WikiSearchResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel85|\AskNews\Model\AbcAPIErrorModel86|\AskNews\Model\AbcAPIErrorModel87|\AskNews\Model\AbcAPIErrorModel88|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \AskNews\Model\WikiSearchResponse|\AskNews\Model\ValidationErrorModel|\AskNews\Model\AbcAPIErrorModel89|\AskNews\Model\AbcAPIErrorModel90|\AskNews\Model\AbcAPIErrorModel91|\AskNews\Model\AbcAPIErrorModel92|\AskNews\Model\AsknewsApiErrorsAPIErrorModel, HTTP status code, HTTP response headers (array of strings)
      */
     public function searchWikiWithHttpInfo($query = '', $neighbor_chunks = null, $n_documents = null, $full_articles = null, $hybrid_search = null, $string_guarantee = null, $diversify = null, $include_main_section = null, string $contentType = self::contentTypes['searchWiki'][0])
     {
@@ -247,11 +247,11 @@ class WikiApi
                         $response->getHeaders()
                     ];
                 case 405:
-                    if ('\AskNews\Model\AbcAPIErrorModel85' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel89' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel85' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel89' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -269,16 +269,16 @@ class WikiApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel85', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel89', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 403:
-                    if ('\AskNews\Model\AbcAPIErrorModel86' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel90' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel86' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel90' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -296,16 +296,16 @@ class WikiApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel86', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel90', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 401:
-                    if ('\AskNews\Model\AbcAPIErrorModel87' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel91' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel87' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel91' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -323,16 +323,16 @@ class WikiApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel87', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel91', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
                 case 400:
-                    if ('\AskNews\Model\AbcAPIErrorModel88' === '\SplFileObject') {
+                    if ('\AskNews\Model\AbcAPIErrorModel92' === '\SplFileObject') {
                         $content = $response->getBody(); //stream goes to serializer
                     } else {
                         $content = (string) $response->getBody();
-                        if ('\AskNews\Model\AbcAPIErrorModel88' !== 'string') {
+                        if ('\AskNews\Model\AbcAPIErrorModel92' !== 'string') {
                             try {
                                 $content = json_decode($content, false, 512, JSON_THROW_ON_ERROR);
                             } catch (\JsonException $exception) {
@@ -350,7 +350,7 @@ class WikiApi
                     }
 
                     return [
-                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel88', []),
+                        ObjectSerializer::deserialize($content, '\AskNews\Model\AbcAPIErrorModel92', []),
                         $response->getStatusCode(),
                         $response->getHeaders()
                     ];
@@ -432,7 +432,7 @@ class WikiApi
                 case 405:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel85',
+                        '\AskNews\Model\AbcAPIErrorModel89',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -440,7 +440,7 @@ class WikiApi
                 case 403:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel86',
+                        '\AskNews\Model\AbcAPIErrorModel90',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -448,7 +448,7 @@ class WikiApi
                 case 401:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel87',
+                        '\AskNews\Model\AbcAPIErrorModel91',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);
@@ -456,7 +456,7 @@ class WikiApi
                 case 400:
                     $data = ObjectSerializer::deserialize(
                         $e->getResponseBody(),
-                        '\AskNews\Model\AbcAPIErrorModel88',
+                        '\AskNews\Model\AbcAPIErrorModel92',
                         $e->getResponseHeaders()
                     );
                     $e->setResponseObject($data);

@@ -1,6 +1,6 @@
 <?php
 /**
- * AbcAPIErrorModel89Test
+ * IndexCountItemTest
  *
  * PHP version 7.4
  *
@@ -31,15 +31,15 @@ namespace AskNews\Test\Model;
 use PHPUnit\Framework\TestCase;
 
 /**
- * AbcAPIErrorModel89Test Class Doc Comment
+ * IndexCountItemTest Class Doc Comment
  *
  * @category    Class
- * @description AbcAPIErrorModel89
+ * @description IndexCountItem
  * @package     AskNews
  * @author      OpenAPI Generator team
  * @link        https://openapi-generator.tech
  */
-class AbcAPIErrorModel89Test extends TestCase
+class IndexCountItemTest extends TestCase
 {
 
     /**
@@ -71,27 +71,36 @@ class AbcAPIErrorModel89Test extends TestCase
     }
 
     /**
-     * Test "AbcAPIErrorModel89"
+     * Test "IndexCountItem"
      */
-    public function testAbcAPIErrorModel89()
+    public function testIndexCountItem()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "code"
+     * Test attribute "start"
      */
-    public function testPropertyCode()
+    public function testPropertyStart()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
 
     /**
-     * Test attribute "detail"
+     * Test attribute "end"
      */
-    public function testPropertyDetail()
+    public function testPropertyEnd()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "count"
+     */
+    public function testPropertyCount()
     {
         // TODO: implement
         self::markTestIncomplete('Not implemented');
