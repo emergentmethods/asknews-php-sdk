@@ -146,7 +146,7 @@ try {
 ## `getIndexCounts()`
 
 ```php
-getIndexCounts($domains, $start_datetime, $end_datetime, $sampling): \AskNews\Model\IndexCountItem[]
+getIndexCounts($start_datetime, $end_datetime, $domains, $sampling, $time_filter, $categories, $provocative, $reporting_voice, $bad_domain_url, $page_rank, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $languages, $countries, $countries_blacklist, $continents, $sentiment): \AskNews\Model\IndexCountItem[]
 ```
 
 Get the index counts underlying AskNews
@@ -176,13 +176,29 @@ $apiInstance = new AskNews\Api\NewsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$domains = array('domains_example'); // string[] | Domain or list of domains to get indexing counts for
 $start_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Start timestamp to filter by
 $end_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | End timestamp to filter by
-$sampling = '1h'; // string | Sampling to use
+$domains = array('domains_example'); // string[] | Domain or list of domains to get indexing counts for
+$sampling = '1d'; // string | Sampling to use
+$time_filter = 'pub_date'; // string | Control which date type to filter on. 'crawl_date' is the date the article was crawled, 'pub_date' is the date the article was published.
+$categories = array('categories_example'); // string[] | Categories of news to filter on
+$provocative = 'provocative_example'; // string | Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary.
+$reporting_voice = array('reporting_voice_example'); // string[] | Type of reporting voice to filer by.
+$bad_domain_url = new \AskNews\Model\\AskNews\Model\BadDomainUrl1(); // \AskNews\Model\BadDomainUrl1 | blacklist of domains that must be excluded from resultsThis can be a single domain url or a list of domain urls.
+$page_rank = 56; // int | maximum allowed pagerank for returned articles
+$string_guarantee = array('string_guarantee_example'); // string[] | If defined, the search will only occur on articles that contain this string.
+$string_guarantee_op = 'AND'; // string | Operator to use for string guarantee.
+$reverse_string_guarantee = array('reverse_string_guarantee_example'); // string[] | If defined, the search will only occur on articles that do not contain this string.
+$entity_guarantee = array('entity_guarantee_example'); // string[] | Entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example ['Location:Paris', 'Person:John']
+$entity_guarantee_op = 'OR'; // string | Operator to use for entity guarantee.
+$languages = array('languages_example'); // string[] | Languages to filter by. This is the two-letter 'set 1' of the ISO 639-1 standard. For example: English is 'en'.
+$countries = array('countries_example'); // string[] | Source countries to filter by (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
+$countries_blacklist = array('countries_blacklist_example'); // string[] | Source countries to blacklist from search (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to reverse_entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is 'US', France is 'FR', Sweden is 'SE'.
+$continents = array('continents_example'); // string[] | Continents to filter by
+$sentiment = 'sentiment_example'; // string | Sentiment to filter news articles by.
 
 try {
-    $result = $apiInstance->getIndexCounts($domains, $start_datetime, $end_datetime, $sampling);
+    $result = $apiInstance->getIndexCounts($start_datetime, $end_datetime, $domains, $sampling, $time_filter, $categories, $provocative, $reporting_voice, $bad_domain_url, $page_rank, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $languages, $countries, $countries_blacklist, $continents, $sentiment);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->getIndexCounts: ', $e->getMessage(), PHP_EOL;
@@ -193,10 +209,26 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **domains** | [**string[]**](../Model/string.md)| Domain or list of domains to get indexing counts for | |
-| **start_datetime** | **\DateTime**| Start timestamp to filter by | [optional] |
-| **end_datetime** | **\DateTime**| End timestamp to filter by | [optional] |
-| **sampling** | **string**| Sampling to use | [optional] [default to &#39;1h&#39;] |
+| **start_datetime** | **\DateTime**| Start timestamp to filter by | |
+| **end_datetime** | **\DateTime**| End timestamp to filter by | |
+| **domains** | [**string[]**](../Model/string.md)| Domain or list of domains to get indexing counts for | [optional] |
+| **sampling** | **string**| Sampling to use | [optional] [default to &#39;1d&#39;] |
+| **time_filter** | **string**| Control which date type to filter on. &#39;crawl_date&#39; is the date the article was crawled, &#39;pub_date&#39; is the date the article was published. | [optional] [default to &#39;pub_date&#39;] |
+| **categories** | [**string[]**](../Model/string.md)| Categories of news to filter on | [optional] |
+| **provocative** | **string**| Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary. | [optional] |
+| **reporting_voice** | [**string[]**](../Model/string.md)| Type of reporting voice to filer by. | [optional] |
+| **bad_domain_url** | [**\AskNews\Model\BadDomainUrl1**](../Model/.md)| blacklist of domains that must be excluded from resultsThis can be a single domain url or a list of domain urls. | [optional] |
+| **page_rank** | **int**| maximum allowed pagerank for returned articles | [optional] |
+| **string_guarantee** | [**string[]**](../Model/string.md)| If defined, the search will only occur on articles that contain this string. | [optional] |
+| **string_guarantee_op** | **string**| Operator to use for string guarantee. | [optional] [default to &#39;AND&#39;] |
+| **reverse_string_guarantee** | [**string[]**](../Model/string.md)| If defined, the search will only occur on articles that do not contain this string. | [optional] |
+| **entity_guarantee** | [**string[]**](../Model/string.md)| Entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example [&#39;Location:Paris&#39;, &#39;Person:John&#39;] | [optional] |
+| **entity_guarantee_op** | **string**| Operator to use for entity guarantee. | [optional] [default to &#39;OR&#39;] |
+| **languages** | [**string[]**](../Model/string.md)| Languages to filter by. This is the two-letter &#39;set 1&#39; of the ISO 639-1 standard. For example: English is &#39;en&#39;. | [optional] |
+| **countries** | [**string[]**](../Model/string.md)| Source countries to filter by (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |
+| **countries_blacklist** | [**string[]**](../Model/string.md)| Source countries to blacklist from search (this is only for the publisher location, not the locations mentioned in articles. For Locations mentioned in articles, refer to reverse_entity_guarantee), countries must be the two-letter ISO country codeFor example: United States is &#39;US&#39;, France is &#39;FR&#39;, Sweden is &#39;SE&#39;. | [optional] |
+| **continents** | [**string[]**](../Model/string.md)| Continents to filter by | [optional] |
+| **sentiment** | **string**| Sentiment to filter news articles by. | [optional] |
 
 ### Return type
 
@@ -335,7 +367,7 @@ $offset = new \AskNews\Model\\AskNews\Model\Offset(); // \AskNews\Model\Offset |
 $categories = array('categories_example'); // string[] | Categories of news to filter on
 $doc_start_delimiter = '<doc>'; // string | Document start delimiter for string return.
 $doc_end_delimiter = '</doc>'; // string | Document end delimiter for string return.
-$provocative = 'all'; // string | Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary.
+$provocative = 'provocative_example'; // string | Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary.
 $reporting_voice = new \AskNews\Model\\AskNews\Model\ReportingVoice(); // \AskNews\Model\ReportingVoice | Type of reporting voice to filer by.
 $domain_url = new \AskNews\Model\\AskNews\Model\DomainUrl(); // \AskNews\Model\DomainUrl | filter by domain url of interest. This can be a single domain or a list of domains. For example, 'npr.org' or ['nature.com', 'npr.org']
 $bad_domain_url = new \AskNews\Model\\AskNews\Model\BadDomainUrl(); // \AskNews\Model\BadDomainUrl | blacklist of domains that must be excluded from resultsThis can be a single domain url or a list of domain urls.
@@ -382,7 +414,7 @@ try {
 | **categories** | [**string[]**](../Model/string.md)| Categories of news to filter on | [optional] |
 | **doc_start_delimiter** | **string**| Document start delimiter for string return. | [optional] [default to &#39;&lt;doc&gt;&#39;] |
 | **doc_end_delimiter** | **string**| Document end delimiter for string return. | [optional] [default to &#39;&lt;/doc&gt;&#39;] |
-| **provocative** | **string**| Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary. | [optional] [default to &#39;all&#39;] |
+| **provocative** | **string**| Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary. | [optional] |
 | **reporting_voice** | [**\AskNews\Model\ReportingVoice**](../Model/.md)| Type of reporting voice to filer by. | [optional] |
 | **domain_url** | [**\AskNews\Model\DomainUrl**](../Model/.md)| filter by domain url of interest. This can be a single domain or a list of domains. For example, &#39;npr.org&#39; or [&#39;nature.com&#39;, &#39;npr.org&#39;] | [optional] |
 | **bad_domain_url** | [**\AskNews\Model\BadDomainUrl**](../Model/.md)| blacklist of domains that must be excluded from resultsThis can be a single domain url or a list of domain urls. | [optional] |
