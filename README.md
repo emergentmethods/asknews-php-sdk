@@ -91,6 +91,7 @@ Class | Method | HTTP request | Description
 *AlertsApi* | [**runAlert**](docs/Api/AlertsApi.md#runalert) | **GET** /v1/chat/alerts/{alert_id}/run | Run an existing alert
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
 *AutofilterApi* | [**autofilter**](docs/Api/AutofilterApi.md#autofilter) | **GET** /v1/chat/autofilter | Generate filter params for AskNews endpoints
+*ChartsApi* | [**createChartsEndpoint**](docs/Api/ChartsApi.md#createchartsendpoint) | **POST** /v1/chat/charts | Create a chart
 *ChatApi* | [**deepNews**](docs/Api/ChatApi.md#deepnews) | **POST** /v1/chat/deepnews | Deep research into real-time news, archive news, and Google.
 *ChatApi* | [**getChatCompletions**](docs/Api/ChatApi.md#getchatcompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant
 *ChatApi* | [**getHeadlineQuestions**](docs/Api/ChatApi.md#getheadlinequestions) | **GET** /v1/chat/questions | Get example headline questions
@@ -240,6 +241,8 @@ Class | Method | HTTP request | Description
 - [BlueskySource](docs/Model/BlueskySource.md)
 - [BlueskySourceParams](docs/Model/BlueskySourceParams.md)
 - [BodyBuildGraph](docs/Model/BodyBuildGraph.md)
+- [ChartParameters](docs/Model/ChartParameters.md)
+- [ChartResponse](docs/Model/ChartResponse.md)
 - [Choice](docs/Model/Choice.md)
 - [CirrusMetadata](docs/Model/CirrusMetadata.md)
 - [Classification](docs/Model/Classification.md)
@@ -247,6 +250,7 @@ Class | Method | HTTP request | Description
 - [Continent](docs/Model/Continent.md)
 - [CountResponse](docs/Model/CountResponse.md)
 - [CreateAlertRequest](docs/Model/CreateAlertRequest.md)
+- [CreateChartRequest](docs/Model/CreateChartRequest.md)
 - [CreateChatCompletionRequest](docs/Model/CreateChatCompletionRequest.md)
 - [CreateChatCompletionRequestMessage](docs/Model/CreateChatCompletionRequestMessage.md)
 - [CreateChatCompletionRequestMessage1](docs/Model/CreateChatCompletionRequestMessage1.md)
@@ -351,6 +355,7 @@ Class | Method | HTTP request | Description
 - [SearchResponseDictItem](docs/Model/SearchResponseDictItem.md)
 - [SearchResponseDictItem1](docs/Model/SearchResponseDictItem1.md)
 - [Sentiment](docs/Model/Sentiment.md)
+- [SeriesConfig](docs/Model/SeriesConfig.md)
 - [Source](docs/Model/Source.md)
 - [SourceReportItem](docs/Model/SourceReportItem.md)
 - [Sources1](docs/Model/Sources1.md)
