@@ -13,5 +13,8 @@ Name | Type | Description | Notes
 **iterations_used** | **int** |  | [optional]
 **last_reasoning** | **string** |  | [optional]
 **last_parameters** | [**\AskNews\Model\ChartParameters**](ChartParameters.md) |  | [optional]
+**png_data** | **string** |  | [optional]
+**png_url** | **string** |  | [optional]
+**chart_url** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

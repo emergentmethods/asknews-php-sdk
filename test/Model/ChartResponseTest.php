@@ -159,4 +159,31 @@ class ChartResponseTest extends TestCase
         // TODO: implement
         self::markTestIncomplete('Not implemented');
     }
+
+    /**
+     * Test attribute "png_data"
+     */
+    public function testPropertyPngData()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "png_url"
+     */
+    public function testPropertyPngUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
+
+    /**
+     * Test attribute "chart_url"
+     */
+    public function testPropertyChartUrl()
+    {
+        // TODO: implement
+        self::markTestIncomplete('Not implemented');
+    }
 }

@@ -65,7 +65,10 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'context' => 'array<string,mixed>',
         'iterations_used' => 'int',
         'last_reasoning' => 'string',
-        'last_parameters' => '\AskNews\Model\ChartParameters'
+        'last_parameters' => '\AskNews\Model\ChartParameters',
+        'png_data' => 'string',
+        'png_url' => 'string',
+        'chart_url' => 'string'
     ];
 
     /**
@@ -84,7 +87,10 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'context' => null,
         'iterations_used' => null,
         'last_reasoning' => null,
-        'last_parameters' => null
+        'last_parameters' => null,
+        'png_data' => null,
+        'png_url' => null,
+        'chart_url' => null
     ];
 
     /**
@@ -101,7 +107,10 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'context' => true,
         'iterations_used' => true,
         'last_reasoning' => true,
-        'last_parameters' => true
+        'last_parameters' => true,
+        'png_data' => true,
+        'png_url' => true,
+        'chart_url' => true
     ];
 
     /**
@@ -198,7 +207,10 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'context' => 'context',
         'iterations_used' => 'iterations_used',
         'last_reasoning' => 'last_reasoning',
-        'last_parameters' => 'last_parameters'
+        'last_parameters' => 'last_parameters',
+        'png_data' => 'png_data',
+        'png_url' => 'png_url',
+        'chart_url' => 'chart_url'
     ];
 
     /**
@@ -215,7 +227,10 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'context' => 'setContext',
         'iterations_used' => 'setIterationsUsed',
         'last_reasoning' => 'setLastReasoning',
-        'last_parameters' => 'setLastParameters'
+        'last_parameters' => 'setLastParameters',
+        'png_data' => 'setPngData',
+        'png_url' => 'setPngUrl',
+        'chart_url' => 'setChartUrl'
     ];
 
     /**
@@ -232,7 +247,10 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         'context' => 'getContext',
         'iterations_used' => 'getIterationsUsed',
         'last_reasoning' => 'getLastReasoning',
-        'last_parameters' => 'getLastParameters'
+        'last_parameters' => 'getLastParameters',
+        'png_data' => 'getPngData',
+        'png_url' => 'getPngUrl',
+        'chart_url' => 'getChartUrl'
     ];
 
     /**
@@ -301,6 +319,9 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
         $this->setIfExists('iterations_used', $data ?? [], null);
         $this->setIfExists('last_reasoning', $data ?? [], null);
         $this->setIfExists('last_parameters', $data ?? [], null);
+        $this->setIfExists('png_data', $data ?? [], null);
+        $this->setIfExists('png_url', $data ?? [], null);
+        $this->setIfExists('chart_url', $data ?? [], null);
     }
 
     /**
@@ -632,6 +653,108 @@ class ChartResponse implements ModelInterface, ArrayAccess, \JsonSerializable
             }
         }
         $this->container['last_parameters'] = $last_parameters;
+
+        return $this;
+    }
+
+    /**
+     * Gets png_data
+     *
+     * @return string|null
+     */
+    public function getPngData()
+    {
+        return $this->container['png_data'];
+    }
+
+    /**
+     * Sets png_data
+     *
+     * @param string|null $png_data png_data
+     *
+     * @return self
+     */
+    public function setPngData($png_data)
+    {
+        if (is_null($png_data)) {
+            array_push($this->openAPINullablesSetToNull, 'png_data');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('png_data', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['png_data'] = $png_data;
+
+        return $this;
+    }
+
+    /**
+     * Gets png_url
+     *
+     * @return string|null
+     */
+    public function getPngUrl()
+    {
+        return $this->container['png_url'];
+    }
+
+    /**
+     * Sets png_url
+     *
+     * @param string|null $png_url png_url
+     *
+     * @return self
+     */
+    public function setPngUrl($png_url)
+    {
+        if (is_null($png_url)) {
+            array_push($this->openAPINullablesSetToNull, 'png_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('png_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['png_url'] = $png_url;
+
+        return $this;
+    }
+
+    /**
+     * Gets chart_url
+     *
+     * @return string|null
+     */
+    public function getChartUrl()
+    {
+        return $this->container['chart_url'];
+    }
+
+    /**
+     * Sets chart_url
+     *
+     * @param string|null $chart_url chart_url
+     *
+     * @return self
+     */
+    public function setChartUrl($chart_url)
+    {
+        if (is_null($chart_url)) {
+            array_push($this->openAPINullablesSetToNull, 'chart_url');
+        } else {
+            $nullablesSetToNull = $this->getOpenAPINullablesSetToNull();
+            $index = array_search('chart_url', $nullablesSetToNull);
+            if ($index !== FALSE) {
+                unset($nullablesSetToNull[$index]);
+                $this->setOpenAPINullablesSetToNull($nullablesSetToNull);
+            }
+        }
+        $this->container['chart_url'] = $chart_url;
 
         return $this;
     }
