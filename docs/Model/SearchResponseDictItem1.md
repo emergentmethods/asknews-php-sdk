@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **assets** | [**\AskNews\Model\Assets1**](Assets1.md) |  | [optional]
 **social_embeds** | **string[]** |  | [optional]
 **bias** | **string** |  | [optional]
+**authors** | [**\AskNews\Model\Author1[]**](Author1.md) |  | [optional]
 **as_string_key** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

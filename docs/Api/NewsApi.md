@@ -324,7 +324,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -388,9 +388,10 @@ $countries_blacklist = array('countries_blacklist_example'); // string[] | Sourc
 $continents = array('continents_example'); // string[] | Continents to filter by.
 $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 $premium = false; // bool | Include premium sources.
+$authors = array('authors_example'); // string[] | Authors to filter articles by.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -435,6 +436,7 @@ try {
 | **continents** | [**string[]**](../Model/string.md)| Continents to filter by. | [optional] |
 | **sentiment** | **string**| Sentiment to filter articles by. | [optional] |
 | **premium** | **bool**| Include premium sources. | [optional] [default to false] |
+| **authors** | [**string[]**](../Model/string.md)| Authors to filter articles by. | [optional] |
 
 ### Return type
 
