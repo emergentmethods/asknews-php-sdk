@@ -78,7 +78,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'https://api.asknews.dev';
+    protected $host = 'https://api.asknews.app';
 
     /**
      * Auth url
@@ -92,7 +92,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'asknews-sdk-php-0.4.6';
+    protected $userAgent = 'asknews-sdk-php-0.4.7';
 
     /**
      * Debug switch (default set to false)
@@ -464,7 +464,7 @@ class Configuration
     {
         return [
             [
-                "url" => "https://api.asknews.dev",
+                "url" => "https://api.asknews.app",
                 "description" => "No description provided",
             ]
         ];
