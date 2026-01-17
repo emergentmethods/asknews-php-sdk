@@ -1,6 +1,6 @@
 {
     "name": "emergentmethods/asknews-php-sdk",
-    "description": "AskNews API",
+    "description": "AskNews API [![status](https://status.asknews.app/api/badge/2/status?style=for-the-badge)](https://status.asknews.app/status/prod)",
     "keywords": [
         "newsapi",
         "llm",

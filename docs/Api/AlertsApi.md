@@ -1,6 +1,6 @@
 # AskNews\AlertsApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.dev, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -33,14 +33,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
-
-
 $apiInstance = new AskNews\Api\AlertsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -69,7 +61,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -99,14 +91,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
-
-
 $apiInstance = new AskNews\Api\AlertsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -134,7 +118,7 @@ void (empty response body)
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -162,14 +146,6 @@ Get an alert.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\AlertsApi(
@@ -202,7 +178,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -230,14 +206,6 @@ Get alert logs.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\AlertsApi(
@@ -280,7 +248,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -308,14 +276,6 @@ Get all created alerts.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\AlertsApi(
@@ -350,7 +310,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -378,14 +338,6 @@ Get all alert logs.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\AlertsApi(
@@ -428,7 +380,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -456,14 +408,6 @@ Update an alert.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\AlertsApi(
@@ -496,7 +440,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -524,14 +468,6 @@ Get an alert.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\AlertsApi(
@@ -564,7 +500,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 

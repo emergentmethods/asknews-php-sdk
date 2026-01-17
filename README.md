@@ -1,6 +1,6 @@
 # asknews-php-sdk
 
-AskNews API
+AskNews API [![status](https://status.asknews.app/api/badge/2/status?style=for-the-badge)](https://status.asknews.app/status/prod)
 
 
 ## Installation & Usage
@@ -50,14 +50,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
-
-
 $apiInstance = new AskNews\Api\AlertsApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -77,7 +69,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.asknews.app*
+All URIs are relative to *https://api.asknews.dev*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -107,6 +99,7 @@ Class | Method | HTTP request | Description
 *DistributionApi* | [**updateDomain**](docs/Api/DistributionApi.md#updatedomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
 *GraphApi* | [**buildGraph**](docs/Api/GraphApi.md#buildgraph) | **POST** /v1/news/graph | Build a custom mega-news-knowledge graph
+*IndexUrlsApi* | [**indexUrls**](docs/Api/IndexUrlsApi.md#indexurls) | **POST** /v1/news/index_urls | Index a list of URLs into AskNews
 *NewsApi* | [**getArticle**](docs/Api/NewsApi.md#getarticle) | **GET** /v1/news/{article_id} | Get an article by its UUID
 *NewsApi* | [**getArticles**](docs/Api/NewsApi.md#getarticles) | **GET** /v1/news | Get multiple articles by UUID
 *NewsApi* | [**getIndexCounts**](docs/Api/NewsApi.md#getindexcounts) | **GET** /v1/index_counts | Get the index counts underlying AskNews
@@ -226,6 +219,10 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel90](docs/Model/AbcAPIErrorModel90.md)
 - [AbcAPIErrorModel91](docs/Model/AbcAPIErrorModel91.md)
 - [AbcAPIErrorModel92](docs/Model/AbcAPIErrorModel92.md)
+- [AbcAPIErrorModel93](docs/Model/AbcAPIErrorModel93.md)
+- [AbcAPIErrorModel94](docs/Model/AbcAPIErrorModel94.md)
+- [AbcAPIErrorModel95](docs/Model/AbcAPIErrorModel95.md)
+- [AbcAPIErrorModel96](docs/Model/AbcAPIErrorModel96.md)
 - [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
@@ -285,6 +282,7 @@ Class | Method | HTTP request | Description
 - [CreateDeepNewsResponseUsage](docs/Model/CreateDeepNewsResponseUsage.md)
 - [CreateDeepNewsResponseUsage1](docs/Model/CreateDeepNewsResponseUsage1.md)
 - [CreateNewsletterRequest](docs/Model/CreateNewsletterRequest.md)
+- [DeepNewsModel](docs/Model/DeepNewsModel.md)
 - [DeepNewsResponseSources](docs/Model/DeepNewsResponseSources.md)
 - [DeepNewsResponseSources1](docs/Model/DeepNewsResponseSources1.md)
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
@@ -316,6 +314,7 @@ Class | Method | HTTP request | Description
 - [HitShareItem](docs/Model/HitShareItem.md)
 - [HitShareResponse](docs/Model/HitShareResponse.md)
 - [IndexCountItem](docs/Model/IndexCountItem.md)
+- [IndexUrlsResponse](docs/Model/IndexUrlsResponse.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
 - [KeyPerson](docs/Model/KeyPerson.md)
 - [ListModelResponse](docs/Model/ListModelResponse.md)
@@ -347,6 +346,7 @@ Class | Method | HTTP request | Description
 - [RedditPerspective](docs/Model/RedditPerspective.md)
 - [RedditResponse](docs/Model/RedditResponse.md)
 - [RedditThread](docs/Model/RedditThread.md)
+- [ReferralItem](docs/Model/ReferralItem.md)
 - [ReplyTo](docs/Model/ReplyTo.md)
 - [ReportRequest](docs/Model/ReportRequest.md)
 - [ReportingVoice](docs/Model/ReportingVoice.md)
@@ -354,6 +354,9 @@ Class | Method | HTTP request | Description
 - [ReportingVoice2](docs/Model/ReportingVoice2.md)
 - [ResendBroadcastAction](docs/Model/ResendBroadcastAction.md)
 - [ResendBroadcastParams](docs/Model/ResendBroadcastParams.md)
+- [ScrapeDataItem](docs/Model/ScrapeDataItem.md)
+- [ScrapeItem](docs/Model/ScrapeItem.md)
+- [ScrapedURLItem](docs/Model/ScrapedURLItem.md)
 - [SearchResponse](docs/Model/SearchResponse.md)
 - [SearchResponseDictItem](docs/Model/SearchResponseDictItem.md)
 - [SearchResponseDictItem1](docs/Model/SearchResponseDictItem1.md)
@@ -379,6 +382,7 @@ Class | Method | HTTP request | Description
 - [TopNDomainsByHitsItem](docs/Model/TopNDomainsByHitsItem.md)
 - [TopNDomainsByHitsResponse](docs/Model/TopNDomainsByHitsResponse.md)
 - [TriggersInner](docs/Model/TriggersInner.md)
+- [URLIndexingRequest](docs/Model/URLIndexingRequest.md)
 - [UpdateAlertRequest](docs/Model/UpdateAlertRequest.md)
 - [UpdateDomainRequest](docs/Model/UpdateDomainRequest.md)
 - [UpdateNewsletterRequest](docs/Model/UpdateNewsletterRequest.md)
@@ -402,10 +406,6 @@ Class | Method | HTTP request | Description
 - [WikiSearchResponse](docs/Model/WikiSearchResponse.md)
 
 ## Authorization
-
-
-
-
 
 
 

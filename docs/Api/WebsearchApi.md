@@ -1,6 +1,6 @@
 # AskNews\WebsearchApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.dev, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -24,14 +24,6 @@ Run a live websearch on a set of queries, get back a fully structured and LLM-di
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\WebsearchApi(
@@ -70,7 +62,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 

@@ -1,6 +1,6 @@
 # AskNews\NewsApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.dev, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -28,14 +28,6 @@ Get a single article given a UUID.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\NewsApi(
@@ -66,7 +58,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -94,14 +86,6 @@ Get articles given a list of UUIDs.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\NewsApi(
@@ -132,7 +116,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -160,14 +144,6 @@ This endpoint is primarly used for the publisher dashboard, to show the number o
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\NewsApi(
@@ -209,8 +185,8 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **start_datetime** | **\DateTime**| Start timestamp to filter by | |
-| **end_datetime** | **\DateTime**| End timestamp to filter by | |
+| **start_datetime** | **\DateTime**| Start timestamp to filter by | [optional] |
+| **end_datetime** | **\DateTime**| End timestamp to filter by | [optional] |
 | **domains** | [**string[]**](../Model/string.md)| Domain or list of domains to get indexing counts for | [optional] |
 | **sampling** | **string**| Sampling to use | [optional] [default to &#39;1d&#39;] |
 | **time_filter** | **string**| Control which date type to filter on. &#39;crawl_date&#39; is the date the article was crawled, &#39;pub_date&#39; is the date the article was published. | [optional] [default to &#39;pub_date&#39;] |
@@ -236,7 +212,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -264,14 +240,6 @@ This endpoint is primarly used for transparency and monitoring the diversity of 
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\NewsApi(
@@ -310,7 +278,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -324,7 +292,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -338,14 +306,6 @@ Search for any news, up to the last 5 minutes or in our extensive historical arc
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\NewsApi(
@@ -379,6 +339,7 @@ $string_guarantee = array('string_guarantee_example'); // string[] | If defined,
 $string_guarantee_op = 'AND'; // string | Operator to use for string guarantee list.
 $reverse_string_guarantee = array('reverse_string_guarantee_example'); // string[] | If defined, the search will only occur on articles that do not contain strings in this list.
 $entity_guarantee = array('entity_guarantee_example'); // string[] | Entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example ['Location:Paris', 'Person:John']
+$reverse_entity_guarantee = array('reverse_entity_guarantee_example'); // string[] | Reverse entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example ['Location:Paris', 'Person:John']
 $entity_guarantee_op = 'OR'; // string | Operator to use for entity guarantee list.
 $return_graphs = false; // bool | Return graphs for the articles. Only available to Analyst tier and above.
 $return_geo = false; // bool | Return GeoCoordinates associated with locations discussed  inside the articles. Only available to Analyst tier and above.
@@ -391,7 +352,7 @@ $premium = false; // bool | Include premium sources.
 $authors = array('authors_example'); // string[] | Authors to filter articles by.
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -427,6 +388,7 @@ try {
 | **string_guarantee_op** | **string**| Operator to use for string guarantee list. | [optional] [default to &#39;AND&#39;] |
 | **reverse_string_guarantee** | [**string[]**](../Model/string.md)| If defined, the search will only occur on articles that do not contain strings in this list. | [optional] |
 | **entity_guarantee** | [**string[]**](../Model/string.md)| Entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example [&#39;Location:Paris&#39;, &#39;Person:John&#39;] | [optional] |
+| **reverse_entity_guarantee** | [**string[]**](../Model/string.md)| Reverse entity guarantee to filter by. This is a list of strings, where each string includes entity type and entity value separated by a colon. The first element is the entity type and the second element is the entity value. For example [&#39;Location:Paris&#39;, &#39;Person:John&#39;] | [optional] |
 | **entity_guarantee_op** | **string**| Operator to use for entity guarantee list. | [optional] [default to &#39;OR&#39;] |
 | **return_graphs** | **bool**| Return graphs for the articles. Only available to Analyst tier and above. | [optional] [default to false] |
 | **return_geo** | **bool**| Return GeoCoordinates associated with locations discussed  inside the articles. Only available to Analyst tier and above. | [optional] [default to false] |
@@ -444,7 +406,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 

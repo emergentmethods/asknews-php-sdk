@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **social_embeds** | **string[]** |  | [optional]
 **bias** | **string** |  | [optional]
 **authors** | [**\AskNews\Model\Author1[]**](Author1.md) |  | [optional]
+**full_text** | **string** |  | [optional]
 **as_string_key** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

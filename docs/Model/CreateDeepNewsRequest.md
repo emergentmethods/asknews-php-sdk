@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**model** | **string** |  | [optional] [default to 'deepseek']
+**model** | [**\AskNews\Model\DeepNewsModel**](DeepNewsModel.md) |  | [optional]
 **messages** | [**\AskNews\Model\CreateDeepNewsRequestMessage[]**](CreateDeepNewsRequestMessage.md) |  |
 **temperature** | **float** |  | [optional] [default to 0.9]
 **top_p** | **float** |  | [optional] [default to 1.0]

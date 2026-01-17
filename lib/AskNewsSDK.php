@@ -22,6 +22,7 @@ class AskNewsSDK
     public Api\DistributionApi $distribution;
     public Api\ForecastApi $forecast;
     public Api\GraphApi $graph;
+    public Api\IndexUrlsApi $indexUrls;
     public Api\NewsApi $news;
     public Api\NewslettersApi $newsletters;
     public Api\PingApi $ping;
@@ -48,6 +49,7 @@ class AskNewsSDK
         $this->distribution = new Api\DistributionApi(null, $_configuration);
         $this->forecast = new Api\ForecastApi(null, $_configuration);
         $this->graph = new Api\GraphApi(null, $_configuration);
+        $this->indexUrls = new Api\IndexUrlsApi(null, $_configuration);
         $this->news = new Api\NewsApi(null, $_configuration);
         $this->newsletters = new Api\NewslettersApi(null, $_configuration);
         $this->ping = new Api\PingApi(null, $_configuration);

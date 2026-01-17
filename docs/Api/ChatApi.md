@@ -1,6 +1,6 @@
 # AskNews\ChatApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.dev, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -25,14 +25,6 @@ Deep research into real-time news, archive news, and Google.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\ChatApi(
@@ -63,7 +55,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -91,14 +83,6 @@ Get the chat completions for a given user message. This endpoint follows the Ope
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\ChatApi(
@@ -129,7 +113,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -157,14 +141,6 @@ Get the headline example questions related to the given queries.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\ChatApi(
@@ -195,7 +171,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -225,14 +201,6 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
-
-
 $apiInstance = new AskNews\Api\ChatApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
@@ -258,7 +226,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 

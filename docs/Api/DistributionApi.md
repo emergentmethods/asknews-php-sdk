@@ -1,6 +1,6 @@
 # AskNews\DistributionApi
 
-All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.dev, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
@@ -32,14 +32,6 @@ Get the hit share for a list of domains in a time period.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -76,7 +68,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -104,14 +96,6 @@ Find domains with optional filters.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -150,7 +134,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -178,14 +162,6 @@ Get the number of hits for articles in a specific domain.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -220,7 +196,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -248,14 +224,6 @@ Get a domain.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -286,7 +254,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -314,14 +282,6 @@ Get article hits.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -358,7 +318,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -386,14 +346,6 @@ Get the top N articles by hits.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -430,7 +382,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -458,14 +410,6 @@ Get the top N domain articles by hits.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -502,7 +446,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -530,14 +474,6 @@ Get the top N domains by hits.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -574,7 +510,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
@@ -602,14 +538,6 @@ Update an existing domain.
 require_once(__DIR__ . '/vendor/autoload.php');
 
 
-
-
-// Configure sdk credentials
-$config = new AskNews\Configuration([
-  'clientId' => 'YOUR_ASKNEWS_CLIENT_ID',
-  'clientSecret' => 'YOUR_ASKNEWS_CLIENT_SECRET',
-  'scopes' => ['news', 'chat', 'stories', 'analytics']
-]);
 
 
 $apiInstance = new AskNews\Api\DistributionApi(
@@ -642,7 +570,7 @@ try {
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey), [AccessToken](../../README.md#AccessToken), [AccessToken](../../README.md#AccessToken)
+[APIKey](../../README.md#APIKey)
 
 ### HTTP request headers
 
