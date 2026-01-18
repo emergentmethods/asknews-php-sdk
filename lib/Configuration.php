@@ -92,7 +92,7 @@ class Configuration
      *
      * @var string
      */
-    protected $userAgent = 'asknews-sdk-php-0.4.7';
+    protected $userAgent = 'asknews-sdk-php-0.4.8';
 
     /**
      * Debug switch (default set to false)
