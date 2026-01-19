@@ -11,6 +11,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**getDomainQueries()**](DistributionApi.md#getDomainQueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles |
 | [**topNArticlesByHits()**](DistributionApi.md#topNArticlesByHits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits |
 | [**topNArticlesForDomain()**](DistributionApi.md#topNArticlesForDomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain |
+| [**topNArticlesForDomainTimeseries()**](DistributionApi.md#topNArticlesForDomainTimeseries) | **GET** /v1/distribution/articles/top_n_for_domain_timeseries | Get the top N articles by hits for domain with daily breakdown |
 | [**topNDomainsByHits()**](DistributionApi.md#topNDomainsByHits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits |
 | [**updateDomain()**](DistributionApi.md#updateDomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain |
 
@@ -443,6 +444,70 @@ try {
 ### Return type
 
 [**\AskNews\Model\TopNArticlesForDomainResponse**](../Model/TopNArticlesForDomainResponse.md)
+
+### Authorization
+
+[APIKey](../../README.md#APIKey)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: `application/json`
+
+[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
+[[Back to Model list]](../../README.md#models)
+[[Back to README]](../../README.md)
+
+## `topNArticlesForDomainTimeseries()`
+
+```php
+topNArticlesForDomainTimeseries($domain_name, $limit, $start_date, $end_date): \AskNews\Model\TopNArticlesTimeseriesResponse
+```
+
+Get the top N articles by hits for domain with daily breakdown
+
+Get the top N domain articles by hits with daily breakdown.
+
+### Example
+
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+
+
+
+$apiInstance = new AskNews\Api\DistributionApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client(),
+    $config
+);
+$domain_name = 'domain_name_example'; // string | Domain name to filter by
+$limit = 10; // int | Number of top domain articles to return per day
+$start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
+$end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
+
+try {
+    $result = $apiInstance->topNArticlesForDomainTimeseries($domain_name, $limit, $start_date, $end_date);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DistributionApi->topNArticlesForDomainTimeseries: ', $e->getMessage(), PHP_EOL;
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **domain_name** | **string**| Domain name to filter by | |
+| **limit** | **int**| Number of top domain articles to return per day | [optional] [default to 10] |
+| **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
+| **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
+
+### Return type
+
+[**\AskNews\Model\TopNArticlesTimeseriesResponse**](../Model/TopNArticlesTimeseriesResponse.md)
 
 ### Authorization
 

@@ -95,6 +95,7 @@ Class | Method | HTTP request | Description
 *DistributionApi* | [**getDomainQueries**](docs/Api/DistributionApi.md#getdomainqueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles
 *DistributionApi* | [**topNArticlesByHits**](docs/Api/DistributionApi.md#topnarticlesbyhits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits
 *DistributionApi* | [**topNArticlesForDomain**](docs/Api/DistributionApi.md#topnarticlesfordomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain
+*DistributionApi* | [**topNArticlesForDomainTimeseries**](docs/Api/DistributionApi.md#topnarticlesfordomaintimeseries) | **GET** /v1/distribution/articles/top_n_for_domain_timeseries | Get the top N articles by hits for domain with daily breakdown
 *DistributionApi* | [**topNDomainsByHits**](docs/Api/DistributionApi.md#topndomainsbyhits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits
 *DistributionApi* | [**updateDomain**](docs/Api/DistributionApi.md#updatedomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
@@ -129,6 +130,7 @@ Class | Method | HTTP request | Description
 
 - [AbcAPIErrorModel1](docs/Model/AbcAPIErrorModel1.md)
 - [AbcAPIErrorModel10](docs/Model/AbcAPIErrorModel10.md)
+- [AbcAPIErrorModel100](docs/Model/AbcAPIErrorModel100.md)
 - [AbcAPIErrorModel11](docs/Model/AbcAPIErrorModel11.md)
 - [AbcAPIErrorModel12](docs/Model/AbcAPIErrorModel12.md)
 - [AbcAPIErrorModel13](docs/Model/AbcAPIErrorModel13.md)
@@ -223,6 +225,9 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel94](docs/Model/AbcAPIErrorModel94.md)
 - [AbcAPIErrorModel95](docs/Model/AbcAPIErrorModel95.md)
 - [AbcAPIErrorModel96](docs/Model/AbcAPIErrorModel96.md)
+- [AbcAPIErrorModel97](docs/Model/AbcAPIErrorModel97.md)
+- [AbcAPIErrorModel98](docs/Model/AbcAPIErrorModel98.md)
+- [AbcAPIErrorModel99](docs/Model/AbcAPIErrorModel99.md)
 - [AlertLog](docs/Model/AlertLog.md)
 - [AlertResponse](docs/Model/AlertResponse.md)
 - [Article](docs/Model/Article.md)
@@ -379,6 +384,9 @@ Class | Method | HTTP request | Description
 - [TopNArticlesByHitsResponse](docs/Model/TopNArticlesByHitsResponse.md)
 - [TopNArticlesForDomainItem](docs/Model/TopNArticlesForDomainItem.md)
 - [TopNArticlesForDomainResponse](docs/Model/TopNArticlesForDomainResponse.md)
+- [TopNArticlesTimeseriesDayItem](docs/Model/TopNArticlesTimeseriesDayItem.md)
+- [TopNArticlesTimeseriesItem](docs/Model/TopNArticlesTimeseriesItem.md)
+- [TopNArticlesTimeseriesResponse](docs/Model/TopNArticlesTimeseriesResponse.md)
 - [TopNDomainsByHitsItem](docs/Model/TopNDomainsByHitsItem.md)
 - [TopNDomainsByHitsResponse](docs/Model/TopNDomainsByHitsResponse.md)
 - [TriggersInner](docs/Model/TriggersInner.md)
