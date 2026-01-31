@@ -92,10 +92,12 @@ Class | Method | HTTP request | Description
 *DistributionApi* | [**findDomains**](docs/Api/DistributionApi.md#finddomains) | **GET** /v1/distribution/domains | Find domains
 *DistributionApi* | [**getArticleHits**](docs/Api/DistributionApi.md#getarticlehits) | **GET** /v1/distribution/stats/count | Get article hits
 *DistributionApi* | [**getDomain**](docs/Api/DistributionApi.md#getdomain) | **GET** /v1/distribution/domains/{name} | Get a domain by name
+*DistributionApi* | [**getDomainHitsSurface**](docs/Api/DistributionApi.md#getdomainhitssurface) | **GET** /v1/distribution/articles/domain_hits_surface | Get total hits and surfaced articles for domains
+*DistributionApi* | [**getDomainHitsSurfaceTimewindow**](docs/Api/DistributionApi.md#getdomainhitssurfacetimewindow) | **GET** /v1/distribution/articles/domain_hits_surface_timewindow | Get hits and surfaced articles per day for domains
 *DistributionApi* | [**getDomainQueries**](docs/Api/DistributionApi.md#getdomainqueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles
 *DistributionApi* | [**topNArticlesByHits**](docs/Api/DistributionApi.md#topnarticlesbyhits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits
-*DistributionApi* | [**topNArticlesForDomain**](docs/Api/DistributionApi.md#topnarticlesfordomain) | **GET** /v1/distribution/articles/top_n_for_domain | Get the top N articles by hits for domain
 *DistributionApi* | [**topNArticlesForDomainTimeseries**](docs/Api/DistributionApi.md#topnarticlesfordomaintimeseries) | **GET** /v1/distribution/articles/top_n_for_domain_timeseries | Get the top N articles by hits for domain with daily breakdown
+*DistributionApi* | [**topNArticlesForDomains**](docs/Api/DistributionApi.md#topnarticlesfordomains) | **GET** /v1/distribution/articles/top_n_for_domains | Get the top N articles by hits for domains
 *DistributionApi* | [**topNDomainsByHits**](docs/Api/DistributionApi.md#topndomainsbyhits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits
 *DistributionApi* | [**updateDomain**](docs/Api/DistributionApi.md#updatedomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
@@ -131,6 +133,14 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel1](docs/Model/AbcAPIErrorModel1.md)
 - [AbcAPIErrorModel10](docs/Model/AbcAPIErrorModel10.md)
 - [AbcAPIErrorModel100](docs/Model/AbcAPIErrorModel100.md)
+- [AbcAPIErrorModel101](docs/Model/AbcAPIErrorModel101.md)
+- [AbcAPIErrorModel102](docs/Model/AbcAPIErrorModel102.md)
+- [AbcAPIErrorModel103](docs/Model/AbcAPIErrorModel103.md)
+- [AbcAPIErrorModel104](docs/Model/AbcAPIErrorModel104.md)
+- [AbcAPIErrorModel105](docs/Model/AbcAPIErrorModel105.md)
+- [AbcAPIErrorModel106](docs/Model/AbcAPIErrorModel106.md)
+- [AbcAPIErrorModel107](docs/Model/AbcAPIErrorModel107.md)
+- [AbcAPIErrorModel108](docs/Model/AbcAPIErrorModel108.md)
 - [AbcAPIErrorModel11](docs/Model/AbcAPIErrorModel11.md)
 - [AbcAPIErrorModel12](docs/Model/AbcAPIErrorModel12.md)
 - [AbcAPIErrorModel13](docs/Model/AbcAPIErrorModel13.md)
@@ -291,6 +301,9 @@ Class | Method | HTTP request | Description
 - [DeepNewsResponseSources](docs/Model/DeepNewsResponseSources.md)
 - [DeepNewsResponseSources1](docs/Model/DeepNewsResponseSources1.md)
 - [DisplayImageUrl](docs/Model/DisplayImageUrl.md)
+- [DomainHitsSurfaceDayItem](docs/Model/DomainHitsSurfaceDayItem.md)
+- [DomainHitsSurfaceResponse](docs/Model/DomainHitsSurfaceResponse.md)
+- [DomainHitsSurfaceTimeWindowResponse](docs/Model/DomainHitsSurfaceTimeWindowResponse.md)
 - [DomainQueriesResponse](docs/Model/DomainQueriesResponse.md)
 - [DomainQueryArticleItem](docs/Model/DomainQueryArticleItem.md)
 - [DomainQueryClusterItem](docs/Model/DomainQueryClusterItem.md)
