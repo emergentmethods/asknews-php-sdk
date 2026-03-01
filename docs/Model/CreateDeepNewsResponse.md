@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **created** | **int** |  |
 **object** | **string** |  | [optional] [default to 'chat.completion']
-**model** | **string** |  | [optional] [default to 'deepseek']
+**model** | **string** |  | [optional] [default to 'claude-sonnet-4-5-20250929']
 **usage** | [**\AskNews\Model\CreateDeepNewsResponseUsage**](CreateDeepNewsResponseUsage.md) |  |
 **choices** | [**\AskNews\Model\CreateDeepNewsResponseChoice[]**](CreateDeepNewsResponseChoice.md) |  |
 **sources** | [**\AskNews\Model\DeepNewsResponseSources**](DeepNewsResponseSources.md) |  |

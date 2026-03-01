@@ -19,5 +19,7 @@ Name | Type | Description | Notes
 **always_trigger** | **bool** |  | [optional] [default to false]
 **repeat** | **bool** |  | [optional] [default to true]
 **active** | **bool** |  | [optional] [default to true]
+**alert_type** | **string** |  | [optional]
+**title** | **string** |  | [optional]
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

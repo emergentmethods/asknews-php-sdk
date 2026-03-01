@@ -292,7 +292,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors, $try_cache): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -350,9 +350,10 @@ $continents = array('continents_example'); // string[] | Continents to filter by
 $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 $premium = false; // bool | Include premium sources.
 $authors = array('authors_example'); // string[] | Authors to filter articles by.
+$try_cache = 'try_cache_example'; // string | Enable response caching with the specified TTL. When a cached response is returned, usage is charged at 0.25x the normal rate. Valid values: '1h' (1 hour), '6h' (6 hours), '12h' (12 hours), '24h' (24 hours), '3d' (3 days), '7d' (7 days).
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors, $try_cache);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -399,6 +400,7 @@ try {
 | **sentiment** | **string**| Sentiment to filter articles by. | [optional] |
 | **premium** | **bool**| Include premium sources. | [optional] [default to false] |
 | **authors** | [**string[]**](../Model/string.md)| Authors to filter articles by. | [optional] |
+| **try_cache** | **string**| Enable response caching with the specified TTL. When a cached response is returned, usage is charged at 0.25x the normal rate. Valid values: &#39;1h&#39; (1 hour), &#39;6h&#39; (6 hours), &#39;12h&#39; (12 hours), &#39;24h&#39; (24 hours), &#39;3d&#39; (3 days), &#39;7d&#39; (7 days). | [optional] |
 
 ### Return type
 
