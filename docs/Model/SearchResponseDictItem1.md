@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 **bias** | **string** |  | [optional]
 **authors** | [**\AskNews\Model\Author1[]**](Author1.md) |  | [optional]
 **full_text** | **string** |  | [optional]
+**original_language_summary** | **string** |  | [optional]
+**image_description** | **string** |  | [optional]
 **as_string_key** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

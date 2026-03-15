@@ -454,7 +454,7 @@ try {
 ## `runAlert()`
 
 ```php
-runAlert($alert_id, $user_id): \AskNews\Model\AlertResponse
+runAlert($alert_id, $user_id, $is_test): \AskNews\Model\AlertResponse
 ```
 
 Run an existing alert
@@ -478,9 +478,10 @@ $apiInstance = new AskNews\Api\AlertsApi(
 );
 $alert_id = 'alert_id_example'; // string | The alert ID
 $user_id = 'user_id_example'; // string | The ID of the user to get logs for
+$is_test = false; // bool | Whether this is a test run
 
 try {
-    $result = $apiInstance->runAlert($alert_id, $user_id);
+    $result = $apiInstance->runAlert($alert_id, $user_id, $is_test);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->runAlert: ', $e->getMessage(), PHP_EOL;
@@ -493,6 +494,7 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **alert_id** | **string**| The alert ID | |
 | **user_id** | **string**| The ID of the user to get logs for | [optional] |
+| **is_test** | **bool**| Whether this is a test run | [optional] [default to false] |
 
 ### Return type
 

@@ -31,5 +31,7 @@ Name | Type | Description | Notes
 **frequency_penalty** | **int** | Penalizes new tokens based on their frequency in the text so far, reducing repetition. | [optional] [default to 0]
 **user** | [**\AskNews\Model\User1**](User1.md) |  | [optional]
 **thread_id** | [**\AskNews\Model\ThreadId1**](ThreadId1.md) |  | [optional]
+**max_parallel_tool_calls** | **int** | Maximum number of parallel tool calls (e.g., searches) the agent can make during generation. Higher values may speed up responses, but may reduce on-the-fly adaptivity. | [optional] [default to 1]
+**engine** | **string** |  | [optional] [default to 'v1']
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

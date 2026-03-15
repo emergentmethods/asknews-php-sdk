@@ -292,7 +292,7 @@ try {
 ## `searchNews()`
 
 ```php
-searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors, $try_cache): \AskNews\Model\SearchResponse
+searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors, $try_cache, $geo_lat, $geo_lon, $geo_radius, $geo_polygon): \AskNews\Model\SearchResponse
 ```
 
 Search for enriched real-time news context
@@ -351,9 +351,13 @@ $sentiment = 'sentiment_example'; // string | Sentiment to filter articles by.
 $premium = false; // bool | Include premium sources.
 $authors = array('authors_example'); // string[] | Authors to filter articles by.
 $try_cache = 'try_cache_example'; // string | Enable response caching with the specified TTL. When a cached response is returned, usage is charged at 0.25x the normal rate. Valid values: '1h' (1 hour), '6h' (6 hours), '12h' (12 hours), '24h' (24 hours), '3d' (3 days), '7d' (7 days).
+$geo_lat = 3.4; // float | Latitude for geo-radius filter. Must be provided together with geo_lon and geo_radius. Filters articles whose coordinates fall within the specified circle.
+$geo_lon = 3.4; // float | Longitude for geo-radius filter. Must be provided together with geo_lat and geo_radius.
+$geo_radius = 3.4; // float | Radius in meters for geo-radius filter. Must be provided together with geo_lat and geo_lon.
+$geo_polygon = 'geo_polygon_example'; // string | JSON string defining a polygon for geo filtering. Must contain an 'exterior' key with a list of {lon, lat} points. The first and last point must be the same. Optionally include 'interiors' as a list of rings (each a list of {lon, lat} points) to exclude areas. Example: {\"exterior\": [{\"lon\": -70, \"lat\": -70}, {\"lon\": 60, \"lat\": -70}, {\"lon\": 60, \"lat\": 60}, {\"lon\": -70, \"lat\": 60}, {\"lon\": -70, \"lat\": -70}]}
 
 try {
-    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors, $try_cache);
+    $result = $apiInstance->searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, $return_type, $historical, $method, $similarity_score_threshold, $offset, $categories, $doc_start_delimiter, $doc_end_delimiter, $provocative, $reporting_voice, $domain_url, $bad_domain_url, $page_rank, $diversify_sources, $strategy, $hours_back, $string_guarantee, $string_guarantee_op, $reverse_string_guarantee, $entity_guarantee, $reverse_entity_guarantee, $entity_guarantee_op, $return_graphs, $return_geo, $languages, $countries, $countries_blacklist, $continents, $sentiment, $premium, $authors, $try_cache, $geo_lat, $geo_lon, $geo_radius, $geo_polygon);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->searchNews: ', $e->getMessage(), PHP_EOL;
@@ -401,6 +405,10 @@ try {
 | **premium** | **bool**| Include premium sources. | [optional] [default to false] |
 | **authors** | [**string[]**](../Model/string.md)| Authors to filter articles by. | [optional] |
 | **try_cache** | **string**| Enable response caching with the specified TTL. When a cached response is returned, usage is charged at 0.25x the normal rate. Valid values: &#39;1h&#39; (1 hour), &#39;6h&#39; (6 hours), &#39;12h&#39; (12 hours), &#39;24h&#39; (24 hours), &#39;3d&#39; (3 days), &#39;7d&#39; (7 days). | [optional] |
+| **geo_lat** | **float**| Latitude for geo-radius filter. Must be provided together with geo_lon and geo_radius. Filters articles whose coordinates fall within the specified circle. | [optional] |
+| **geo_lon** | **float**| Longitude for geo-radius filter. Must be provided together with geo_lat and geo_radius. | [optional] |
+| **geo_radius** | **float**| Radius in meters for geo-radius filter. Must be provided together with geo_lat and geo_lon. | [optional] |
+| **geo_polygon** | **string**| JSON string defining a polygon for geo filtering. Must contain an &#39;exterior&#39; key with a list of {lon, lat} points. The first and last point must be the same. Optionally include &#39;interiors&#39; as a list of rings (each a list of {lon, lat} points) to exclude areas. Example: {\&quot;exterior\&quot;: [{\&quot;lon\&quot;: -70, \&quot;lat\&quot;: -70}, {\&quot;lon\&quot;: 60, \&quot;lat\&quot;: -70}, {\&quot;lon\&quot;: 60, \&quot;lat\&quot;: 60}, {\&quot;lon\&quot;: -70, \&quot;lat\&quot;: 60}, {\&quot;lon\&quot;: -70, \&quot;lat\&quot;: -70}]} | [optional] |
 
 ### Return type
 

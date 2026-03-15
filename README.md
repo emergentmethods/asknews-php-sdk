@@ -86,8 +86,7 @@ Class | Method | HTTP request | Description
 *ChartsApi* | [**createChartsEndpoint**](docs/Api/ChartsApi.md#createchartsendpoint) | **POST** /v1/chat/charts | Create a chart
 *ChatApi* | [**deepNews**](docs/Api/ChatApi.md#deepnews) | **POST** /v1/chat/deepnews | Deep research into real-time news, archive news, and Google.
 *ChatApi* | [**getChatCompletions**](docs/Api/ChatApi.md#getchatcompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant
-*ChatApi* | [**getHeadlineQuestions**](docs/Api/ChatApi.md#getheadlinequestions) | **GET** /v1/chat/questions | Get example headline questions
-*ChatApi* | [**listChatModels**](docs/Api/ChatApi.md#listchatmodels) | **GET** /v1/openai/models | List available chat models
+*ChatApi* | [**listDeepnewsModels**](docs/Api/ChatApi.md#listdeepnewsmodels) | **GET** /v1/chat/deepnews-models | List available DeepNews models
 *DistributionApi* | [**domainHitShare**](docs/Api/DistributionApi.md#domainhitshare) | **GET** /v1/distribution/stats/hit_share | Get the hit share for a list of domains in a time period
 *DistributionApi* | [**findDomains**](docs/Api/DistributionApi.md#finddomains) | **GET** /v1/distribution/domains | Find domains
 *DistributionApi* | [**getArticleHits**](docs/Api/DistributionApi.md#getarticlehits) | **GET** /v1/distribution/stats/count | Get article hits
@@ -264,6 +263,7 @@ Class | Method | HTTP request | Description
 - [Continent](docs/Model/Continent.md)
 - [CountResponse](docs/Model/CountResponse.md)
 - [CreateAlertRequest](docs/Model/CreateAlertRequest.md)
+- [CreateAlertRequestReport](docs/Model/CreateAlertRequestReport.md)
 - [CreateChartRequest](docs/Model/CreateChartRequest.md)
 - [CreateChatCompletionRequest](docs/Model/CreateChatCompletionRequest.md)
 - [CreateChatCompletionRequestMessage](docs/Model/CreateChatCompletionRequestMessage.md)
@@ -300,6 +300,9 @@ Class | Method | HTTP request | Description
 - [CreateDeepNewsResponseUsage1](docs/Model/CreateDeepNewsResponseUsage1.md)
 - [CreateNewsletterRequest](docs/Model/CreateNewsletterRequest.md)
 - [DeepNewsModel](docs/Model/DeepNewsModel.md)
+- [DeepNewsModelItem](docs/Model/DeepNewsModelItem.md)
+- [DeepNewsReportParams](docs/Model/DeepNewsReportParams.md)
+- [DeepNewsReportRequest](docs/Model/DeepNewsReportRequest.md)
 - [DeepNewsResponseSources](docs/Model/DeepNewsResponseSources.md)
 - [DeepNewsResponseSources1](docs/Model/DeepNewsResponseSources1.md)
 - [DeepNewsSource](docs/Model/DeepNewsSource.md)
@@ -338,8 +341,8 @@ Class | Method | HTTP request | Description
 - [IndexUrlsResponse](docs/Model/IndexUrlsResponse.md)
 - [IntraClusterStatistics](docs/Model/IntraClusterStatistics.md)
 - [KeyPerson](docs/Model/KeyPerson.md)
-- [ListModelResponse](docs/Model/ListModelResponse.md)
-- [ModelItem](docs/Model/ModelItem.md)
+- [LegacyReportRequest](docs/Model/LegacyReportRequest.md)
+- [ListDeepNewsModelResponse](docs/Model/ListDeepNewsModelResponse.md)
 - [NewsletterContactCreateResponse](docs/Model/NewsletterContactCreateResponse.md)
 - [NewsletterContactRequest](docs/Model/NewsletterContactRequest.md)
 - [NewsletterContactResponse](docs/Model/NewsletterContactResponse.md)
@@ -369,7 +372,6 @@ Class | Method | HTTP request | Description
 - [RedditThread](docs/Model/RedditThread.md)
 - [ReferralItem](docs/Model/ReferralItem.md)
 - [ReplyTo](docs/Model/ReplyTo.md)
-- [ReportRequest](docs/Model/ReportRequest.md)
 - [ReportingVoice](docs/Model/ReportingVoice.md)
 - [ReportingVoice1](docs/Model/ReportingVoice1.md)
 - [ReportingVoice2](docs/Model/ReportingVoice2.md)

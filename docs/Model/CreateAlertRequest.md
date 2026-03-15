@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **repeat** | **bool** | Whether to repeat the alert. Default is True. If False, the alert will be disabled after it triggers once. | [optional] [default to true]
 **active** | **bool** | Whether the alert is active or not. Default is True. | [optional] [default to true]
 **expires_at** | **\DateTime** |  | [optional]
-**report** | [**\AskNews\Model\ReportRequest**](ReportRequest.md) |  | [optional]
+**report** | [**\AskNews\Model\CreateAlertRequestReport**](CreateAlertRequestReport.md) |  | [optional]
 **title** | **string** |  | [optional]
 **share_link** | **string** |  | [optional]
 

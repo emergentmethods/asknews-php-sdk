@@ -6,8 +6,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | ------------- | ------------- | ------------- |
 | [**deepNews()**](ChatApi.md#deepNews) | **POST** /v1/chat/deepnews | Deep research into real-time news, archive news, and Google. |
 | [**getChatCompletions()**](ChatApi.md#getChatCompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant |
-| [**getHeadlineQuestions()**](ChatApi.md#getHeadlineQuestions) | **GET** /v1/chat/questions | Get example headline questions |
-| [**listChatModels()**](ChatApi.md#listChatModels) | **GET** /v1/openai/models | List available chat models |
+| [**listDeepnewsModels()**](ChatApi.md#listDeepnewsModels) | **GET** /v1/chat/deepnews-models | List available DeepNews models |
 
 
 ## `deepNews()`
@@ -124,15 +123,15 @@ try {
 [[Back to Model list]](../../README.md#models)
 [[Back to README]](../../README.md)
 
-## `getHeadlineQuestions()`
+## `listDeepnewsModels()`
 
 ```php
-getHeadlineQuestions($queries): array<string,string[]>
+listDeepnewsModels(): \AskNews\Model\ListDeepNewsModelResponse
 ```
 
-Get example headline questions
+List available DeepNews models
 
-Get the headline example questions related to the given queries.
+List the available DeepNews models with their type (rich/fast).
 
 ### Example
 
@@ -142,77 +141,17 @@ require_once(__DIR__ . '/vendor/autoload.php');
 
 
 
-
 $apiInstance = new AskNews\Api\ChatApi(
     // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
     // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$queries = array('queries_example'); // string[] | Queries to get questions for
-
-try {
-    $result = $apiInstance->getHeadlineQuestions($queries);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling ChatApi->getHeadlineQuestions: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **queries** | [**string[]**](../Model/string.md)| Queries to get questions for | [optional] |
-
-### Return type
-
-**array<string,string[]>**
-
-### Authorization
-
-[APIKey](../../README.md#APIKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `listChatModels()`
-
-```php
-listChatModels(): \AskNews\Model\ListModelResponse
-```
-
-List available chat models
-
-List the available chat models.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-
-$apiInstance = new AskNews\Api\ChatApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
+    new GuzzleHttp\Client()
 );
 
 try {
-    $result = $apiInstance->listChatModels();
+    $result = $apiInstance->listDeepnewsModels();
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling ChatApi->listChatModels: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling ChatApi->listDeepnewsModels: ', $e->getMessage(), PHP_EOL;
 }
 ```
 
@@ -222,11 +161,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**\AskNews\Model\ListModelResponse**](../Model/ListModelResponse.md)
+[**\AskNews\Model\ListDeepNewsModelResponse**](../Model/ListDeepNewsModelResponse.md)
 
 ### Authorization
 
-[APIKey](../../README.md#APIKey)
+No authorization required
 
 ### HTTP request headers
 
