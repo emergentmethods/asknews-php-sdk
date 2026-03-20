@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **messages** | [**\AskNews\Model\CreateDeepNewsRequestMessage[]**](CreateDeepNewsRequestMessage.md) | The messages to send to DeepNews. Each message should have &#39;role&#39; and &#39;content&#39; keys. Use this to specify what research/monitoring task DeepNews should perform. The &#39;content&#39; for the final &#39;user&#39; message should be your Alert query. |
 **model** | [**\AskNews\Model\CreateDeepNewsRequestModel**](CreateDeepNewsRequestModel.md) |  | [optional]
-**filter_params** | [**\AskNews\Model\CreateDeepNewsRequestFilterParams**](CreateDeepNewsRequestFilterParams.md) |  | [optional]
+**filter_params** | [**\AskNews\Model\FilterParams1**](FilterParams1.md) |  | [optional]
 **search_depth** | **int** | The search depth for deep research. Higher values mean more thorough research. | [optional] [default to 2]
 **max_depth** | **int** | The maximum research depth allowed. | [optional] [default to 6]
 **sources** | [**\AskNews\Model\Sources1**](Sources1.md) |  | [optional]

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**identifier** | **string** |  |
+**identifier** | **string** |  | [optional] [default to 'web']
 **params** | [**\AskNews\Model\WebSourceParams**](WebSourceParams.md) |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

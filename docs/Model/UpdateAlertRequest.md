@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **repeat** | **bool** |  | [optional]
 **active** | **bool** |  | [optional]
 **expires_at** | **\DateTime** |  | [optional]
-**report** | [**\AskNews\Model\CreateAlertRequestReport**](CreateAlertRequestReport.md) |  | [optional]
+**report** | [**\AskNews\Model\Report2**](Report2.md) |  | [optional]
 **title** | **string** |  | [optional]
 **share_link** | **string** |  | [optional]
 

@@ -69,7 +69,7 @@ try {
 
 ## API Endpoints
 
-All URIs are relative to *https://api.asknews.app*
+All URIs are relative to *https://api.asknews.dev*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -263,7 +263,6 @@ Class | Method | HTTP request | Description
 - [Continent](docs/Model/Continent.md)
 - [CountResponse](docs/Model/CountResponse.md)
 - [CreateAlertRequest](docs/Model/CreateAlertRequest.md)
-- [CreateAlertRequestReport](docs/Model/CreateAlertRequestReport.md)
 - [CreateChartRequest](docs/Model/CreateChartRequest.md)
 - [CreateChatCompletionRequest](docs/Model/CreateChatCompletionRequest.md)
 - [CreateChatCompletionRequestMessage](docs/Model/CreateChatCompletionRequestMessage.md)
@@ -279,7 +278,6 @@ Class | Method | HTTP request | Description
 - [CreateChatCompletionResponseUsage](docs/Model/CreateChatCompletionResponseUsage.md)
 - [CreateChatCompletionResponseUsage1](docs/Model/CreateChatCompletionResponseUsage1.md)
 - [CreateDeepNewsRequest](docs/Model/CreateDeepNewsRequest.md)
-- [CreateDeepNewsRequestFilterParams](docs/Model/CreateDeepNewsRequestFilterParams.md)
 - [CreateDeepNewsRequestMessage](docs/Model/CreateDeepNewsRequestMessage.md)
 - [CreateDeepNewsRequestMessage1](docs/Model/CreateDeepNewsRequestMessage1.md)
 - [CreateDeepNewsRequestModel](docs/Model/CreateDeepNewsRequestModel.md)
@@ -322,6 +320,7 @@ Class | Method | HTTP request | Description
 - [Entities](docs/Model/Entities.md)
 - [Entities1](docs/Model/Entities1.md)
 - [FilterParams](docs/Model/FilterParams.md)
+- [FilterParams1](docs/Model/FilterParams1.md)
 - [FilterParamsMetadata](docs/Model/FilterParamsMetadata.md)
 - [FilterParamsResponse](docs/Model/FilterParamsResponse.md)
 - [FinanceResponse](docs/Model/FinanceResponse.md)
@@ -343,6 +342,7 @@ Class | Method | HTTP request | Description
 - [KeyPerson](docs/Model/KeyPerson.md)
 - [LegacyReportRequest](docs/Model/LegacyReportRequest.md)
 - [ListDeepNewsModelResponse](docs/Model/ListDeepNewsModelResponse.md)
+- [MCPFilterParams](docs/Model/MCPFilterParams.md)
 - [NewsletterContactCreateResponse](docs/Model/NewsletterContactCreateResponse.md)
 - [NewsletterContactRequest](docs/Model/NewsletterContactRequest.md)
 - [NewsletterContactResponse](docs/Model/NewsletterContactResponse.md)
@@ -354,6 +354,7 @@ Class | Method | HTTP request | Description
 - [Offset2](docs/Model/Offset2.md)
 - [Offset3](docs/Model/Offset3.md)
 - [Offset4](docs/Model/Offset4.md)
+- [Offset5](docs/Model/Offset5.md)
 - [OrganizationProfile](docs/Model/OrganizationProfile.md)
 - [OrganizationProfileSubscription](docs/Model/OrganizationProfileSubscription.md)
 - [PaginatedResponseAlertLog](docs/Model/PaginatedResponseAlertLog.md)
@@ -372,6 +373,11 @@ Class | Method | HTTP request | Description
 - [RedditThread](docs/Model/RedditThread.md)
 - [ReferralItem](docs/Model/ReferralItem.md)
 - [ReplyTo](docs/Model/ReplyTo.md)
+- [Report](docs/Model/Report.md)
+- [Report1](docs/Model/Report1.md)
+- [Report1AnyOf](docs/Model/Report1AnyOf.md)
+- [Report2](docs/Model/Report2.md)
+- [Report2AnyOfInner](docs/Model/Report2AnyOfInner.md)
 - [ReportingVoice](docs/Model/ReportingVoice.md)
 - [ReportingVoice1](docs/Model/ReportingVoice1.md)
 - [ReportingVoice2](docs/Model/ReportingVoice2.md)

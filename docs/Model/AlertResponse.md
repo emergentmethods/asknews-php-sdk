@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 **cron** | **string** |  |
 **model** | **string** |  |
 **share_link** | **string** |  | [optional]
-**sources** | **array<string,mixed>[]** |  |
-**report** | **array<string,mixed>** |  | [optional]
+**sources** | **array<string,mixed>[]** |  | [optional]
+**report** | [**\AskNews\Model\Report**](Report.md) |  | [optional]
 **triggers** | **array<string,mixed>[]** |  |
 **always_trigger** | **bool** |  | [optional] [default to false]
 **repeat** | **bool** |  | [optional] [default to true]
