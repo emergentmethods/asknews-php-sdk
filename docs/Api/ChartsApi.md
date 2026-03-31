@@ -1,6 +1,6 @@
 # AskNews\ChartsApi
 
-All URIs are relative to https://api.asknews.dev, except if the operation defines another base path.
+All URIs are relative to https://api.asknews.app, except if the operation defines another base path.
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
