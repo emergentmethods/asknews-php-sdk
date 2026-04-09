@@ -262,7 +262,7 @@ try {
 ## `getAlerts()`
 
 ```php
-getAlerts($page, $per_page, $all): \AskNews\Model\PaginatedResponseAlertResponse
+getAlerts($user_id, $page, $per_page, $all): \AskNews\Model\PaginatedResponseAlertResponse
 ```
 
 Get all created alerts
@@ -284,12 +284,13 @@ $apiInstance = new AskNews\Api\AlertsApi(
     new GuzzleHttp\Client(),
     $config
 );
+$user_id = 'user_id_example'; // string | The ID of the user to get alerts for
 $page = 1; // int | The page number to get
 $per_page = 10; // int | The number of items per page
 $all = false; // bool | Whether to get all the alerts
 
 try {
-    $result = $apiInstance->getAlerts($page, $per_page, $all);
+    $result = $apiInstance->getAlerts($user_id, $page, $per_page, $all);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->getAlerts: ', $e->getMessage(), PHP_EOL;
@@ -300,6 +301,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
+| **user_id** | **string**| The ID of the user to get alerts for | [optional] |
 | **page** | **int**| The page number to get | [optional] [default to 1] |
 | **per_page** | **int**| The number of items per page | [optional] [default to 10] |
 | **all** | **bool**| Whether to get all the alerts | [optional] [default to false] |
