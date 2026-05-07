@@ -72,7 +72,7 @@ try {
 ## `getArticles()`
 
 ```php
-getArticles($article_ids): \AskNews\Model\SearchResponseDictItem[]
+getArticles($article_ids, $full_text): \AskNews\Model\SearchResponseDictItem[]
 ```
 
 Get multiple articles by UUID
@@ -95,9 +95,10 @@ $apiInstance = new AskNews\Api\NewsApi(
     $config
 );
 $article_ids = array('article_ids_example'); // string[] | Article UUIDs to fetch.
+$full_text = false; // bool | Whether to return the full text of the articles.
 
 try {
-    $result = $apiInstance->getArticles($article_ids);
+    $result = $apiInstance->getArticles($article_ids, $full_text);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling NewsApi->getArticles: ', $e->getMessage(), PHP_EOL;
@@ -109,6 +110,7 @@ try {
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
 | **article_ids** | [**string[]**](../Model/string.md)| Article UUIDs to fetch. | |
+| **full_text** | **bool**| Whether to return the full text of the articles. | [optional] [default to false] |
 
 ### Return type
 

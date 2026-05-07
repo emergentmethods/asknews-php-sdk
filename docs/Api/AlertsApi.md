@@ -262,7 +262,7 @@ try {
 ## `getAlerts()`
 
 ```php
-getAlerts($user_id, $page, $per_page, $all): \AskNews\Model\PaginatedResponseAlertResponse
+getAlerts($user_id, $page, $per_page, $all, $include_deleted): \AskNews\Model\PaginatedResponseAlertResponse
 ```
 
 Get all created alerts
@@ -288,9 +288,10 @@ $user_id = 'user_id_example'; // string | The ID of the user to get alerts for
 $page = 1; // int | The page number to get
 $per_page = 10; // int | The number of items per page
 $all = false; // bool | Whether to get all the alerts
+$include_deleted = false; // bool | Whether to include soft-deleted alerts
 
 try {
-    $result = $apiInstance->getAlerts($user_id, $page, $per_page, $all);
+    $result = $apiInstance->getAlerts($user_id, $page, $per_page, $all, $include_deleted);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling AlertsApi->getAlerts: ', $e->getMessage(), PHP_EOL;
@@ -305,6 +306,7 @@ try {
 | **page** | **int**| The page number to get | [optional] [default to 1] |
 | **per_page** | **int**| The number of items per page | [optional] [default to 10] |
 | **all** | **bool**| Whether to get all the alerts | [optional] [default to false] |
+| **include_deleted** | **bool**| Whether to include soft-deleted alerts | [optional] [default to false] |
 
 ### Return type
 

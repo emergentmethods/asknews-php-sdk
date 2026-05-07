@@ -17,6 +17,7 @@ class AskNewsSDK
     public Api\AlertsApi $alerts;
     public Api\AnalyticsApi $analytics;
     public Api\AutofilterApi $autofilter;
+    public Api\ByokApi $byok;
     public Api\ChartsApi $charts;
     public Api\ChatApi $chat;
     public Api\DistributionApi $distribution;
@@ -44,6 +45,7 @@ class AskNewsSDK
         $this->alerts = new Api\AlertsApi(null, $_configuration);
         $this->analytics = new Api\AnalyticsApi(null, $_configuration);
         $this->autofilter = new Api\AutofilterApi(null, $_configuration);
+        $this->byok = new Api\ByokApi(null, $_configuration);
         $this->charts = new Api\ChartsApi(null, $_configuration);
         $this->chat = new Api\ChatApi(null, $_configuration);
         $this->distribution = new Api\DistributionApi(null, $_configuration);
