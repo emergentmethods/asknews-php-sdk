@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **owner** | **string** |  | [optional]
 **is_tollbit** | **bool** |  | [optional] [default to false]
 **publisher** | **bool** |  | [optional] [default to false]
+**full_text** | **bool** |  | [optional] [default to true]
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  | [optional]
 

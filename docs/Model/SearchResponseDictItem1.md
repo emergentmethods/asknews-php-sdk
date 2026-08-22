@@ -36,6 +36,8 @@ Name | Type | Description | Notes
 **full_text** | **string** |  | [optional]
 **original_language_summary** | **string** |  | [optional]
 **image_description** | **string** |  | [optional]
+**crawl_date** | **\DateTime** |  | [optional]
+**content_type** | **string** |  | [optional]
 **as_string_key** | **string** |  |
 
 [[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#endpoints) [[Back to README]](../../README.md)

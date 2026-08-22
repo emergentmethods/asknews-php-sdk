@@ -4,9 +4,9 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 
 | Method | HTTP request | Description |
 | ------------- | ------------- | ------------- |
-| [**deleteByokKey()**](ByokApi.md#deleteByokKey) | **DELETE** /v1/chat/byok/{provider} | Delete a stored BYOK API key for a provider |
-| [**getByokKey()**](ByokApi.md#getByokKey) | **GET** /v1/chat/byok/{provider} | Get a stored BYOK API key hint for a provider |
-| [**upsertByokKey()**](ByokApi.md#upsertByokKey) | **PUT** /v1/chat/byok/{provider} | Store a BYOK API key for a provider |
+| [**deleteByokKey()**](ByokApi.md#deleteByokKey) | **DELETE** /v1/byok/{provider} | Delete a stored BYOK API key for a provider |
+| [**getByokKey()**](ByokApi.md#getByokKey) | **GET** /v1/byok/{provider} | Get a stored BYOK API key hint for a provider |
+| [**upsertByokKey()**](ByokApi.md#upsertByokKey) | **PUT** /v1/byok/{provider} | Store a BYOK API key for a provider |
 
 
 ## `deleteByokKey()`

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **id** | **string** |  |
 **created** | **int** |  |
 **object** | **string** |  | [optional] [default to 'chat.completion.chunk']
-**model** | **string** |  | [optional] [default to 'claude-sonnet-4-6']
+**model** | **string** |  | [optional] [default to 'claude-sonnet-5']
 **usage** | [**\AskNews\Model\CreateDeepNewsResponseUsage**](CreateDeepNewsResponseUsage.md) |  |
 **choices** | [**\AskNews\Model\CreateDeepNewsResponseStreamChunkChoiceV2[]**](CreateDeepNewsResponseStreamChunkChoiceV2.md) |  |
 

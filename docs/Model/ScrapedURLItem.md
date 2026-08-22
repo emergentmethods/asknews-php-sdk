@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **url** | **string** |  |
 **data** | [**\AskNews\Model\ScrapeDataItem**](ScrapeDataItem.md) |  | [optional]
+**skip_dedupe** | **bool** |  | [optional] [default to false]
 **metadata** | **array<string,mixed>** |  | [optional]
 **enrichments** | **array<string,mixed>** |  | [optional]
 

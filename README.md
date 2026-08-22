@@ -83,9 +83,9 @@ Class | Method | HTTP request | Description
 *AlertsApi* | [**runAlert**](docs/Api/AlertsApi.md#runalert) | **GET** /v1/chat/alerts/{alert_id}/run | Run an existing alert
 *AnalyticsApi* | [**getAssetSentiment**](docs/Api/AnalyticsApi.md#getassetsentiment) | **GET** /v1/analytics/finance/sentiment | Get a timeseries of finance news sentiment for assets
 *AutofilterApi* | [**autofilter**](docs/Api/AutofilterApi.md#autofilter) | **GET** /v1/chat/autofilter | Generate filter params for AskNews endpoints
-*ByokApi* | [**deleteByokKey**](docs/Api/ByokApi.md#deletebyokkey) | **DELETE** /v1/chat/byok/{provider} | Delete a stored BYOK API key for a provider
-*ByokApi* | [**getByokKey**](docs/Api/ByokApi.md#getbyokkey) | **GET** /v1/chat/byok/{provider} | Get a stored BYOK API key hint for a provider
-*ByokApi* | [**upsertByokKey**](docs/Api/ByokApi.md#upsertbyokkey) | **PUT** /v1/chat/byok/{provider} | Store a BYOK API key for a provider
+*ByokApi* | [**deleteByokKey**](docs/Api/ByokApi.md#deletebyokkey) | **DELETE** /v1/byok/{provider} | Delete a stored BYOK API key for a provider
+*ByokApi* | [**getByokKey**](docs/Api/ByokApi.md#getbyokkey) | **GET** /v1/byok/{provider} | Get a stored BYOK API key hint for a provider
+*ByokApi* | [**upsertByokKey**](docs/Api/ByokApi.md#upsertbyokkey) | **PUT** /v1/byok/{provider} | Store a BYOK API key for a provider
 *ChartsApi* | [**createChartsEndpoint**](docs/Api/ChartsApi.md#createchartsendpoint) | **POST** /v1/chat/charts | Create a chart
 *ChatApi* | [**deepNews**](docs/Api/ChatApi.md#deepnews) | **POST** /v1/chat/deepnews | Deep research into real-time news, archive news, and Google.
 *ChatApi* | [**getChatCompletions**](docs/Api/ChatApi.md#getchatcompletions) | **POST** /v1/openai/chat/completions | Get chat completions from a news-infused AI assistant
@@ -96,12 +96,13 @@ Class | Method | HTTP request | Description
 *DistributionApi* | [**getDomain**](docs/Api/DistributionApi.md#getdomain) | **GET** /v1/distribution/domains/{name} | Get a domain by name
 *DistributionApi* | [**getDomainHitsSurface**](docs/Api/DistributionApi.md#getdomainhitssurface) | **GET** /v1/distribution/articles/domain_hits_surface | Get total hits and surfaced articles for domains
 *DistributionApi* | [**getDomainHitsSurfaceTimewindow**](docs/Api/DistributionApi.md#getdomainhitssurfacetimewindow) | **GET** /v1/distribution/articles/domain_hits_surface_timewindow | Get hits and surfaced articles per day for domains
+*DistributionApi* | [**getDomainMetrics**](docs/Api/DistributionApi.md#getdomainmetrics) | **GET** /v1/distribution/stats/metrics | Get raw publisher metric event counts for domains
+*DistributionApi* | [**getDomainMetricsTimeseries**](docs/Api/DistributionApi.md#getdomainmetricstimeseries) | **GET** /v1/distribution/stats/metrics_timeseries | Get raw publisher metric event counts per day for domains
 *DistributionApi* | [**getDomainQueries**](docs/Api/DistributionApi.md#getdomainqueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles
 *DistributionApi* | [**topNArticlesByHits**](docs/Api/DistributionApi.md#topnarticlesbyhits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits
 *DistributionApi* | [**topNArticlesForDomainTimeseries**](docs/Api/DistributionApi.md#topnarticlesfordomaintimeseries) | **GET** /v1/distribution/articles/top_n_for_domain_timeseries | Get the top N articles by hits for domain with daily breakdown
 *DistributionApi* | [**topNArticlesForDomains**](docs/Api/DistributionApi.md#topnarticlesfordomains) | **GET** /v1/distribution/articles/top_n_for_domains | Get the top N articles by hits for domains
 *DistributionApi* | [**topNDomainsByHits**](docs/Api/DistributionApi.md#topndomainsbyhits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits
-*DistributionApi* | [**updateDomain**](docs/Api/DistributionApi.md#updatedomain) | **PUT** /v1/distribution/domains/{name} | Update an existing domain
 *ForecastApi* | [**getForecast**](docs/Api/ForecastApi.md#getforecast) | **GET** /v1/chat/forecast | Make an expert forecast for a news event.
 *GraphApi* | [**buildGraph**](docs/Api/GraphApi.md#buildgraph) | **POST** /v1/news/graph | Build a custom mega-news-knowledge graph
 *IndexUrlsApi* | [**indexUrls**](docs/Api/IndexUrlsApi.md#indexurls) | **POST** /v1/news/index_urls | Index a list of URLs into AskNews
@@ -149,6 +150,10 @@ Class | Method | HTTP request | Description
 - [AbcAPIErrorModel110](docs/Model/AbcAPIErrorModel110.md)
 - [AbcAPIErrorModel111](docs/Model/AbcAPIErrorModel111.md)
 - [AbcAPIErrorModel112](docs/Model/AbcAPIErrorModel112.md)
+- [AbcAPIErrorModel113](docs/Model/AbcAPIErrorModel113.md)
+- [AbcAPIErrorModel114](docs/Model/AbcAPIErrorModel114.md)
+- [AbcAPIErrorModel115](docs/Model/AbcAPIErrorModel115.md)
+- [AbcAPIErrorModel116](docs/Model/AbcAPIErrorModel116.md)
 - [AbcAPIErrorModel12](docs/Model/AbcAPIErrorModel12.md)
 - [AbcAPIErrorModel13](docs/Model/AbcAPIErrorModel13.md)
 - [AbcAPIErrorModel14](docs/Model/AbcAPIErrorModel14.md)
@@ -355,6 +360,9 @@ Class | Method | HTTP request | Description
 - [DomainHitsSurfaceDayItem](docs/Model/DomainHitsSurfaceDayItem.md)
 - [DomainHitsSurfaceResponse](docs/Model/DomainHitsSurfaceResponse.md)
 - [DomainHitsSurfaceTimeWindowResponse](docs/Model/DomainHitsSurfaceTimeWindowResponse.md)
+- [DomainMetricsDayItem](docs/Model/DomainMetricsDayItem.md)
+- [DomainMetricsResponse](docs/Model/DomainMetricsResponse.md)
+- [DomainMetricsTimeWindowResponse](docs/Model/DomainMetricsTimeWindowResponse.md)
 - [DomainQueriesResponse](docs/Model/DomainQueriesResponse.md)
 - [DomainQueryArticleItem](docs/Model/DomainQueryArticleItem.md)
 - [DomainQueryClusterItem](docs/Model/DomainQueryClusterItem.md)
@@ -405,6 +413,7 @@ Class | Method | HTTP request | Description
 - [Offset3](docs/Model/Offset3.md)
 - [Offset4](docs/Model/Offset4.md)
 - [Offset5](docs/Model/Offset5.md)
+- [Offset6](docs/Model/Offset6.md)
 - [OrganizationProfile](docs/Model/OrganizationProfile.md)
 - [OrganizationProfileSubscription](docs/Model/OrganizationProfileSubscription.md)
 - [PaginatedResponseAlertLog](docs/Model/PaginatedResponseAlertLog.md)
@@ -471,9 +480,9 @@ Class | Method | HTTP request | Description
 - [TriggersInner](docs/Model/TriggersInner.md)
 - [URLIndexingRequest](docs/Model/URLIndexingRequest.md)
 - [UpdateAlertRequest](docs/Model/UpdateAlertRequest.md)
-- [UpdateDomainRequest](docs/Model/UpdateDomainRequest.md)
 - [UpdateNewsletterRequest](docs/Model/UpdateNewsletterRequest.md)
 - [UpsertApiKeyRequest](docs/Model/UpsertApiKeyRequest.md)
+- [Usage](docs/Model/Usage.md)
 - [User](docs/Model/User.md)
 - [User1](docs/Model/User1.md)
 - [UserProfile](docs/Model/UserProfile.md)

@@ -10,7 +10,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 ## `liveWebSearch()`
 
 ```php
-liveWebSearch($queries, $lookback, $domains, $strict, $offset): \AskNews\Model\WebSearchResponse
+liveWebSearch($queries, $lookback, $start_datetime, $end_datetime, $engine, $domains, $strict, $offset): \AskNews\Model\WebSearchResponse
 ```
 
 Run a live websearch.
@@ -34,12 +34,15 @@ $apiInstance = new AskNews\Api\WebsearchApi(
 );
 $queries = array('queries_example'); // string[] | A list of queries to be live searched, analyzed, distilled, and structured.
 $lookback = 56; // int | Number of hours back to allow the websearch to look. Defaults to All time
+$start_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Earliest acceptable publication datetime for results. For v1, acts like the existing lookback filter.
+$end_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Latest acceptable publication datetime for results.
+$engine = 'v1'; // string | Search engine version to use for live websearch results.
 $domains = array('domains_example'); // string[] | A list of domains to search.
 $strict = false; // bool | If true, the websearch will only return results that have a known publication date and are within the lookback period.
-$offset = 56; // int | The number of results to offset for followup queries.
+$offset = new \AskNews\Model\\AskNews\Model\Offset1(); // \AskNews\Model\Offset1 | The number of results to offset for followup queries. Numeric for regular websearch; X (Twitter) searches return an opaque cursor string in response.offset â€” pass it back here to paginate.
 
 try {
-    $result = $apiInstance->liveWebSearch($queries, $lookback, $domains, $strict, $offset);
+    $result = $apiInstance->liveWebSearch($queries, $lookback, $start_datetime, $end_datetime, $engine, $domains, $strict, $offset);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling WebsearchApi->liveWebSearch: ', $e->getMessage(), PHP_EOL;
@@ -52,9 +55,12 @@ try {
 | ------------- | ------------- | ------------- | ------------- |
 | **queries** | [**string[]**](../Model/string.md)| A list of queries to be live searched, analyzed, distilled, and structured. | |
 | **lookback** | **int**| Number of hours back to allow the websearch to look. Defaults to All time | [optional] |
+| **start_datetime** | **\DateTime**| Earliest acceptable publication datetime for results. For v1, acts like the existing lookback filter. | [optional] |
+| **end_datetime** | **\DateTime**| Latest acceptable publication datetime for results. | [optional] |
+| **engine** | **string**| Search engine version to use for live websearch results. | [optional] [default to &#39;v1&#39;] |
 | **domains** | [**string[]**](../Model/string.md)| A list of domains to search. | [optional] |
 | **strict** | **bool**| If true, the websearch will only return results that have a known publication date and are within the lookback period. | [optional] [default to false] |
-| **offset** | **int**| The number of results to offset for followup queries. | [optional] |
+| **offset** | [**\AskNews\Model\Offset1**](../Model/.md)| The number of results to offset for followup queries. Numeric for regular websearch; X (Twitter) searches return an opaque cursor string in response.offset â€” pass it back here to paginate. | [optional] |
 
 ### Return type
 

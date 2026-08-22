@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **start_timestamp** | **int** |  | [optional]
 **end_timestamp** | **int** |  | [optional]
 **time_filter** | **string** | Control which date type to filter on. &#39;crawl_date&#39; is the date the article was crawled, &#39;pub_date&#39; is the date the article was published. | [optional] [default to 'crawl_date']
-**offset** | [**\AskNews\Model\Offset3**](Offset3.md) |  | [optional]
+**offset** | [**\AskNews\Model\Offset4**](Offset4.md) |  | [optional]
 **categories** | **string[]** | Categories of news to filter on | [optional]
 **provocative** | **string** | Filter articles based on how provocative they are deemed based on the use of provocative language and emotional vocabulary. | [optional] [default to 'all']
 **authors** | **string[]** |  | [optional]

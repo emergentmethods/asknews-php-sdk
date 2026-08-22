@@ -131,7 +131,7 @@ listDeepnewsModels(): \AskNews\Model\ListDeepNewsModelResponse
 
 List available DeepNews models
 
-List the available DeepNews models with their type (rich/fast).
+List the available DeepNews models with their public type (standard/lite/advanced).
 
 ### Example
 
