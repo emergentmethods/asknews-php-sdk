@@ -96,6 +96,8 @@ class DeepNewsModel
 
     public const GPT_5_6_SOL = 'gpt-5.6-sol';
 
+    public const GPT_6_ASTRA = 'gpt-6-astra';
+
     public const DEEPSEEK = 'deepseek';
 
     public const DEEPSEEK_BASIC = 'deepseek-basic';
@@ -164,6 +166,7 @@ class DeepNewsModel
             self::CLAUDE_FABLE_5,
             self::GPT_5_6_TERRA,
             self::GPT_5_6_SOL,
+            self::GPT_6_ASTRA,
             self::DEEPSEEK,
             self::DEEPSEEK_BASIC,
             self::DEEPSEEK_R1_0528,
