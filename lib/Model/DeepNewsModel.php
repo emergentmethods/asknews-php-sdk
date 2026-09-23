@@ -88,6 +88,8 @@ class DeepNewsModel
 
     public const CLAUDE_OPUS_5 = 'claude-opus-5';
 
+    public const CLAUDE_OPUS_5_5 = 'claude-opus-5-5';
+
     public const CLAUDE_OPUS_4_6 = 'claude-opus-4-6';
 
     public const CLAUDE_FABLE_5 = 'claude-fable-5';
@@ -95,6 +97,8 @@ class DeepNewsModel
     public const GPT_5_6_TERRA = 'gpt-5.6-terra';
 
     public const GPT_5_6_SOL = 'gpt-5.6-sol';
+
+    public const GPT_6_SOL = 'gpt-6-sol';
 
     public const GPT_6_ASTRA = 'gpt-6-astra';
 
@@ -162,10 +166,12 @@ class DeepNewsModel
             self::CLAUDE_SONNET_5,
             self::CLAUDE_OPUS_4_8,
             self::CLAUDE_OPUS_5,
+            self::CLAUDE_OPUS_5_5,
             self::CLAUDE_OPUS_4_6,
             self::CLAUDE_FABLE_5,
             self::GPT_5_6_TERRA,
             self::GPT_5_6_SOL,
+            self::GPT_6_SOL,
             self::GPT_6_ASTRA,
             self::DEEPSEEK,
             self::DEEPSEEK_BASIC,
