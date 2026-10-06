@@ -39,7 +39,7 @@ $end_datetime = new \DateTime('2013-10-20T19:20:30+01:00'); // \DateTime | Lates
 $engine = 'v1'; // string | Search engine version to use for live websearch results.
 $domains = array('domains_example'); // string[] | A list of domains to search.
 $strict = false; // bool | If true, the websearch will only return results that have a known publication date and are within the lookback period.
-$offset = new \AskNews\Model\\AskNews\Model\Offset1(); // \AskNews\Model\Offset1 | The number of results to offset for followup queries. Numeric for regular websearch; X (Twitter) searches return an opaque cursor string in response.offset â€” pass it back here to paginate.
+$offset = new \AskNews\Model\\AskNews\Model\Offset1(); // \AskNews\Model\Offset1 | The number of results to offset for followup queries. Numeric for regular websearch; X (Twitter) searches return an opaque cursor string in response.offset — pass it back here to paginate.
 
 try {
     $result = $apiInstance->liveWebSearch($queries, $lookback, $start_datetime, $end_datetime, $engine, $domains, $strict, $offset);
@@ -60,7 +60,7 @@ try {
 | **engine** | **string**| Search engine version to use for live websearch results. | [optional] [default to &#39;v1&#39;] |
 | **domains** | [**string[]**](../Model/string.md)| A list of domains to search. | [optional] |
 | **strict** | **bool**| If true, the websearch will only return results that have a known publication date and are within the lookback period. | [optional] [default to false] |
-| **offset** | [**\AskNews\Model\Offset1**](../Model/.md)| The number of results to offset for followup queries. Numeric for regular websearch; X (Twitter) searches return an opaque cursor string in response.offset â€” pass it back here to paginate. | [optional] |
+| **offset** | [**\AskNews\Model\Offset1**](../Model/.md)| The number of results to offset for followup queries. Numeric for regular websearch; X (Twitter) searches return an opaque cursor string in response.offset — pass it back here to paginate. | [optional] |
 
 ### Return type
 

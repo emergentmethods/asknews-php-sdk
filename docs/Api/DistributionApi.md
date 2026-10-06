@@ -15,7 +15,7 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**getDomainQueries()**](DistributionApi.md#getDomainQueries) | **GET** /v1/distribution/articles/domain_queries | Get queries that surfaced domain articles |
 | [**topNArticlesByHits()**](DistributionApi.md#topNArticlesByHits) | **GET** /v1/distribution/articles/top_n | Get the top N articles by hits |
 | [**topNArticlesForDomainTimeseries()**](DistributionApi.md#topNArticlesForDomainTimeseries) | **GET** /v1/distribution/articles/top_n_for_domain_timeseries | Get the top N articles by hits for domain with daily breakdown |
-| [**topNArticlesForDomains()**](DistributionApi.md#topNArticlesForDomains) | **GET** /v1/distribution/articles/top_n_for_domains | Get the top N articles by hits for domains |
+| [**topNArticlesForDomains()**](DistributionApi.md#topNArticlesForDomains) | **GET** /v1/distribution/articles/top_n_for_domains | Get the top N articles by metric for domains |
 | [**topNDomainsByHits()**](DistributionApi.md#topNDomainsByHits) | **GET** /v1/distribution/domains/top_n | Get the top N domains by hits |
 
 
@@ -716,12 +716,12 @@ try {
 ## `topNArticlesForDomains()`
 
 ```php
-topNArticlesForDomains($domain_names, $limit, $page, $start_date, $end_date): \AskNews\Model\TopNArticlesForDomainResponse
+topNArticlesForDomains($domain_names, $limit, $page, $start_date, $end_date, $metric): \AskNews\Model\TopNArticlesForDomainResponse
 ```
 
-Get the top N articles by hits for domains
+Get the top N articles by metric for domains
 
-Get the top N domain articles by hits.
+Get the top N domain articles ranked by the selected metric.
 
 ### Example
 
@@ -743,9 +743,10 @@ $limit = 10; // int | Number of top domain articles to return (page size)
 $page = 1; // int | Page number (1-based; page size = limit)
 $start_date = 56; // int | Start date to filter by (timestamp in seconds since epoch)
 $end_date = 56; // int | End date to filter by (timestamp in seconds since epoch)
+$metric = 'surface'; // string | Metric used to rank and count the returned articles
 
 try {
-    $result = $apiInstance->topNArticlesForDomains($domain_names, $limit, $page, $start_date, $end_date);
+    $result = $apiInstance->topNArticlesForDomains($domain_names, $limit, $page, $start_date, $end_date, $metric);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DistributionApi->topNArticlesForDomains: ', $e->getMessage(), PHP_EOL;
@@ -761,6 +762,7 @@ try {
 | **page** | **int**| Page number (1-based; page size &#x3D; limit) | [optional] [default to 1] |
 | **start_date** | **int**| Start date to filter by (timestamp in seconds since epoch) | [optional] |
 | **end_date** | **int**| End date to filter by (timestamp in seconds since epoch) | [optional] |
+| **metric** | **string**| Metric used to rank and count the returned articles | [optional] [default to &#39;surface&#39;] |
 
 ### Return type
 

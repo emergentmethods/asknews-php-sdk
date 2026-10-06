@@ -7,7 +7,6 @@ All URIs are relative to https://api.asknews.app, except if the operation define
 | [**getArticle()**](NewsApi.md#getArticle) | **GET** /v1/news/{article_id} | Get an article by its UUID |
 | [**getArticles()**](NewsApi.md#getArticles) | **GET** /v1/news | Get multiple articles by UUID |
 | [**getIndexCounts()**](NewsApi.md#getIndexCounts) | **GET** /v1/index_counts | Get the index counts underlying AskNews |
-| [**getSourcesReport()**](NewsApi.md#getSourcesReport) | **GET** /v1/sources | Get the sources underlying AskNews |
 | [**searchNews()**](NewsApi.md#searchNews) | **GET** /v1/news/search | Search for enriched real-time news context |
 
 
@@ -211,72 +210,6 @@ try {
 ### Return type
 
 [**\AskNews\Model\IndexCountItem[]**](../Model/IndexCountItem.md)
-
-### Authorization
-
-[APIKey](../../README.md#APIKey)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: `application/json`
-
-[[Back to top]](#) [[Back to API list]](../../README.md#endpoints)
-[[Back to Model list]](../../README.md#models)
-[[Back to README]](../../README.md)
-
-## `getSourcesReport()`
-
-```php
-getSourcesReport($n_points, $start_timestamp, $end_timestamp, $metric, $sampling): \AskNews\Model\SourceReportItem[]
-```
-
-Get the sources underlying AskNews
-
-This endpoint is primarly used for transparency and monitoring the diversity of the data.  Visualized at `https://asknews.app/transparency`.  Get the distribution of sources/languages/countries underlying AskNews content.
-
-### Example
-
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-
-
-
-$apiInstance = new AskNews\Api\NewsApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client(),
-    $config
-);
-$n_points = 100; // int | Number of points to return
-$start_timestamp = 56; // int | Start timestamp to filter by
-$end_timestamp = 56; // int | End timestamp to filter by
-$metric = 'countries_diversity'; // string | Metric to filter by
-$sampling = '1h'; // string | Sampling to use
-
-try {
-    $result = $apiInstance->getSourcesReport($n_points, $start_timestamp, $end_timestamp, $metric, $sampling);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling NewsApi->getSourcesReport: ', $e->getMessage(), PHP_EOL;
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-| ------------- | ------------- | ------------- | ------------- |
-| **n_points** | **int**| Number of points to return | [optional] [default to 100] |
-| **start_timestamp** | **int**| Start timestamp to filter by | [optional] |
-| **end_timestamp** | **int**| End timestamp to filter by | [optional] |
-| **metric** | **string**| Metric to filter by | [optional] [default to &#39;countries_diversity&#39;] |
-| **sampling** | **string**| Sampling to use | [optional] [default to &#39;1h&#39;] |
-
-### Return type
-
-[**\AskNews\Model\SourceReportItem[]**](../Model/SourceReportItem.md)
 
 ### Authorization
 
