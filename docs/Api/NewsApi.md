@@ -232,7 +232,7 @@ searchNews($query, $n_articles, $start_timestamp, $end_timestamp, $time_filter, 
 
 Search for enriched real-time news context
 
-Search for any news, up to the last 5 minutes or in our extensive historical archive filled with 100s of millions of articles.  Geared toward low-latency applications, where time is of the essence. For example, this endpoint is commonly used for quickly getting news context for an LLM.  This endpoint is also commonly used for synthetic data curation. For example, say you are fine-tuning a model for sports. You could filter  with `classification=\"Sports\"` and build a dataset of sports articles.  News articles come with an abundance of valuable metadata, including full summaries, sentiment, entities, reporting voice, page rank, language, and much much more.  An example of this data in action can be found and interacted with at `https://asknews.app/chat`
+Search for real-time news from the last minute or historical news from the past decade.  Geared toward low-latency applications, where time is of the essence. For example, this endpoint is commonly used for quickly getting news context for an LLM.  News articles come with an abundance of valuable metadata, including full summaries, sentiment, entities, reporting voice, page rank, language, and much much more.
 
 ### Example
 

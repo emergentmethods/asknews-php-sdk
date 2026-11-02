@@ -21,8 +21,8 @@ Name | Type | Description | Notes
 **key_points** | **string[]** |  | [optional]
 **title** | **string** |  |
 **sentiment** | **int** |  |
-**centroid_distance** | **float** |  |
-**cluster_probability** | **float** |  |
+**centroid_distance** | **float** |  | [optional]
+**cluster_probability** | **float** |  | [optional]
 **markdown_citation** | **string** |  | [optional] [default to '']
 **provocative** | **string** |  | [optional] [default to 'unknown']
 **reporting_voice** | [**\AskNews\Model\ReportingVoice1**](ReportingVoice1.md) |  | [optional]
@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **social_embeds** | **string[]** |  | [optional]
 **bias** | **string** |  | [optional]
 **authors** | [**\AskNews\Model\Author1[]**](Author1.md) |  | [optional]
+**wikidata_entities** | **array<string,\AskNews\Model\WikidataEntity1[]>** |  | [optional]
 **full_text** | **string** |  | [optional]
 **original_language_summary** | **string** |  | [optional]
 **image_description** | **string** |  | [optional]

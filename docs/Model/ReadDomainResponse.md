@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **is_tollbit** | **bool** |  | [optional] [default to false]
 **publisher** | **bool** |  | [optional] [default to false]
 **full_text** | **bool** |  | [optional] [default to true]
+**premium_multiplier** | **int** |  | [optional] [default to 1]
 **created_at** | **\DateTime** |  |
 **updated_at** | **\DateTime** |  | [optional]
 
